@@ -23,9 +23,9 @@ const currentYear = new Date().getFullYear();
 
 export function FooterWithSitemap() {
     return (
-        <footer className="bg-gray-800 text-white">
-            <div className="mx-auto w-full max-w-7xl px-8 py-4">
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <footer className="fixed bottom-0 left-0 w-full">
+            <div className="mx-auto w-full max-w-7xl px-8">
+                <div className="mx-auto grid w-full grid-cols-1 gap-8 py-4 md:grid-cols-2 lg:grid-cols-4">
                     {SITEMAP.map(({ title, links }, key) => (
                         <div key={key} className="w-full">
                             <Typography
@@ -50,14 +50,14 @@ export function FooterWithSitemap() {
                         </div>
                     ))}
                 </div>
-                <div className="flex flex-col items-center justify-center border-t border-white py-2 md:flex-row md:justify-between">
+                <div className="flex w-full flex-col items-center justify-center border-t border-white py-2 md:flex-row md:justify-between">
                     <Typography
                         variant="small"
                         className="mb-4 text-center font-normal text-white md:mb-0"
                     >
                         &copy; {currentYear} Quant Arena. All Rights Reserved.
                     </Typography>
-                    <div className="flex gap-4 text-white">
+                    <div className="flex gap-4 text-white sm:justify-center">
                         <Typography as="a" href="#" className="opacity-80 transition-opacity hover:opacity-100">
                             <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path
