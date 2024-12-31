@@ -37,10 +37,10 @@ export function FooterWithSitemap() {
                             </Typography>
                             <ul className="space-y-1">
                                 {links.map((link, key) => (
-                                    <Typography key={key} as="li" color="white" className="font-normal">
+                                    <Typography key={key} as="li" color="white" className="font-normal text-white">
                                         <a
                                             href="#"
-                                            className="inline-block py-1 pr-2 transition-transform hover:scale-105"
+                                            className="inline-block text-white py-1 pr-2 text-white transition-transform hover:scale-105"
                                         >
                                             {link}
                                         </a>
