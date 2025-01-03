@@ -7,7 +7,7 @@ export default function Hero() {
           Advanced Analytics & Risk Management Solutions
         </h1>
         <p className="mt-8 text-xl font-light leading-relaxed">
-          Identify, assess, and mitigate risks in real-time with data-driven
+          Identify, assess, and mitigate risks with data-driven
           insights tailored to your business needs.
         </p>
         <button className="flex items-center gap-2 px-6 py-2 mt-6 bg-green-300 text-black rounded-md shadow hover:bg-green-500 transition">
