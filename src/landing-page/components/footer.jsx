@@ -1,45 +1,119 @@
+import Phone from '../images/phone-call.png'
+import Mail from '../images/envelope.png'
+import Location from '../images/marker.png'
+
 export default function Footer() {
-  const footerLinks = {
-    Product: ["Landing Page", "Popup Builder", "Web-design", "Content", "Integrations"],
-    "Use Cases": ["Web-designers", "Marketers", "Small Business", "Website Builder"],
-    Resources: ["Academy", "Blog", "Themes", "Hosting", "Developers", "Support"],
-    Company: ["About Us", "Careers", "FAQs", "Teams", "Contact Us"]
-  };
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="flex flex-col justify-center items-center px-20 py-20 mt-28 bg-black max-md:px-5 max-md:mt-10 max-md:max-w-full">
-      <div className="flex flex-col w-full max-w-[1712px] max-md:max-w-full">
-        <div className="flex flex-col mt-28 ml-16 w-full max-w-[1485px] max-md:mt-10 max-md:max-w-full">
-          <div className="flex flex-wrap gap-5 justify-between items-start max-md:max-w-full">
-            <div className="flex flex-col mt-3">
-              <h2 className="self-start text-2xl text-center text-white">Subscribe</h2>
-              <form className="flex mt-7 w-full min-h-[50px]">
-                <label htmlFor="emailInput" className="sr-only">Enter your email Address</label>
-                <input
-                  type="email"
-                  id="emailInput"
-                  className="flex-1 px-2.5 py-4 bg-gray-200 shadow-lg text-lg text-gray-400"
-                  placeholder="Enter your email Address"
-                />
-                <button type="submit" className="px-7 py-1.5 text-base text-center text-white whitespace-nowrap bg-purple-500 border border-solid max-md:px-5">
-                  Subscribe
-                </button>
-              </form>
-            </div>
-            {Object.entries(footerLinks).map(([category, links]) => (
-              <div key={category} className="flex flex-col text-sm text-white">
-                <h3 className="text-lg font-bold">{category}</h3>
-                {links.map((link, index) => (
-                  <a key={index} href="#" className="mt-4 hover:text-violet-400">
-                    {link}
-                  </a>
-                ))}
+    <footer className="bg-black text-white py-12">
+      {/* Top Section */}
+      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-b border-gray-600 pb-8">
+        {/* Phone */}
+        <div className="flex items-center space-x-4">
+          <div className="w-12 h-12 rounded-full bg-[#9E6AED] flex items-center justify-center">
+            <img src={Phone} alt="Phone" className="h-6 w-6 text-white" />
+          </div>
+          <span className="text-lg">7758871196</span>
+        </div>
+
+        {/* Email */}
+        <div className="flex items-center space-x-4">
+          <div className="w-12 h-12 rounded-full bg-[#FCBE60] flex items-center justify-center">
+            <img src={Mail} alt="Mail" className="h-6 w-6 text-white" />
+          </div>
+          <span className="text-lg">connect.quantarena.co.in</span>
+        </div>
+
+        {/* Address */}
+        <div className="flex items-center space-x-4">
+          <div className="w-12 h-12 rounded-full bg-[#9E6AED] flex items-center justify-center">
+            <img src={Location} alt="Location" className="h-6 w-6 text-white" />
+          </div>
+          <p className="text-lg">Lorem ipsum dolor sit amet consectetur.</p>
+        </div>
+      </div>
+
+      {/* Bottom Section */}
+      <div className="max-w-auto mx-auto px-8 mt-8 grid grid-cols-1 md:grid-cols-5 gap-8">
+        {/* Logo and Subscribe */}
+        <div className="space-y-4 mb-8">
+        <h1 className="text-xl px-12 font-bold">LOGO</h1>
+        
+        {/* <img src="/path/to/logo.png" alt="Logo" className="h-12 w-auto mx-auto" /> */}
+
+              <div className="flex flex-col items-center">
+              <input
+              type="email"
+              placeholder="Enter your email"
+              className="px-4 py-2 rounded-full bg-white text-black"
+              />
+              <button className="mt-4 px-6 py-2 bg-[#9E6AED] text-white rounded-full">
+              Subscribe
+              </button>
               </div>
-            ))}
+          
+             
+              
+            </div>
+             
+            {/* Links */}
+        <div className="col-span-1 md:col-span-4 grid grid-cols-2 md:grid-cols-6 gap-8">
+          <div>
+            <h2 className="font-bold mb-4">Pages</h2>
+            <ul className="space-y-2">
+              <li>Home</li>
+              <li>Services</li>
+              <li>QAPMS</li>
+              <li>Career</li>
+              <li>Contact Us</li>
+            </ul>
           </div>
-          <div className="self-start mt-10 text-2xl font-light text-white">
-            ©{new Date().getFullYear()} All Rights Reserved
+
+          <div>
+            <h2 className="font-bold mb-4">Company</h2>
+            <ul className="space-y-2">
+              <li>About Us</li>
+              <li>Our Team</li>
+              <li>Career</li>
+            </ul>
           </div>
+          <div>
+            <h2 className="font-bold mb-4">Analytics</h2>
+            <ul className="space-y-2">
+              <li>Data Management & Processing</li>
+            </ul>
+          </div>
+          <div>
+            <h2 className="font-bold mb-4">Risk management</h2>
+            <ul className="space-y-2">
+              <li>Home</li>
+              <li>Services</li>
+              <li>QAPMS</li>
+              <li>Career</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-bold mb-4">Policy</h2>
+            <ul className="space-y-2">
+              <li>Terms & Condition</li>
+              <li>Privacy Policy</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="font-bold mb-4">Links</h2>
+            <ul className="space-y-2">
+              <li>Instagram</li>
+              <li>Facebook</li>
+              <li>LinkedIn</li>
+              <li>Twitter</li>
+            </ul>
+          </div>
+        </div>
+        <div className="text-center mt-4 text-gray-400">
+          © {currentYear} All Rights Reserved
         </div>
       </div>
     </footer>
