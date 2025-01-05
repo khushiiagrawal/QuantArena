@@ -7,7 +7,18 @@ export default withMT({
     "./node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['"Roboto"', "Arial", "sans-serif"],
+        montserrat: ['"Montserrat"', "sans-serif"],
+        lora: ['"Lora"', "serif"],
+        opensans: ['"Open Sans"', "sans-serif"],
+        kufam: ['"Kufam"', "sans-serif"],
+        playfair: ['"Playfair Display"', "serif"],
+        serif: ['"Georgia"', "serif"],
+        mono: ['"Courier New"', "monospace"],
+      },
+    },
   },
   plugins: [],
 });
