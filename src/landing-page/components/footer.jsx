@@ -46,9 +46,9 @@ export default function Footer() {
               <input
               type="email"
               placeholder="Enter your email"
-              className="px-4 py-2 rounded-full bg-white text-black"
+              className="px-4 py-2 bg-white text-black rounded"
               />
-              <button className="mt-4 px-6 py-2 bg-[#9E6AED] text-white rounded-full">
+              <button className="mt-4 px-6 py-2 bg-[#9E6AED] text-white">
               Subscribe
               </button>
               </div>
