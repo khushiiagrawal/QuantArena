@@ -6,7 +6,8 @@ export default function About() {
     const fontStyle = { fontFamily: 'Montserrat, sans-serif' };
 
     return (
-        <div className="relative bg-gray-200 text-black" style={fontStyle}>
+        <div id='AboutUs'>
+            <div className="relative bg-gray-200 text-black" style={fontStyle}>
             {/* Purple Banner Background */}
                         <div
                             className="relative h-40 md:h-60 flex items-center justify-center ml-4 md:ml-20"
@@ -137,5 +138,7 @@ export default function About() {
             {/* Space at the bottom */}
             <div className="h-20"></div>
         </div>
+        </div>
+        
     );
 }
