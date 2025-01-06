@@ -23,8 +23,8 @@ export default function Header() {
 
   return (
     <div id="Header">
-      <header className="fixed w-screen flex items-center justify-between px-8 md:px-16 py-3 md:py-4 bg-black font-montserrat bg-opacity-50 shadow-md z-50">
-      <div className="text-2xl md:text-3xl text-white">Logo</div>
+      <header className="fixed w-screen flex items-center justify-between px-8 md:px-16 py-3 md:py-5 bg-black font-montserrat bg-opacity-50 shadow-md z-50">
+      <div className="text-2xl md:text-2xl text-white">Logo</div>
       <div className="md:hidden">
         <button onClick={handleMobileMenuToggle} className="text-white">
           <svg
