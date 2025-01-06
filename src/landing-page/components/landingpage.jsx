@@ -24,6 +24,7 @@ export default function LandingPage() {
         <TeamSection/>
         <Footer/>
       </main>
+      
 
       {/* Footer */}
     </div>

@@ -1,15 +1,16 @@
 export default function MainPage() {
   return (
-    <div className="flex flex-wrap items-center justify-between px-6 py-8 h-full bg-black text-white md:px-20 md:py-12 relative">
+    <div id="Hero">
+      <div className="flex flex-wrap items-center justify-between px-6 py-8 h-full bg-black text-white md:px-20 md:py-12 relative">
       <div className="w-full md:max-w-lg mt-12 md:mt-18 md:ml-6 text-center md:text-left">
-        <h1 className="text-5xl sm:text-5xl md:text-5xl font-bold uppercase leading-tight text-white">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold uppercase leading-tight font-kufam text-white">
           Advanced Analytics & Risk Management Solutions
         </h1>
-        <p className="mt-4 md:mt-6 text-lg md:text-xl font-light leading-relaxed">
+        <p className="mt-4 md:mt-6 text-lg md:text-xl font-light font-montserrat leading-relaxed">
           Identify, assess, and mitigate with data-driven insights tailored to
           your business needs.
         </p>
-        <button className="flex items-center justify-center gap-2 px-4 py-2 mt-6 bg-green-300 text-black rounded-md shadow hover:bg-green-500 transition">
+        <button className="flex items-center justify-center gap-2 px-4 py-2 mt-6 bg-[#5BD8A3] text-black font-montserrat rounded-md shadow hover:bg-green-300 transition">
           <span>Get In Touch</span>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/49da03168f27461ca59f3dd580a07fb1/192f3b2d699a273c665bf60310f3cb2cf3b3992509fd278e60369b421f9ef038?apiKey=49da03168f27461ca59f3dd580a07fb1&"
@@ -25,6 +26,7 @@ export default function MainPage() {
           className="w-full h-auto max-w-6xl mt-10 md:mt-24 py-6 md:py-4 transform transition-transform duration-500 hover:scale-105 hover:rotate-2"
         />
       </div>
+    </div>
     </div>
   );
 }
