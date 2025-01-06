@@ -2,20 +2,19 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
     { label: "Home", link: "/home" },
-    { label: "Services", link: "/services", hasDropdown: true },
+    { label: "Services", hasDropdown: true },
     { label: "QAPMS", link: "/qapms" },
     { label: "Career", link: "/career" },
     { label: "Contact Us", link: "/contact-us" },
   ];
 
-  const handleDropdownToggle = (e) => {
-    e.preventDefault();
-    setIsDropdownOpen(!isDropdownOpen);
+  const handleDropdownToggle = (index) => {
+    setOpenDropdownIndex(openDropdownIndex === index ? null : index);
   };
 
   const handleMobileMenuToggle = () => {
@@ -23,7 +22,8 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full flex items-center justify-between px-8 md:px-16 py-4 md:py-6 bg-black bg-opacity-50 shadow-md z-50">
+    <div id="Header">
+      <header className="fixed w-screen flex items-center justify-between px-8 md:px-16 py-3 md:py-4 bg-black font-montserrat bg-opacity-50 shadow-md z-50">
       <div className="text-2xl md:text-3xl text-white">Logo</div>
       <div className="md:hidden">
         <button onClick={handleMobileMenuToggle} className="text-white">
@@ -52,32 +52,30 @@ export default function Header() {
           <div key={index} className="relative">
             <Link
               to={item.link}
-              className="text-white hover:text-gray-300 transition-colors flex items-center"
+              className="text-white hover:text-gray-400 hover:underline transition-colors flex items-center"
               onClick={() => {
                 if (item.hasDropdown) {
-                  handleDropdownToggle();
+                  handleDropdownToggle(index);
                 }
                 setIsMobileMenuOpen(false);
               }}
             >
               {item.label}
               {item.hasDropdown && (
-                <span className="ml-1 md:ml-3 w-2.5 h-2.5 border-b-2 border-r-2 border-white rotate-45 transform translate-y-[2px]"></span>
+                <span className="ml-1 md:ml-3 w-2.5 h-2.5 border-b-2 border-r-2 border-white rotate-45 transform translate-y-[-1px]"></span>
               )}
             </Link>
-            {item.hasDropdown && isDropdownOpen && (
-              <ul className="absolute top-[80%] mt-2 md:mt-5 w-32 md:w-40 bg-white shadow-lg rounded-md">
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  <Link to="/services/service1">Service 1</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  <Link to="/services/service2">Service 2</Link>
-                </li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  <Link to="/services/service3">Service 3</Link>
-                </li>
-              </ul>
-            )}
+            {item.hasDropdown && openDropdownIndex === index && (
+                <ul className="absolute top-full left-0 mt-2 w-48 bg-white text-black shadow-lg">
+                  <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">
+                    <Link to="/services/service1">Service 1</Link>
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">
+                    <Link to="/services/service2">Service 2</Link>
+                  </li>
+                  
+                </ul>
+              )}
           </div>
         ))}
       </nav>
@@ -90,5 +88,6 @@ export default function Header() {
         <span className="text-sm md:text-base">1008899097</span>
       </div>
     </header>
+    </div>
   );
 }
