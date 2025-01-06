@@ -1,30 +1,32 @@
-import { Routes, Route, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import LandingPage from "./landing-page/components/landingpage";
+import { Routes, Route } from "react-router-dom";
 import Services from "./pages/services";
 import QAPMS from "./pages/qamps";
-import Career from "./pages/career";
+import CareerPageHero from "./pages/Career/career";
 import ContactUs from "./pages/contact";
+import LandingPage from "./landing-page/components/landingpage";
+import Layout from "./landing-page/components/layout";
+
+
+
+import { Navigate } from "react-router-dom";
 
 function HomeRedirect() {
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    navigate("/");
-  }, [navigate]);
-
-  return null;
+  return <Navigate to="/" />;
 }
 
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<LandingPage />} />
-      <Route path="/home" element={<HomeRedirect />} />
-      <Route path="/services" element={<Services />} />
-      <Route path="/qapms" element={<QAPMS />} />
-      <Route path="/career" element={<Career />} />
-      <Route path="/contact-us" element={<ContactUs />} />
+      <Route path="/" element={<Layout />}>
+        <Route index element={<LandingPage />} />
+        <Route path="home" element={<HomeRedirect />} />
+        <Route path="services" element={<Services />} />
+        <Route path="qapms" element={<QAPMS />} />
+        <Route path="career" element={<CareerPageHero />} />
+        <Route path="contact-us" element={<ContactUs />} />
+        
+
+      </Route>
     </Routes>
   );
 }
