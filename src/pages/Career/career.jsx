@@ -4,6 +4,12 @@ import img3 from './imgs/img3.png'
 import img4 from './imgs/img4.png'
 import img5 from './imgs/img5.png'
 import img6 from './imgs/img6.png'
+import p1 from './imgs/p-1.png'
+import p2 from './imgs/p-2.png'
+import p3 from './imgs/p-3.png'
+import p4 from './imgs/p-4.png'
+import p5 from './imgs/p-5.png'
+import p6 from './imgs/p-6.png'
 import Phone from '../../landing-page/images/phone-call.png';
 import Mail from '../../landing-page/images/envelope.png';
 import Location from '../../landing-page/images/marker.png';
@@ -31,6 +37,7 @@ export default function CareerPageHero() {
       </div>
       <ImageLayout/>
       <WhyJoinUs/>
+      <ImageLayout2/>
       <AllFooter/>
       
     </div>
@@ -280,6 +287,55 @@ const AllFooter = () => {
   );
 
 } 
+
+export const ImageLayout2 = () => {
+  return (
+    <div className="grid bg-white grid-cols-1 gap-4 p-6 sm:grid-cols-2 md:grid-cols-4">
+      {/* First row */}
+      <div className="col-span-1 md:col-span-1">
+        <img
+          src={p1}
+          alt="First image"
+          className="object-cover"
+        />
+      </div>
+      <div className="col-span-1 md:col-span-1">
+        <img
+          src={p2}
+          alt="Writing notes"
+          className="object-cover"
+        />
+      </div>
+      <div className="col-span-1 md:col-span-1 relative">
+        <img
+          src={p3}
+          alt="Presentation"
+          className="object-cover"
+        />
+        <img
+          src={p4}
+          alt="Smiling professional"
+          className="object-cover absolute bottom-0 left-0"
+        />
+      </div>
+
+      {/* Third row */}
+      <div className="col-span-1 md:col-span-1 relative">
+        <img
+          src={p5}
+          alt="Working on a laptop"
+          className="object-cover"
+        />
+        <img
+          src={p6}
+          alt="Happy individual with laptop"
+          className="object-cover absolute bottom-0 left-0"
+        />
+      </div>
+    </div>
+  );
+};
+
 
 
 
