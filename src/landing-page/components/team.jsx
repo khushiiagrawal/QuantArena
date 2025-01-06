@@ -5,7 +5,8 @@ import pic4 from '../images/pic4.png';
 
 export function TeamSection() {
     return (
-        <div className="py-16 bg-gray-200 text-center">
+        <div id='TeamSection'>
+            <div className="py-16 w-screen bg-gray-200 text-center">
             {/* Section Heading */}
             <h2 className="text-3xl text-[#824AD8]">
                 <span className="font-semibold  font-montserrat">
@@ -21,7 +22,7 @@ export function TeamSection() {
             <div className="w-40 h-0.5 bg-[#FFC362] my-4 mx-auto"></div>
 
             {/* Team Cards */}
-            <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
+            <div className="mt-12  grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
                 {/* Team Member 1 */}
                 <div className="relative">
                     <img
@@ -76,5 +77,7 @@ export function TeamSection() {
             </div>
             <div className='mt-8'></div>
         </div>
+        </div>
+        
     );
 }
