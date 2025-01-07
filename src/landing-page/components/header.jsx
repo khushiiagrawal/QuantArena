@@ -46,7 +46,7 @@ export default function Header() {
       <nav
         className={`${
           isMobileMenuOpen ? "block" : "hidden"
-        } md:flex items-center gap-4 md:gap-10 text-lg`}
+        } md:flex items-center md:text-xl gap-4 md:gap-10 text-lg`}
       >
         {navItems.map((item, index) => (
           <div key={index} className="relative">
@@ -85,7 +85,7 @@ export default function Header() {
           alt="Phone icon"
           className="w-4 h-4 md:w-5 md:h-5 filter invert"
         />
-        <span className="text-sm md:text-base">1008899097</span>
+        <span className="text-sm md:text-xl">1008899097</span>
       </div>
     </header>
     </div>
