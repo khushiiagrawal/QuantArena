@@ -131,13 +131,15 @@ const WhyJoinUs = () => {
   ];
 
   return (
-    <section className="bg-[#D7CDE6] py-12">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="bg-[#D7CDE6] w-screen h-screen">
+      <div className="max-w-7xl mx-auto px-6 py-10">
+        <div className='h-11'></div>
         <h2 className="text-3xl font-montserrat font-semibold text-black text-center mb-16 underline decoration-2" style={{ textUnderlineOffset: '16px', textDecorationColor: '#9C69EB' }}>
           Why Join Us?
         </h2>
+      <div className="h-10"></div>
        
-        <div className="grid grid-cols-1 font-montserrat sm:grid-cols-2 text-gray-800 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 font-montserrat sm:grid-cols-2 text-gray-800 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
