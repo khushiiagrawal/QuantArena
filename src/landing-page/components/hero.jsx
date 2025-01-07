@@ -1,7 +1,9 @@
+import herobg from '../images/Group2.png';
+
 export default function MainPage() {
   return (
-    <div id="Hero">
-      <div className="flex flex-wrap items-center justify-between px-6 py-8 h-screen w-screen  bg-black text-white md:px-20 md:py-12 relative">
+    <div id="Hero" >
+      <div className="flex flex-wrap items-center justify-between px-6 py-8 h-screen w-screen  bg-black text-white md:px-20 md:py-12 relative" style={{ backgroundImage: `url(${herobg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="w-full md:max-w-lg mt-12 md:mt-18 md:ml-6 text-center md:text-left">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold uppercase leading-tight font-kufam text-white">
           Advanced Analytics & Risk Management Solutions
@@ -26,7 +28,7 @@ export default function MainPage() {
           className="w-full h-auto max-w-6xl mt-10 md:mt-24 py-6 md:py-4 transform transition-transform duration-500 hover:scale-105 hover:rotate-2"
         />
       </div>
-    </div>
+     </div>
     </div>
   );
 }
