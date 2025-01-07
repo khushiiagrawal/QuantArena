@@ -1,7 +1,7 @@
 export default function MainPage() {
   return (
     <div id="Hero">
-      <div className="flex flex-wrap items-center justify-between px-6 py-8 h-full bg-black text-white md:px-20 md:py-12 relative">
+      <div className="flex flex-wrap items-center justify-between px-6 py-8 h-screen w-screen  bg-black text-white md:px-20 md:py-12 relative">
       <div className="w-full md:max-w-lg mt-12 md:mt-18 md:ml-6 text-center md:text-left">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold uppercase leading-tight font-kufam text-white">
           Advanced Analytics & Risk Management Solutions
