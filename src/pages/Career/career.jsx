@@ -10,36 +10,42 @@ import p3 from './imgs/p-3.png'
 import p4 from './imgs/p-4.png'
 import p5 from './imgs/p-5.png'
 import p6 from './imgs/p-6.png'
-import Phone from '../../landing-page/images/phone-call.png';
-import Mail from '../../landing-page/images/envelope.png';
-import Location from '../../landing-page/images/marker.png';
-import { useState } from 'react';
+import a1 from './imgs/fast.png'
+import a2 from './imgs/great.png'
+import a3 from './imgs/take.png'
+import a4 from './imgs/growth.png'
+import a5 from './imgs/impactful.png'
+import a6 from './imgs/balance.png'
+import Footer from '../../landing-page/components/footer'
+
+
 
 
 export default function CareerPageHero() {
   return (
     <div>
       <div className="w-screen flex-wrap flex-col bg-black text-white flex h-screen items-center justify-center text-center p-4">
-          <h1 className="text-3xl md:text-6xl font-bold font-kufam mt-6 mb-12 leading-relaxed">
-              TRAFFIC AND ENGAGEMENT <br/> METRICS FOR CAREER PAGE
-          </h1>
-          <p className="text-lg md:text-2xl font-montserrat text-gray-300 mb-24 leading-relaxed">
-              Identify, assess, and mitigate risks with data-driven <br /> insights tailored to your business needs.
-          </p>
-          <button className="bg-[#5BD8A3] hover:bg-green-300 font-montserrat mt-6 text-black gap-2 font-medium py-3 px-5 rounded-md flex items-center">
-              Get In Touch
-              <img
-                  src="https://cdn.builder.io/api/v1/image/assets/49da03168f27461ca59f3dd580a07fb1/192f3b2d699a273c665bf60310f3cb2cf3b3992509fd278e60369b421f9ef038?apiKey=49da03168f27461ca59f3dd580a07fb1&"
-                  alt="Arrow icon"
-                  className="w-5 h-5 ml-2"
-              />
-          </button>
+        <h1 className="text-3xl md:text-6xl font-bold font-kufam mt-6 mb-10 leading-relaxed">
+          YOUR CAREER THROUGH <br /> OUR VISION
+        </h1>
+        <p className="text-lg md:text-2xl font-montserrat text-gray-300 mb-24 leading-relaxed">
+        Shaping Your Career, Enriching Your Future <br/> Where Ambition Meets a Satisfied Pocket!
+        </p>
+        <button className="bg-[#5BD8A3] hover:bg-green-300 font-montserrat mt-6 text-black gap-2 font-medium py-3 px-5 rounded-md flex items-center">
+          Get In Touch
+          <img
+            src="https://cdn.builder.io/api/v1/image/assets/49da03168f27461ca59f3dd580a07fb1/192f3b2d699a273c665bf60310f3cb2cf3b3992509fd278e60369b421f9ef038?apiKey=49da03168f27461ca59f3dd580a07fb1&"
+            alt="Arrow icon"
+            className="w-5 h-5 ml-2"
+          />
+        </button>
       </div>
-      <ImageLayout/>
-      <WhyJoinUs/>
-      <ImageLayout2/>
-      <AllFooter/>
-      
+      <ImageLayout />
+      <WhyJoinUs />
+      <ImageLayout2 />
+      <JobApplicationPage />
+      <Footer />
+
     </div>
   );
 }
@@ -131,21 +137,20 @@ const WhyJoinUs = () => {
   ];
 
   return (
-    <section className="bg-[#D7CDE6] w-screen h-screen">
-      <div className="max-w-7xl mx-auto px-6 py-10">
-        <div className='h-11'></div>
+    <section className="bg-[#D7CDE6] w-full py-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-montserrat font-semibold text-black text-center mb-16 underline decoration-2" style={{ textUnderlineOffset: '16px', textDecorationColor: '#9C69EB' }}>
           Why Join Us?
         </h2>
-      <div className="h-10"></div>
-       
-        <div className="grid grid-cols-1 font-montserrat sm:grid-cols-2 text-gray-800 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
               className="bg-white shadow-md border-gray-400 border rounded-lg p-6 hover:shadow-lg transition"
             >
-              <div className="w-12 h-12 bg-[#D7CDE6] rounded-full mb-4"></div>
+              <div className="w-12 h-12 bg-[#D7CDE6] rounded-full mb-4 flex items-center justify-center">
+                <img src={index === 0 ? a1 : index === 1 ? a2 : index === 2 ? a3 : index === 3 ? a4 : index === 4 ? a5 : a6} alt="Icon" className="w-7 h-7" />
+              </div>
               <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
             </div>
@@ -156,139 +161,6 @@ const WhyJoinUs = () => {
   );
 };
 
-const AllFooter = () => {
-  const [showServicesDropdown, setShowServicesDropdown] = useState(false);
-  const currentYear = new Date().getFullYear();
-
-  const handleServicesClick = (e) => {
-    e.preventDefault();
-    setShowServicesDropdown(!showServicesDropdown);
-  };
-
-  return (
-    <footer className="bg-black text-white py-12">
-      {/* Top Section */}
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-b border-gray-600 pb-8">
-        {/* Phone */}
-        <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 rounded-full bg-[#9E6AED] flex items-center justify-center">
-            <img src={Phone} alt="Phone" className="h-6 w-6 text-white" />
-          </div>
-          <span className="text-lg">7758871196</span>
-        </div>
-
-        {/* Email */}
-        <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 rounded-full bg-[#FCBE60] flex items-center justify-center">
-            <img src={Mail} alt="Mail" className="h-6 w-6 text-white" />
-          </div>
-          <span className="text-lg">connect.quantarena.co.in</span>
-        </div>
-
-        {/* Address */}
-        <div className="flex items-center space-x-4">
-          <div className="w-12 h-12 rounded-full bg-[#9E6AED] flex items-center justify-center">
-            <img src={Location} alt="Location" className="h-6 w-6 text-white" />
-          </div>
-          <p className="text-lg">Lorem ipsum dolor sit amet consectetur.</p>
-        </div>
-      </div>
-
-      {/* Bottom Section */}
-      <div className="max-w-auto mx-auto px-8 mt-8 grid grid-cols-1 md:grid-cols-5 gap-8">
-        {/* Logo and Subscribe */}
-        <div className="space-y-4 mb-8">
-          <h1 className="text-xl px-12 font-bold">LOGO</h1>
-        
-          {/* <img src="/path/to/logo.png" alt="Logo" className="h-12 w-auto mx-auto" /> */}
-
-          <div className="flex flex-col items-center">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="px-4 py-2 bg-white text-black rounded"
-            />
-            <button className="mt-4 px-6 py-2 bg-[#9E6AED] text-white">
-              Subscribe
-            </button>
-          </div>
-        </div>
-             
-        {/* Links */}
-        <div className="col-span-1 md:col-span-4 grid grid-cols-2 md:grid-cols-6 gap-8">
-          <div>
-            <h2 className="font-bold mb-4 text-white">Pages</h2>
-            <ul className="space-y-2">
-            <li><a className="text-white" href="/">Home</a></li>
-              <li><a href="/" onClick={handleServicesClick} className="text-white">Services</a></li>
-              {showServicesDropdown && (
-                <ul className="space-y-2 pl-4">
-                  <li><a href="/service1" className="text-white">Service 1</a></li>
-                  <li><a href="/service2" className="text-white">Service 2</a></li>
-                </ul>
-              )}
-              <li><a href="/qamps" className="text-white">QAPMS</a></li>
-              <li><a href="/career" className="text-white">Career</a></li>
-              <li><a href="/contact" className="text-white">Contact Us</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="font-bold mb-4 text-white">Company</h2>
-            <ul className="space-y-2">
-              <li className="text-white"><a href="#AboutUs" onClick={(e) => { e.preventDefault(); document.getElementById('AboutUs').scrollIntoView({ behavior: 'smooth' }); }} className="text-white">About Us</a></li>
-              <li className="text-white"><a href="#TeamSection" onClick={(e) => { e.preventDefault(); document.getElementById('TeamSection').scrollIntoView({ behavior: 'smooth' }); }} className="text-white">Our Team</a></li>
-              <li className="text-white"><a href="/career" className="text-white">Career</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="font-bold mb-4 text-white">Analytics</h2>
-            <ul className="space-y-2">
-              <li className="text-white"><a href="/" className="text-white">Data Management & Processing</a></li>
-            </ul>
-          </div>
-          <div>
-            <h2 className="font-bold mb-4 text-white">Risk management</h2>
-            <ul className="space-y-2">
-            <li className="text-white"><a href="#Header" onClick={(e) => { e.preventDefault(); document.getElementById('Header').scrollIntoView({ behavior: 'smooth' }); }} className="text-white">Home</a></li>
-              <li><a href="/" onClick={handleServicesClick} className="text-white">Services</a></li>
-              {showServicesDropdown && (
-                <ul className="space-y-2 pl-4">
-                  <li><a href="/service1" className="text-white">Service 1</a></li>
-                  <li><a href="/service2" className="text-white">Service 2</a></li>
-                </ul>
-              )}
-              <li><a href="/qamps" className="text-white">QAPMS</a></li>
-              <li><a href="/career" className="text-white">Career</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="font-bold mb-4 text-white">Policy</h2>
-            <ul className="space-y-2">
-              <li><a className="text-white" href="/">Terms & Condition</a></li>
-              <li> <a className="text-white" href="/">Privacy Policy</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h2 className="font-bold mb-4 text-white">Links</h2>
-            <ul className="space-y-2">
-              <li><a className="text-white" href="/">Instagram</a></li>
-              <li><a className="text-white" href="/">Facebook</a></li>
-              <li><a className="text-white " href="/">LinkedIn</a></li>
-              <li><a className="text-white" href="/">Twitter</a></li>
-            </ul>
-          </div>
-        </div>
-        <div className="text-center mt-4 text-gray-400">
-          © {currentYear} All Rights Reserved
-        </div>
-      </div>
-    </footer>
-  );
-
-} 
 
 export const ImageLayout2 = () => {
   return (
@@ -341,3 +213,311 @@ export const ImageLayout2 = () => {
 
 
 
+import { useState } from 'react';
+
+export const JobApplicationPage = () => {
+  const fontStyle = { fontFamily: 'Montserrat, sans-serif' };
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    introduce: '',
+    contribution: '',
+    importance: '',
+    message: '',
+    attachment: null
+  });
+  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedJob, setSelectedJob] = useState(null);
+  const jobsPerPage = 8;
+
+  const jobPositions = [
+    { title: 'Sr. UI UX Designer', location: 'Pune, India', type: 'Full Time', description: 'Job description for Sr. UI UX Designer.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel justo quis ligula facilisis auctor. Sed sollicitudin leo ut lorem efficitur, a fermentum lorem sodales. Nullam tempor, nisi eu luctus gravida, nunc erat lobortis nisi, sed facilisis elit justo non nunc. Maecenas euismod sem et enim tincidunt, non suscipit enim euismod. Integer vel justo a nunc vestibulum egestas ac non felis. Vivamus maximus erat ac bibendum vehicula. Fusce euismod ex eu malesuada fermentum. Nulla facilisi. Curabitur venenatis nibh ut ante tempus, vel tempor neque vulputate. ', criteria: 'Criteria for Sr. UI UX Designer' },
+    { title: 'Sr. Software Developer', location: 'Bangalore, India', type: 'Full Time', description: 'Job description for Sr. Software Developer. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel justo quis ligula facilisis auctor. Sed sollicitudin leo ut lorem efficitur, a fermentum lorem sodales. Nullam tempor, nisi eu luctus gravida, nunc erat lobortis nisi, sed facilisis elit justo non nunc. Maecenas euismod sem et enim tincidunt, non suscipit enim euismod. Integer vel justo a nunc vestibulum egestas ac non felis. Vivamus maximus erat ac bibendum vehicula. Fusce euismod ex eu malesuada fermentum. Nulla facilisi. Curabitur venenatis nibh ut ante tempus, vel tempor neque vulputate.', criteria: 'Criteria for Sr. Software Developer' },
+    { title: 'Frontend Engineer', location: 'Remote', type: 'Contract', description: 'Job description for Frontend Engineer', criteria: 'Criteria for Frontend Engineer' },
+    { title: 'Backend Developer', location: 'Hyderabad, India', type: 'Full Time', description: 'Job description for Backend Developer', criteria: 'Criteria for Backend Developer' },
+    { title: 'Product Manager', location: 'Mumbai, India', type: 'Full Time', description: 'Job description for Product Manager', criteria: 'Criteria for Product Manager' },
+    { title: 'Data Scientist', location: 'Chennai, India', type: 'Full Time', description: 'Job description for Data Scientist', criteria: 'Criteria for Data Scientist' },
+    { title: 'QA Tester', location: 'Noida, India', type: 'Part Time', description: 'Job description for QA Tester', criteria: 'Criteria for QA Tester' },
+    { title: 'DevOps Engineer', location: 'Pune, India', type: 'Full Time', description: 'Job description for DevOps Engineer', criteria: 'Criteria for DevOps Engineer' },
+    { title: 'Full Stack Developer', location: 'Mumbai, India', type: 'Full Time', description: 'Job description for Full Stack Developer', criteria: 'Criteria for Full Stack Developer' },
+    { title: 'Data Analytics', location: 'Pune, India', type: 'Full Time', description: 'Job description for Data Analytics', criteria: 'Criteria for Data Analytics' },
+    { title: 'Cyber Security', location: 'Pune, India', type: 'Full Time', description: 'Job description for Cyber Security', criteria: 'Criteria for Cyber Security' },
+    { title: 'AI/ML Enthusiast', location: 'Pune, India', type: 'Full Time', description: 'Job description for AI/ML Enthusiast', criteria: 'Criteria for AI/ML Enthusiast' },
+    { title: 'Product Manager', location: 'Noida, India', type: 'Full Time', description: 'Job description for Product Manager', criteria: 'Criteria for Product Manager' },
+    { title: 'Sr. Software Developer', location: 'Pune, India', type: 'Full Time', description: 'Job description for Sr. Software Developer', criteria: 'Criteria for Sr. Software Developer' }
+  ];
+
+  const indexOfLastJob = currentPage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = jobPositions.slice(indexOfFirstJob, indexOfLastJob);
+
+  const isFormValid = () => {
+    return (
+      formData.name &&
+      formData.phone &&
+      formData.email &&
+      formData.introduce &&
+      formData.contribution &&
+      formData.importance &&
+      formData.attachment
+    );
+  };
+
+  const handleChange = (e) => {
+    const { id, value, files } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [id]: files ? files[0] : value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (isFormValid()) {
+      console.log('Form submitted:', formData);
+    } else {
+      alert('Please fill in all required fields.');
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentPage > 1) setCurrentPage(currentPage - 1);
+  };
+
+  const handleNext = () => {
+    if (indexOfLastJob < jobPositions.length) setCurrentPage(currentPage + 1);
+  };
+
+  const handleJobClick = (job) => {
+    setSelectedJob(job);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedJob(null);
+  };
+
+  return (
+    <div className="min-h-screen">
+      <div className="font-montserrat">
+        {/* Header Section */}
+        <div className="relative h-40 flex items-center justify-center" style={{ backgroundColor: '#9E6AED' }}>
+          <h1
+            className="absolute text-[50px] sm:text-[70px] md:text-[90px] lg:text-[140px] font-extrabold uppercase text-white opacity-10"
+            style={{ ...fontStyle, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+          >
+            WANT TO JOIN US?
+          </h1>
+          <h2 className="absolute top-0 left-4 m-10 text-xl md:text-3xl font-semibold uppercase text-white">
+            Want to join us?
+          </h2>
+        </div>
+
+        <div className="bg-gray-200 p-6">
+          <div className="container mx-auto py-8 px-4 bg-white shadow-lg">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              {/* Open Positions Section */}
+              <div className="space-y-6">
+                <h2 className="text-2xl text-black">Open Positions</h2>
+                {currentJobs.map((job, index) => (
+                  <div
+                    key={index}
+                    className="bg-white shadow-lg rounded border-gray-300 border p-6 flex flex-col justify-between"
+                  >
+                    <div className="flex justify-between items-center">
+                      <div>
+                        <h3 className="text-black">{job.title}</h3>
+                        <p className="text-gray-600">{job.location}</p>
+                      </div>
+                      <span className="bg-[#5BD8A3] text-white px-3 py-1 text-sm font-medium">
+                        {job.type}
+                      </span>
+                    </div>
+                    <p
+                      onClick={() => handleJobClick(job)}
+                      className="text-[#9E6AED] bg-white hover:underline font-medium mt-4 cursor-pointer"
+                    >
+                      View & Apply
+                    </p>
+                  </div>
+                ))}
+                {/* Pagination Controls */}
+                <div className="flex justify-between mt-4">
+                  <button
+                    onClick={handlePrev}
+                    disabled={currentPage === 1}
+                    className="px-4 py-2 bg-black rounded disabled:opacity-50"
+                  >
+                    Prev
+                  </button>
+                  <button
+                    onClick={handleNext}
+                    disabled={indexOfLastJob >= jobPositions.length}
+                    className="px-4 py-2 bg-black rounded disabled:opacity-50"
+                  >
+                    Next
+                  </button>
+                </div>
+              </div>
+
+              {/* Application Form Section */}
+              <div className="bg-[#9E6AED] p-8">
+                <h2 className="text-xl mb-6">In case you are someone who really wants to join us and cannot find an appropriate opening, fill out this form. We will surely get back to you.</h2>
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-2" htmlFor="name">
+                      Name<span className='text-red-500'>*</span>
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                      className="w-full px-3 py-2 border border-white text-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                      placeholder="Enter your name"
+                      value={formData.name}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-2" htmlFor="phone">
+                      Phone Number<span className='text-red-500'>*</span>
+                    </label>
+                    <input
+                      id="phone"
+                      type="tel"
+                      pattern="\d{10}"
+                      maxLength="10"
+                      className="w-full px-3 py-2 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                      placeholder="Enter phone number"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      onKeyDown={(e) => {
+                        if (!/[0-9]/.test(e.key)) {
+                          e.preventDefault();
+                        }
+                      }}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-2" htmlFor="email">
+                      Email Address<span className='text-red-500'>*</span>
+                    </label>
+                    <input
+                      id="email"
+                      type="email"
+                      className="w-full px-3 py-2 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                      placeholder="Enter your email address"
+                      value={formData.email}
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-2" htmlFor="introduce">
+                      Introduce Yourself<span className='text-red-500'>*</span>
+                    </label>
+                    <textarea
+                      id="introduce"
+                      className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                      placeholder="Enter your introduction"
+                      rows="3"
+                      value={formData.introduce}
+                      onChange={handleChange}
+                    ></textarea>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-2" htmlFor="contribution">
+                      What will you bring to the table?<span className='text-red-500'>*</span>
+                    </label>
+                    <textarea
+                      id="contribution"
+                      className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                      placeholder="Describe your contribution"
+                      rows="3"
+                      value={formData.contribution}
+                      onChange={handleChange}
+                    ></textarea>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-2" htmlFor="importance">
+                      Why do you think what you can bring to the table is important?<span className='text-red-500'>*</span>
+                    </label>
+                    <textarea
+                      id="importance"
+                      className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                      placeholder="Explain the importance"
+                      rows="3"
+                      value={formData.importance}
+                      onChange={handleChange}
+                    ></textarea>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-2" htmlFor="message">
+                      Any other message for us?
+                    </label>
+                    <textarea
+                      id="message"
+                      className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                      placeholder="Enter your message"
+                      rows="3"
+                      value={formData.message}
+                      onChange={handleChange}
+                    ></textarea>
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-white mb-2" htmlFor="attachment">
+                      Relevant Attachments<span className='text-red-500'>*</span>
+                    </label>
+                    <input
+                      id="attachment"
+                      type="file"
+                      className="w-full px-3 py-4 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
+                      onChange={handleChange}
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className={`w-full ${isFormValid() ? 'bg-[#5BD8A3] hover:bg-green-600' : 'bg-gray-400 cursor-not-allowed'} text-white font-bold py-2 px-4 rounded-lg`}
+                    disabled={!isFormValid()}
+                  >
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {selectedJob && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white text-black font-montserrat p-8 rounded-lg shadow-lg max-w-lg w-screen relative">
+            <span
+              onClick={handleCloseModal}
+              className="absolute top-0 w-6 h-6 right-3 cursor-pointer text-gray-500 hover:text-gray-700 text-4xl"
+            >
+              &times;
+            </span>
+            <h2 className="text-2xl font-bold mb-4 text-center">{selectedJob.title}</h2>
+            <p className="mb-4"><strong>Location:</strong> {selectedJob.location}</p>
+            <p className="mb-4"><strong>Type:</strong> {selectedJob.type}</p>
+            <p className="mb-4"><strong>Description:</strong> {selectedJob.description}</p>
+            <p className="mb-4"><strong>Criteria:</strong> {selectedJob.criteria}</p>
+            <div className="flex justify-center">
+              <p className="bg-[#5BD8A3] text-white px-4 py-2 rounded cursor-pointer" onClick={() => alert('Apply Now clicked')}>
+                Apply Now
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+  
+}
