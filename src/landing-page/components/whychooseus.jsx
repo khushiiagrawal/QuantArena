@@ -104,9 +104,9 @@ export default function WhyChooseUs() {
 
 export function PartnerSection() {
     return (
-      <div className="relative py-14 bg-gradient-to-r from-gray-400 to-gray-100 text-center font-montserrat">
+      <div className="relative py-14 bg-gradient-to-r from-gray-500 to-gray-100 text-center font-montserrat">
         {/* Gradient Background */}
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-400 to-white pointer-events-none"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-white pointer-events-none"></div>
   
         {/* Content Container */}
         <div className="relative max-w-6xl mx-auto">

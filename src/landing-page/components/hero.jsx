@@ -3,7 +3,7 @@ import herobg from '../images/Group2.png';
 export default function MainPage() {
   return (
     <div id="Hero" >
-      <div className="flex flex-wrap items-center justify-between px-6 py-8 h-screen w-screen  bg-black text-white md:px-20 md:py-12 relative" style={{ backgroundImage: `url(${herobg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="flex items-center justify-between px-6 py-8 h-screen w-screen  bg-black text-white md:px-20 md:py-12 relative" style={{ backgroundImage: `url(${herobg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="w-full md:max-w-lg mt-12 md:mt-18 md:ml-6 text-center md:text-left">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold uppercase leading-tight font-kufam text-white">
           Advanced Analytics & Risk Management Solutions
@@ -36,9 +36,9 @@ export default function MainPage() {
 
 export function AboutSection() {
   return (
-    <div className="relative py-4 bg-gradient-to-r from-gray-400 to-gray-100 text-center font-montserrat">
+    <div className="relative py-4 bg-gradient-to-r from-gray-500 to-gray-100 text-center font-montserrat">
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-400 to-white pointer-events-none"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-white pointer-events-none"></div>
 
       {/* Content Container */}
       <div className="relative max-w-6xl mx-auto">
