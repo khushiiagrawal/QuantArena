@@ -66,31 +66,35 @@ const ContactPage = () => {
           {/* Contact Info */}
           <div className="flex-1 bg-[#9E6AED] text-white p-6 rounded-md mt-6 lg:mt-0">
             <div className="space-y-4">
-              <div className="flex font-montserrat items-center gap-4">
+              <div className="flex font-montserrat items-start gap-4">
                 <span className="px-3 py-2 bg-white text-[#9E6AED] rounded-full">
                   📞
                 </span>
-                <p>We'd love to hear from you! Whether you have questions.</p>
+                <p>+91-7758871196</p>
               </div>
-              <div className="flex font-montserrat items-center gap-4">
+              <div className="flex font-montserrat items-start gap-4">
                 <span className="px-3 py-2 bg-white text-purple-500 rounded-full">
                   ✉️
                 </span>
-                <p>We'd love to hear from you! Whether you have questions.</p>
+                <p>connect@quantarena.co.in</p>
               </div>
-              <div className="flex font-montserrat items-center gap-4">
+              <div className="flex font-montserrat items-start gap-4">
                 <span className="px-3 py-2 bg-white text-purple-500 rounded-full">
                   📍
                 </span>
-                <p>We'd love to hear from you! Whether you have questions.</p>
+                <p>Head Office: Office no. A-15, Sr. no. 90, Majestique Memories, NIBM Annex, Mohammadwadi, Pune- 411060 (MH) <br/> <br/> Registered Address: Office no. A-15, Sr. no. 90, Majestique Memories, NIBM Annex, Mohammadwadi, Pune- 411060 (MH) </p>
               </div>
+              
               <div className="mt-6">
-                <p className="font-semibold">Follow Us</p>
+                <p className="font-semibold font-montserrat">Follow Us</p>
                 <div className="flex gap-4 mt-2">
-                  <span className="px-3 py-2 bg-white rounded-full"></span>
-                  <span className="px-3 py-2 bg-white rounded-full"></span>
-                  <span className="px-3 py-2 bg-white rounded-full"></span>
+                  <span className="px-3 py-3 bg-white rounded-full"></span>
+                  <span className="px-3 py-3 bg-white rounded-full"></span>
+                  <span className="px-3 py-3 bg-white rounded-full"></span>
                 </div>
+                <button className="px-8 w-80 py-2 mt-4 bg-white text-black font-semibold hover:bg-gray-200">
+                  Message us on Whatsapp
+                </button>
               </div>
             </div>
           </div>

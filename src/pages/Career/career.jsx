@@ -17,6 +17,7 @@ import a4 from './imgs/growth.png'
 import a5 from './imgs/impactful.png'
 import a6 from './imgs/balance.png'
 import Footer from '../../landing-page/components/footer'
+import herobg from '../../landing-page/images/Group2.png';
 
 
 
@@ -24,21 +25,23 @@ import Footer from '../../landing-page/components/footer'
 export default function CareerPageHero() {
   return (
     <div>
-      <div className="w-screen flex-wrap flex-col bg-black text-white flex h-screen items-center justify-center text-center p-4">
-        <h1 className="text-3xl md:text-6xl font-bold font-kufam mt-6 mb-10 leading-relaxed">
-          YOUR CAREER THROUGH <br /> OUR VISION
-        </h1>
-        <p className="text-lg md:text-2xl font-montserrat text-gray-300 mb-24 leading-relaxed">
-        Shaping Your Career, Enriching Your Future <br/> Where Ambition Meets a Satisfied Pocket!
-        </p>
-        <button className="bg-[#5BD8A3] hover:bg-green-300 font-montserrat mt-6 text-black gap-2 font-medium py-3 px-5 rounded-md flex items-center">
-          Get In Touch
-          <img
-            src="https://cdn.builder.io/api/v1/image/assets/49da03168f27461ca59f3dd580a07fb1/192f3b2d699a273c665bf60310f3cb2cf3b3992509fd278e60369b421f9ef038?apiKey=49da03168f27461ca59f3dd580a07fb1&"
-            alt="Arrow icon"
-            className="w-5 h-5 ml-2"
-          />
-        </button>
+      <div id='ca'>
+        <div className="w-screen flex-wrap flex-col bg-black text-white flex h-screen items-center justify-center text-center p-4" style={{ backgroundImage: `url(${herobg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+          <h1 className="text-3xl md:text-6xl font-bold font-kufam mt-6 mb-10 leading-relaxed">
+            YOUR CAREER THROUGH <br /> OUR VISION
+          </h1>
+          <p className="text-lg md:text-2xl font-montserrat text-gray-300 mb-24 leading-relaxed">
+            Shaping Your Career, Enriching Your Future <br /> Where Ambition Meets a Satisfied Pocket!
+          </p>
+          <a href='/contact-us' className="bg-[#5BD8A3] hover:bg-green-300 font-montserrat mt-6 text-black gap-2 font-medium py-3 px-5 rounded-md flex items-center">
+            Get In Touch
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets/49da03168f27461ca59f3dd580a07fb1/192f3b2d699a273c665bf60310f3cb2cf3b3992509fd278e60369b421f9ef038?apiKey=49da03168f27461ca59f3dd580a07fb1&"
+              alt="Arrow icon"
+              className="w-5 h-5 ml-2"
+            />
+          </a>
+        </div>
       </div>
       <ImageLayout />
       <WhyJoinUs />
@@ -52,51 +55,55 @@ export default function CareerPageHero() {
 
 export const ImageLayout = () => {
   return (
-    <div className="grid bg-white grid-cols-1 gap-4 p-6 sm:grid-cols-2 md:grid-cols-4">
-      {/* First row */}
-      <div className="col-span-1 md:col-span-1">
-        <img
-          src={img1}
-          alt="First image"
-          className="object-cover"
-        />
-      </div>
-      <div className="col-span-1 md:col-span-1 relative">
-        <img
-          src={img2}
-          alt="Presentation"
-          className="object-cover"
-        />
-        <img
-          src={img3}
-          alt="Smiling professional"
-          className="object-cover absolute bottom-0 left-0"
-        />
+    <div id='img'>
+      <div className="grid bg-white grid-cols-1 gap-4 p-6 sm:grid-cols-2 md:grid-cols-4">
+        {/* First row */}
+        <div className="col-span-1 md:col-span-1">
+          <img
+            src={img1}
+            alt="First image"
+            className="object-cover"
+          />
+        </div>
+        <div className="col-span-1 md:col-span-1 relative">
+          <img
+            src={img2}
+            alt="Presentation"
+            className="object-cover"
+          />
+          <img
+            src={img3}
+            alt="Smiling professional"
+            className="object-cover absolute bottom-0 left-0"
+          />
+        </div>
+
+        {/* Second row */}
+        <div className="col-span-1 md:col-span-1">
+          <img
+            src={img4}
+            alt="Writing notes"
+            className="object-cover"
+          />
+        </div>
+
+        {/* Third row */}
+        <div className="col-span-1 md:col-span-1 relative">
+          <img
+            src={img5}
+            alt="Working on a laptop"
+            className="object-cover"
+          />
+          <img
+            src={img6}
+            alt="Happy individual with laptop"
+            className="object-cover absolute bottom-0 left-0"
+          />
+        </div>
       </div>
 
-      {/* Second row */}
-      <div className="col-span-1 md:col-span-1">
-        <img
-          src={img4}
-          alt="Writing notes"
-          className="object-cover"
-        />
-      </div>
-
-      {/* Third row */}
-      <div className="col-span-1 md:col-span-1 relative">
-        <img
-          src={img5}
-          alt="Working on a laptop"
-          className="object-cover"
-        />
-        <img
-          src={img6}
-          alt="Happy individual with laptop"
-          className="object-cover absolute bottom-0 left-0"
-        />
-      </div>
     </div>
+
   );
 };
 
@@ -151,7 +158,7 @@ const WhyJoinUs = () => {
               <div className="w-12 h-12 bg-[#D7CDE6] rounded-full mb-4 flex items-center justify-center">
                 <img src={index === 0 ? a1 : index === 1 ? a2 : index === 2 ? a3 : index === 3 ? a4 : index === 4 ? a5 : a6} alt="Icon" className="w-7 h-7" />
               </div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+              <h3 className="text-xl text-gray-800 font-montserrat font-semibold mb-1">{feature.title}</h3>
               <p className="text-gray-600">{feature.description}</p>
             </div>
           ))}
@@ -164,32 +171,32 @@ const WhyJoinUs = () => {
 
 export const ImageLayout2 = () => {
   return (
-    <div className="grid bg-white grid-cols-1 gap-4 p-6 sm:grid-cols-2 md:grid-cols-4">
+    <div className="grid bg-white grid-cols-1 gap-6 px-12  py-12 sm:grid-cols-2 md:grid-cols-4">
       {/* First row */}
       <div className="col-span-1 md:col-span-1">
         <img
           src={p1}
           alt="First image"
-          className="object-cover"
+          className="object-cover rounded-lg"
         />
       </div>
       <div className="col-span-1 md:col-span-1">
         <img
           src={p2}
           alt="Writing notes"
-          className="object-cover"
+          className="object-cover rounded-lg"
         />
       </div>
       <div className="col-span-1 md:col-span-1 relative">
         <img
           src={p3}
           alt="Presentation"
-          className="object-cover"
+          className="object-cover rounded-lg"
         />
         <img
           src={p4}
           alt="Smiling professional"
-          className="object-cover absolute bottom-0 left-0"
+          className="object-cover absolute rounded-lg bottom-0 left-0"
         />
       </div>
 
@@ -198,12 +205,12 @@ export const ImageLayout2 = () => {
         <img
           src={p5}
           alt="Working on a laptop"
-          className="object-cover"
+          className="object-cover rounded-lg"
         />
         <img
           src={p6}
           alt="Happy individual with laptop"
-          className="object-cover absolute bottom-0 left-0"
+          className="object-cover absolute rounded-lg bottom-0 left-0"
         />
       </div>
     </div>
@@ -230,6 +237,7 @@ export const JobApplicationPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedJob, setSelectedJob] = useState(null);
   const jobsPerPage = 8;
+  const [selectedDes, setSelectedDes] = useState(null);
 
   const jobPositions = [
     { title: 'Sr. UI UX Designer', location: 'Pune, India', type: 'Full Time', description: 'Job description for Sr. UI UX Designer.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel justo quis ligula facilisis auctor. Sed sollicitudin leo ut lorem efficitur, a fermentum lorem sodales. Nullam tempor, nisi eu luctus gravida, nunc erat lobortis nisi, sed facilisis elit justo non nunc. Maecenas euismod sem et enim tincidunt, non suscipit enim euismod. Integer vel justo a nunc vestibulum egestas ac non felis. Vivamus maximus erat ac bibendum vehicula. Fusce euismod ex eu malesuada fermentum. Nulla facilisi. Curabitur venenatis nibh ut ante tempus, vel tempor neque vulputate. ', criteria: 'Criteria for Sr. UI UX Designer' },
@@ -291,6 +299,10 @@ export const JobApplicationPage = () => {
 
   const handleJobClick = (job) => {
     setSelectedJob(job);
+  };
+
+  const handleapplyClick = (job) => {
+    setSelectedDes(job);
   };
 
   const handleCloseModal = () => {
@@ -395,6 +407,9 @@ export const JobApplicationPage = () => {
                         if (!/[0-9]/.test(e.key)) {
                           e.preventDefault();
                         }
+                        if (!/[0-9]/.test(e.key)) {
+                          e.preventDefault();
+                        }
                       }}
                     />
                   </div>
@@ -496,28 +511,207 @@ export const JobApplicationPage = () => {
       </div>
 
       {selectedJob && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white text-black font-montserrat p-8 rounded-lg shadow-lg max-w-lg w-screen relative">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex p-6 items-center w-screen h-screen justify-center z-50">
+          <div className="bg-white container text-black font-montserrat p-6 rounded-lg shadow-lg max-w-3xl w-screen relative">
             <span
               onClick={handleCloseModal}
               className="absolute top-0 w-6 h-6 right-3 cursor-pointer text-gray-500 hover:text-gray-700 text-4xl"
             >
               &times;
             </span>
-            <h2 className="text-2xl font-bold mb-4 text-center">{selectedJob.title}</h2>
-            <p className="mb-4"><strong>Location:</strong> {selectedJob.location}</p>
-            <p className="mb-4"><strong>Type:</strong> {selectedJob.type}</p>
-            <p className="mb-4"><strong>Description:</strong> {selectedJob.description}</p>
-            <p className="mb-4"><strong>Criteria:</strong> {selectedJob.criteria}</p>
+            <h2 className="text-2xl text-gray-900 font-montserrat font-bold mb-1 text-left">{selectedJob.title}</h2>
+            <div className="text-sm mb-6 text-gray-500 font-montserrat text-left">QuantArena</div>
+            <div className="w-full h-0.5 bg-gray-300 my-6"></div>
+
+
+            <div className='font-montserrat font-semibold text-lg text-gray-900 mb-4 text-left'>
+              Job Description:
+
+
+            <ul className="list-disc text-sm font-normal mt-2 mb-8 font-sm list-inside space-y-2">
+              <li>Lorem ipsum dolor sit amet consectetur. In ut donec ipsum cursus neque rhoncus nec a vivamus. Mattis tellus mattis est hendrerit eu amet fermentum. Amet enim consectetur arcu sit.</li>
+              <li>Lorem ipsum dolor sit amet consectetur. In ut donec ipsum cursus neque rhoncus nec a vivamus. Mattis tellus mattis est hendrerit eu amet fermentum. Amet enim consectetur arcu sit.</li>
+              <li>Lorem ipsum dolor sit amet consectetur. In ut donec ipsum cursus neque rhoncus nec a vivamus. Mattis tellus mattis est hendrerit eu amet fermentum. Amet enim consectetur arcu sit.</li>
+            </ul>
+
+            </div>
+            <div className='font-montserrat font-semibold text-lg text-gray-900 mb-4 text-left'>
+              Eligibility Criteria:
+
+
+            <ul className="list-disc text-sm font-normal mt-2 font-sm list-inside space-y-2">
+              <li>Lorem ipsum dolor sit amet consectetur. In ut donec ipsum cursus neque rhoncus nec a vivamus. Mattis tellus mattis est hendrerit eu amet fermentum. Amet enim consectetur arcu sit.</li>
+              <li>Lorem ipsum dolor sit amet consectetur. In ut donec ipsum cursus neque rhoncus nec a vivamus. Mattis tellus mattis est hendrerit eu amet fermentum. Amet enim consectetur arcu sit.</li>
+              <li>Lorem ipsum dolor sit amet consectetur. In ut donec ipsum cursus neque rhoncus nec a vivamus. Mattis tellus mattis est hendrerit eu amet fermentum. Amet enim consectetur arcu sit.</li>
+            </ul>
+
+            </div>
+            
+
+
+
             <div className="flex justify-center">
-              <p className="bg-[#5BD8A3] text-white px-4 py-2 rounded cursor-pointer" onClick={() => alert('Apply Now clicked')}>
-                Apply Now
+              <p
+                onClick={() => {
+                  handleapplyClick(selectedJob);
+                  handleCloseModal();
+                }}
+                className="bg-[#5BD8A3] text-white px-8 py-2 border hover:border-green-200 hover:bg-green-100 cursor-pointer"
+              >
+                Apply
               </p>
             </div>
           </div>
         </div>
       )}
+      {selectedDes && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex p-6 items-center justify-center z-50">
+          <div className="bg-white text-black font-montserrat p-6 rounded shadow-lg max-w-xl w-screen relative overflow-y-auto" style={{ maxHeight: '90vh' }}>
+            <span
+              onClick={() => setSelectedDes(null)}
+              className="absolute top-0 w-6 h-6 right-3 cursor-pointer text-gray-500 hover:text-gray-700 text-4xl"
+            >
+              &times;
+            </span>
+            <form className="space-y-4" onSubmit={handleSubmit}>
+              <div>
+                <h3 className="text-2xl font-montserrat text-gray-800 font-bold mb-1 text-left">{selectedDes.title}</h3>
+                <div className="text-sm mb-4 text-gray-500 gap-4 font-montserrat text-left">QuantArena</div>
+                <div className="w-full h-0.5 bg-gray-300 my-3"></div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="name">
+                  Name<span className='text-red-500'>*</span>
+                </label>
+                <input
+                  id="name"
+                  type="text"
+                  className="w-full px-3 py-2 border border-black text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                  placeholder="Enter your name"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="phone">
+                  Phone Number<span className='text-red-500'>*</span>
+                </label>
+                <input
+                  id="phone"
+                  type="tel"
+                  pattern="\d{10}"
+                  maxLength="10"
+                  className="w-full px-3 py-2 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                  placeholder="Enter phone number"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  onKeyDown={(e) => {
+                    if (!/[0-9]/.test(e.key)) {
+                      e.preventDefault();
+                    }
+                    if (!/[0-9]/.test(e.key)) {
+                      e.preventDefault();
+                    }
+                  }}
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="email">
+                  Email Address<span className='text-red-500'>*</span>
+                </label>
+                <input
+                  id="email"
+                  type="email"
+                  className="w-full px-3 py-2 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                  placeholder="Enter your email address"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="introduce">
+                  Introduce Yourself<span className='text-red-500'>*</span>
+                </label>
+                <textarea
+                  id="introduce"
+                  className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                  placeholder="Enter your introduction"
+                  rows="3"
+                  value={formData.introduce}
+                  onChange={handleChange}
+                ></textarea>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="contribution">
+                  What will you bring to the table?<span className='text-red-500'>*</span>
+                </label>
+                <textarea
+                  id="contribution"
+                  className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                  placeholder="Describe your contribution"
+                  rows="3"
+                  value={formData.contribution}
+                  onChange={handleChange}
+                ></textarea>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="importance">
+                  Why do you think what you can bring to the table is important?<span className='text-red-500'>*</span>
+                </label>
+                <textarea
+                  id="importance"
+                  className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                  placeholder="Explain the importance"
+                  rows="3"
+                  value={formData.importance}
+                  onChange={handleChange}
+                ></textarea>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="message">
+                  Any other message for us?
+                </label>
+                <textarea
+                  id="message"
+                  className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                  placeholder="Enter your message"
+                  rows="3"
+                  value={formData.message}
+                  onChange={handleChange}
+                ></textarea>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="attachment">
+                  Relevant Attachments<span className='text-red-500'>*</span>
+                </label>
+                <input
+                  id="attachment"
+                  type="file"
+                  className="w-full px-3 py-4 border border-black focus:outline-none focus:ring-2 focus:ring-blue"
+                  onChange={handleChange}
+                />
+              </div>
+
+              <button
+                type="submit"
+                className={`w-full ${isFormValid() ? 'bg-[#5BD8A3] hover:bg-green-600' : 'bg-gray-400 cursor-not-allowed'} text-black font-bold py-2 px-4 rounded-lg`}
+                disabled={!isFormValid()}
+              >
+                Submit
+              </button>
+            </form>
+
+          </div>
+        </div>
+      )}
+
+
     </div>
   );
-  
+
 }
