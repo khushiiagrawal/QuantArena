@@ -34,38 +34,28 @@ export default function Footer() {
 
         {/* Address */}
         <div className="flex items-center space-x-4">
-          <div className="w-14 h-12 rounded-full bg-[#9E6AED] flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full bg-[#9E6AED] flex items-center justify-center">
             <img src={Location} alt="Location" className="h-6 w-6 text-white" />
           </div>
 
-          <span className="text-lg">Office no. A-15, Sr. no.  90,  <br /> Majestique Memories, NIBM <br /> Annex, Mohammadwadi, Pune- 411060 (MH)</span>
+          <span className="text-lg">Office no. A-15, Sr. no. 90, <br /> Majestique Memories, NIBM <br /> Annex,Mohammadwadi,<br/> Pune - 411060 (MH)</span>
         </div>
       </div>
 
       {/* Bottom Section */}
-      <div className="max-w-auto mx-auto px-8 mt-10 grid grid-cols-1 md:grid-cols-5 gap-12">
+      <div className="max-w-auto mx-auto mt-10 grid grid-cols-1 md:grid-cols-5">
         {/* Logo and Subscribe */}
-        <div className="space-y-2 mb-10">
-          <h1 className="text-xl px-12 font-bold">LOGO</h1>
+        
+          <h1 className="text-xl font-montserrat px-20 py-2 font-bold">LOGO</h1>
 
           {/* <img src="/path/to/logo.png" alt="Logo" className="h-12 w-auto mx-auto" /> */}
 
-          <div className="flex flex-col  items-center">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="px-4 py-2 mt-8 bg-white text-black rounded"
-            />
-            <button className="mt-4 px-6 py-2 bg-[#9E6AED] text-white">
-              Subscribe
-            </button>
-          </div>
-        </div>
+      
 
         {/* Links */}
-        <div className="col-span-1 md:col-span-4 grid grid-cols-2 md:grid-cols-5 gap-8">
+        <div className="col-span-1 max-w-auto mx-auto container md:col-span-4 grid grid-cols-2 md:grid-cols-5 gap-12">
           <div>
-            <h2 className="font-bold mb-4 text-white">Pages</h2>
+            <h2 className="font-bold mb-4 underline text-white">Pages</h2>
             <ul className="space-y-2">
               <li className="text-white"><a href="/" className="text-white">Home</a></li>
               <li><a href="/" onClick={handleServicesClick} className="text-white">Services</a></li>
@@ -82,7 +72,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="font-bold mb-4 text-white">Analytics</h2>
+            <h2 className="font-bold mb-4 underline text-white">Analytics</h2>
             <ul className="space-y-2">
               <li className="text-white"><a href="/" className="text-white">Data Management
                 <br /> & Processing</a></li>
@@ -93,7 +83,7 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h2 className="font-bold mb-4 text-white">Risk management</h2>
+            <h2 className="font-bold mb-4 underline text-white">Risk management</h2>
             <ul className="space-y-2">
               <li className="text-white"><a href="/" className="text-white">Model Review</a></li>
               <li className="text-white"><a href="/" className="text-white">Policy Review</a></li>
@@ -104,7 +94,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="font-bold mb-4 text-white">Policy</h2>
+            <h2 className="font-bold mb-4 underline text-white">Policy</h2>
             <ul className="space-y-2">
               <li><a className="text-white" href="/">Terms & Condition</a></li>
               <li> <a className="text-white" href="/">Privacy Policy</a></li>
@@ -114,7 +104,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h2 className="font-bold mb-4 text-white">Links</h2>
+            <h2 className="font-bold mb-4 underline text-white">Links</h2>
             <ul className="space-y-2">
               <li><a className="text-white" href="/">Instagram</a></li>
               <li><a className="text-white" href="/">Facebook</a></li>
