@@ -12,14 +12,15 @@ export default function MainPage() {
           Identify, assess, and mitigate with data-driven insights tailored to
           your business needs.
         </p>
-        <button className="flex items-center justify-center gap-2 px-4 py-2 mt-6 bg-[#5BD8A3] text-black font-montserrat rounded-md shadow hover:bg-green-300 transition">
+        
+        <a href='/contact-us' className="flex items-center justify-center py-2 w-36 mt-6 bg-[#5BD8A3] text-black font-montserrat rounded-md shadow hover:bg-green-300 transition">
           <span>Get In Touch</span>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/49da03168f27461ca59f3dd580a07fb1/192f3b2d699a273c665bf60310f3cb2cf3b3992509fd278e60369b421f9ef038?apiKey=49da03168f27461ca59f3dd580a07fb1&"
             alt="Arrow icon"
             className="w-5 h-5"
           />
-        </button>
+        </a>
       </div>
       <div className="w-full md:flex-1 mt-12 md:mt-0 md:ml-30 max-w-xl">
         <img
@@ -36,7 +37,8 @@ export default function MainPage() {
 
 export function AboutSection() {
   return (
-    <div className="relative py-4 bg-gradient-to-r from-gray-500 to-gray-100 text-center font-montserrat">
+    <div id='about'>
+      <div className="relative py-4 bg-gradient-to-r from-gray-500 to-gray-100 text-center font-montserrat">
       {/* Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-gray-500 to-white pointer-events-none"></div>
 
@@ -65,5 +67,7 @@ export function AboutSection() {
         </div>
       </div>
     </div>
+    </div>
+    
   );
 }
