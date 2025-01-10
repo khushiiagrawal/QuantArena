@@ -9,7 +9,7 @@ export default function WhyChooseUs() {
         <div className="relative bg-[#F8F4FD] text-black" style={fontStyle}>
             {/* Header Section */}
             <div
-                className="relative h-40 flex items-center justify-center md:mr-20"
+                className="relative h-32 flex items-center justify-center md:mr-20"
                 style={{ backgroundColor: '#9E6AED' }}
             >
                 {/* Large Background Text */}
