@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Services from "./pages/services";
-import QAPMS from "./pages/qamps";
+import QAPMS from "./pages/qapms/qamps";
 import CareerPageHero from "./pages/Career/career";
 import ContactUs from "./pages/contact";
 import LandingPage from "./landing-page/components/landingpage";
