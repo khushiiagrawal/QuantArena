@@ -171,48 +171,39 @@ const WhyJoinUs = () => {
 
 export const ImageLayout2 = () => {
   return (
-    <div className="grid bg-white grid-cols-1 gap-6 px-12  py-12 sm:grid-cols-2 md:grid-cols-4">
-      {/* First row */}
-      <div className="col-span-1 md:col-span-1">
-        <img
-          src={p1}
-          alt="First image"
-          className="object-cover rounded-lg"
-        />
-      </div>
-      <div className="col-span-1 md:col-span-1">
-        <img
-          src={p2}
-          alt="Writing notes"
-          className="object-cover rounded-lg"
-        />
-      </div>
+    <div className="grid bg-white grid-cols-1 gap-6 px-6 py-6 sm:grid-cols-2 md:grid-cols-4">
       <div className="col-span-1 md:col-span-1 relative">
-        <img
-          src={p3}
-          alt="Presentation"
-          className="object-cover rounded-lg"
-        />
-        <img
-          src={p4}
-          alt="Smiling professional"
-          className="object-cover absolute rounded-lg bottom-0 left-0"
-        />
-      </div>
-
-      {/* Third row */}
-      <div className="col-span-1 md:col-span-1 relative">
-        <img
-          src={p5}
-          alt="Working on a laptop"
-          className="object-cover rounded-lg"
-        />
-        <img
-          src={p6}
-          alt="Happy individual with laptop"
-          className="object-cover absolute rounded-lg bottom-0 left-0"
-        />
-      </div>
+          <img
+            src={p3}
+            alt="Presentation"
+            className="object-cover"
+          />
+          
+        </div>
+        <div className="col-span-1 md:col-span-1 relative">
+          <img
+            src={p4}
+            alt="Presentation"
+            className="object-cover"
+          />
+          
+        </div>
+        <div className="col-span-1 md:col-span-1 relative">
+          <img
+            src={p5}
+            alt="Presentation"
+            className="object-cover"
+          />
+          
+        </div>
+        <div className="col-span-1 md:col-span-1 relative">
+          <img
+            src={p6}
+            alt="Presentation"
+            className="object-cover"
+          />
+          
+        </div>
     </div>
   );
 };
