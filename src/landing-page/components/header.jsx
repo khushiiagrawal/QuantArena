@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 export default function Header() {
   const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [headerBg, setHeaderBg] = useState("bg-white bg-opacity-60");
+  const [headerBg, setHeaderBg] = useState("bg-white bg-opacity-80");
   const location = useLocation();
 
   const navItems = [
@@ -12,7 +12,6 @@ export default function Header() {
     { label: "Services", hasDropdown: true },
     { label: "QAPMS", link: "/qapms" },
     { label: "Career", link: "/career" },
-    { label: "Contact Us", link: "/contact-us" },
   ];
 
   const handleDropdownToggle = (index) => {
@@ -33,7 +32,7 @@ export default function Header() {
         const sectionBottom = section.offsetTop + section.offsetHeight;
 
         if (window.scrollY <= sectionBottom) {
-          setHeaderBg("bg-white bg-opacity-60");
+          setHeaderBg("bg-white bg-opacity-90");
         } else {
           setHeaderBg("bg-black bg-opacity-60");
         }
@@ -59,16 +58,92 @@ export default function Header() {
     }
   }, [location.pathname]);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const textColorClass = headerBg.includes("bg-black") ? "text-white" : "text-black";
 
   return (
     <div id="Header">
-      <header className={`fixed w-screen flex items-center justify-between px-8 md:px-16 py-3 md:py-5 ${headerBg} font-montserrat shadow-md z-50 transition-colors duration-300`}>
+      <header className={`fixed w-full flex items-center justify-between px-8 md:px-16 py-3 md:py-5 ${headerBg} font-montserrat shadow-md transition-colors duration-300 ${location.pathname === "/career" ? "z-50" : ""}`}>
         <div className={`text-2xl md:text-2xl ${textColorClass}`}>Logo</div>
+        <div className="flex-1 flex justify-center">
+          <nav className={`md:flex items-center md:text-xl gap-4 md:gap-10 text-lg ${isMobileMenuOpen ? "block z-50" : "hidden"} md:block`}>
+            {navItems.map((item, index) => (
+              <div key={index} className="relative">
+                <Link
+                  to={item.link}
+                  className={`${textColorClass} hover:text-gray-600 hover:underline transition-colors flex items-center`}
+                  onClick={() => {
+                    if (item.hasDropdown) {
+                      handleDropdownToggle(index);
+                    } else {
+                      setOpenDropdownIndex(null);
+                    }
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  {item.label}
+                  {item.hasDropdown && (
+                    <svg
+                      className={`ml-1 md:ml-3 w-4 h-4 transform ${openDropdownIndex === index ? "rotate-180" : "rotate-0"} transition-transform ${textColorClass}`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M19 9l-7 7-7-7"
+                      ></path>
+                    </svg>
+                  )}
+                </Link>
+                {item.hasDropdown && openDropdownIndex === index && (
+                  <ul className={`absolute top-full left-0 mt-2 w-48 ${headerBg.includes("bg-white") ? "bg-black text-white" : "bg-white text-black"} shadow-lg z-50`}>
+                    <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">
+                      <Link to="/services/service1">Service 1</Link>
+                    </li>
+                    <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">
+                      <Link to="/services/service2">Service 2</Link>
+                    </li>
+                  </ul>
+                )}
+              </div>
+            ))}
+            <Link
+              to="/contact-us"
+              className={`block md:hidden bg-[#9E6AED] text-sm text-center text-white px-1 py-1 rounded hover:bg-purple-200 transition-colors`}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Contact Us
+            </Link>
+          </nav>
+        </div>
+        <div className="hidden md:block">
+          <Link
+            to="/contact-us"
+            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center`}
+          >
+            Contact Us
+          </Link>
+        </div>
         <div className="md:hidden">
-          <button onClick={handleMobileMenuToggle} className={textColorClass}>
+          <button onClick={handleMobileMenuToggle} className="text-white">
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -83,54 +158,6 @@ export default function Header() {
             </svg>
           </button>
         </div>
-        <nav
-          className={`${
-            isMobileMenuOpen ? "block" : "hidden"
-          } md:flex items-center md:text-xl gap-4 md:gap-10 text-lg`}
-        >
-          {navItems.map((item, index) => (
-            <div key={index} className="relative">
-              <Link
-                to={item.link}
-                className={`${textColorClass} hover:text-gray-600 hover:underline transition-colors flex items-center`}
-                onClick={() => {
-                  if (item.hasDropdown) {
-                    handleDropdownToggle(index);
-                  }
-                  setIsMobileMenuOpen(false);
-                }}
-              >
-                {item.label}
-                {item.hasDropdown && (
-                  <svg
-                    className={`ml-1 md:ml-3 w-4 h-4 transform ${openDropdownIndex === index ? "rotate-180" : "rotate-0"} transition-transform ${textColorClass}`}
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
-                )}
-              </Link>
-              {item.hasDropdown && openDropdownIndex === index && (
-                <ul className={`absolute top-full left-0 mt-2 w-48 ${headerBg.includes("bg-white") ? "bg-black text-white" : "bg-white text-black"} shadow-lg`}>
-                  <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">
-                    <Link to="/services/service1">Service 1</Link>
-                  </li>
-                  <li className="px-4 py-2 hover:bg-gray-300 cursor-pointer">
-                    <Link to="/services/service2">Service 2</Link>
-                  </li>
-                </ul>
-              )}
-            </div>
-          ))}
-        </nav>
       </header>
     </div>
   );

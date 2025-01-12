@@ -305,11 +305,11 @@ export const JobApplicationPage = () => {
         <div className="relative h-40 flex items-center justify-center" style={{ backgroundColor: '#9E6AED' }}>
           <h1
             className="absolute text-[50px] sm:text-[70px] md:text-[90px] lg:text-[140px] font-extrabold uppercase text-white opacity-10"
-            style={{ ...fontStyle, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
+            style={{ ...fontStyle, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', zIndex: 0 }}
           >
             WANT TO JOIN US?
           </h1>
-          <h2 className="absolute top-0 left-4 m-10 text-xl md:text-3xl font-semibold uppercase text-white">
+          <h2 className="relative text-xl md:text-3xl font-semibold uppercase text-white" style={{ zIndex: 1 }}>
             Want to join us?
           </h2>
         </div>
