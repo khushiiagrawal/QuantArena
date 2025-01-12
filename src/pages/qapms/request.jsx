@@ -1,94 +1,188 @@
+import { useState } from 'react';
 
-function Req() {
-  return (
-    <div className="flex h-screen w-screen">
-      {/* Left Section */}
-      <div className="w-1/2 bg-purple-500 flex items-center justify-center relative overflow-hidden">
-        <h1 className="text-white text-4xl font-bold text-center">
-          QuantArena Project Management System
-        </h1>
-        {/* Decorative Background Shapes */}
-        <div className="absolute top-10 left-10 w-20 h-20 bg-purple-400 rounded-lg opacity-50"></div>
-        <div className="absolute bottom-20 right-20 w-12 h-12 bg-purple-400 rounded-full opacity-50"></div>
-        <div className="absolute bottom-10 left-32 w-8 h-8 bg-purple-400 rounded-full opacity-50"></div>
-      </div>
+const Req = () => {
+    const [isRequestAccess, setIsRequestAccess] = useState(true);
 
-      {/* Right Section */}
-      <div className="w-1/2 bg-white flex items-center justify-center">
-        <div className="w-3/4">
-          {/* Logo */}
-          <h2 className="text-black text-xl font-bold mb-6">Logo</h2>
+    return (
+        <div className="flex h-screen w-screen">
+            {/* Conditionally render sections based on isRequestAccess */}
+            {isRequestAccess ? (
+                <>
+                    {/* Left Section */}
+                    <div className="w-1/2 bg-[#9E6AED] flex items-center justify-center">
+                        <h1 className="text-white text-5xl font-montserrat text-semibold text-center">
+                            QuantArena Project <br />Management System
+                        </h1>
+                    </div>
 
-          {/* Heading */}
-          <h2 className="text-gray-800 text-2xl font-bold">Request Access</h2>
-          <p className="text-gray-500 mb-6">
-            Lorem ipsum dolor sit amet consectetur. Imperdiet duis risus.
-          </p>
+                    {/* Right Section */}
+                    <div className="w-1/2 bg-white flex items-center justify-center">
+                        <div className="w-3/4">
+                            {/* Logo */}
+                            <h2 className="text-2xl text-black font-semibold mb-16">Logo</h2>
 
-          {/* Tabs */}
-          <div className="flex border-b border-gray-300 mb-6">
-            <button className="text-purple-600 border-b-2 border-purple-600 pb-2 px-4 font-medium">
-              Request Access
-            </button>
-            <button className="text-gray-500 pb-2 px-4 font-medium">Login</button>
-          </div>
+                            {/* Request Access Section */}
+                            <h3 className="text-3xl text-black font-montserrat font-semibold mb-2">
+                                Request Access
+                            </h3>
+                            <p className="text-gray-500 text-sm mb-6">
+                                Lorem ipsum dolor sit amet consectetur. Imperdiet duis risus.
+                            </p>
+                            {/* Tabs */}
+                            <div className="flex border w-3/4 border-gray-300 bg-white overflow-hidden mb-6">
+                                <button
+                                    className={`flex-1 bg-white hover:border-[#9B9AEC] border font-medium py-2 px-4 border-b-4 focus:outline-none ${
+                                        isRequestAccess ? 'text-[#9E6AED] border-[#9E6AED]' : 'text-gray-500 border-transparent'
+                                    }`}
+                                    onClick={() => setIsRequestAccess(true)}
+                                >
+                                    Request Access
+                                </button>
+                                <button
+                                    className={`flex-1 bg-white font-medium hover:border-[#9B9AEC] border py-2 px-4 border-b-4 focus:outline-none ${
+                                        !isRequestAccess ? 'text-[#9E6AED] border-[#9E6AED]' : 'text-gray-500 border-transparent'
+                                    }`}
+                                    onClick={() => setIsRequestAccess(false)}
+                                >
+                                    Login
+                                </button>
+                            </div>
 
-          {/* Form */}
-          <form className="space-y-4">
-            {/* Name Field */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-2">
-                Name<span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                placeholder="Enter your name"
-                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
-              />
-            </div>
+                            {/* Form */}
+                            <form>
+                                <div className="mb-4">
+                                    <label className="block text-gray-700 text-sm font-medium mb-2">
+                                        Name<span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        className="w-3/4 text-black border-gray-600 focus:outline-none border bg-white p-2 focus:ring-2 "
+                                        placeholder="Enter your name"
+                                        required
+                                    />
+                                </div>
 
-            {/* Email Field */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-2">
-                Email Address<span className="text-red-500">*</span>
-              </label>
-              <div className="relative">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-                <span className="absolute right-3 top-3 text-gray-400">📧</span>
-              </div>
-            </div>
+                                <div className="mb-4">
+                                    <label className="block text-gray-700 text-sm font-medium mb-2">
+                                        Email Address<span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        className="w-3/4 border-gray-600 text-black border bg-white p-2 focus:ring-2 focus:outline-none"
+                                        placeholder="Enter your email"
+                                        required
+                                    />
+                                </div>
 
-            {/* Project ID Field */}
-            <div>
-              <label className="block text-gray-700 font-medium mb-2">
-                Project ID<span className="text-red-500">*</span>
-              </label>
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Enter Project ID"
-                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                />
-                <span className="absolute right-3 top-3 text-gray-400">👁️</span>
-              </div>
-            </div>
+                                <div className="mb-6">
+                                    <label className="block text-gray-700 text-sm font-medium mb-2">
+                                        Project ID<span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        className="w-3/4 border-gray-600 border text-black bg-white p-2 focus:ring-2 focus:outline-none"
+                                        placeholder="Enter project ID"
+                                        required
+                                    />
+                                </div>
 
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full bg-green-500 text-white font-medium py-2 rounded hover:bg-green-600 transition"
-            >
-              Request Access
-            </button>
-          </form>
+                                <button
+                                    type="submit"
+                                    className="w-3/4 bg-[#5BD8A3] text-white font-medium py-3 hover:bg-green-200"
+                                >
+                                    Request Access
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </>
+            ) : (
+                <>
+                    {/* Left Section */}
+                    <div className="w-1/2 bg-white flex items-center justify-center">
+                        <div className="w-3/4">
+                            {/* Logo */}
+                            <h2 className="text-2xl text-black font-semibold mb-16">Logo</h2>
+
+                            {/* Login Section */}
+                            <div className='mb-16'>
+                            <h3 className="text-3xl text-black font-montserrat font-semibold mb-2">
+                               Sign In to QAPMS
+                            </h3>
+                            <p className="text-gray-500 text-sm mb-6">
+                                Lorem ipsum dolor sit amet consectetur. Imperdiet duis risus.
+                            </p>
+                            {/* Tabs */}
+                            <div className="flex border w-3/4 border-gray-300 bg-white overflow-hidden mb-6">
+                                <button
+                                    className={`flex-1 bg-white hover:border-[#9B9AEC] border font-medium py-2 px-4 border-b-4 focus:outline-none ${
+                                        isRequestAccess ? 'text-[#9E6AED] border-[#9E6AED]' : 'text-gray-500 border-transparent'
+                                    }`}
+                                    onClick={() => setIsRequestAccess(true)}
+                                >
+                                    Request Access
+                                </button>
+                                <button
+                                    className={`flex-1 bg-white font-medium hover:border-[#9B9AEC] border py-2 px-4 border-b-4 focus:outline-none ${
+                                        !isRequestAccess ? 'text-[#9E6AED] border-[#9E6AED]' : 'text-gray-500 border-transparent'
+                                    }`}
+                                    onClick={() => setIsRequestAccess(false)}
+                                >
+                                    Login
+                                </button>
+                            </div>
+                            
+
+                            {/* Form */}
+                            <form>
+                                <div className="mb-4">
+                                    <label className="block text-gray-700 text-sm font-medium mb-2">
+                                        Email Address<span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        className="w-3/4 border-gray-600 text-black border bg-white p-2 focus:ring-2 focus:outline-none"
+                                        placeholder="Enter your email"
+                                        required
+                                    />
+                                </div>
+
+                                <div className="mb-6">
+                                    <label className="block text-gray-700 text-sm font-medium mb-2">
+                                        Password<span className="text-red-500">*</span>
+                                    </label>
+                                    <input
+                                        type="password"
+                                        className="w-3/4 border-gray-600 border text-black bg-white p-2 focus:ring-2 focus:outline-none"
+                                        placeholder="Enter your password"
+                                        required
+                                    />
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    className="w-3/4 bg-[#5BD8A3] text-white font-medium py-3 hover:bg-green-200"
+                                >
+                                    Login
+                                </button>
+                            </form>
+                        </div>
+                        </div>
+                    </div>
+
+                    {/* Right Section */}
+                    <div className="w-1/2 bg-[#9E6AED] flex items-center justify-center">
+                        <h1 className="text-white text-5xl font-montserrat text-semibold text-center">
+                            QuantArena Project <br />Management System
+                        </h1>
+                    </div>
+                    
+                </>
+            )}
+            
         </div>
-      </div>
-    </div>
-  );
-}
+        
+    );
+};
 
 export default Req;
