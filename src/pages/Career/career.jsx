@@ -4,8 +4,6 @@ import img3 from './imgs/img3.png'
 import img4 from './imgs/img4.png'
 import img5 from './imgs/img5.png'
 import img6 from './imgs/img6.png'
-import p1 from './imgs/p-1.png'
-import p2 from './imgs/p-2.png'
 import p3 from './imgs/p-3.png'
 import p4 from './imgs/p-4.png'
 import p5 from './imgs/p-5.png'
@@ -477,7 +475,7 @@ export const JobApplicationPage = () => {
 
                   <div>
                     <label className="block text-sm font-medium text-white mb-2" htmlFor="attachment">
-                      Relevant Attachments<span className='text-red-500'>*</span>
+                      Relevant Attachments<span className='text-red-500'>*</span> (One or more)
                     </label>
                     <input
                       id="attachment"
@@ -485,6 +483,23 @@ export const JobApplicationPage = () => {
                       className="w-full px-3 py-4 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
                       onChange={handleChange}
                     />
+                    <br/><br/>
+                    <input
+                      id="attachment"
+                      type="file"
+                      className="w-full px-3 py-4 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
+                      onChange={handleChange}
+                    />
+                  <br/><br/>
+      
+                  <input
+                    id="link"
+                    type="url"
+                    className="w-full px-3 py-2 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                    placeholder="Enter a link"
+                    value={formData.link || ''}
+                    onChange={handleChange}
+                  />
                   </div>
 
                   <button
@@ -677,16 +692,33 @@ export const JobApplicationPage = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="attachment">
-                  Relevant Attachments<span className='text-red-500'>*</span>
-                </label>
-                <input
-                  id="attachment"
-                  type="file"
-                  className="w-full px-3 py-4 border border-black focus:outline-none focus:ring-2 focus:ring-blue"
-                  onChange={handleChange}
-                />
-              </div>
+                    <label className="block text-sm font-medium text-black mb-2" htmlFor="attachment">
+                      Relevant Attachments<span className='text-red-500'>*</span> (One or more)
+                    </label>
+                    <input
+                      id="attachment"
+                      type="file"
+                      className="w-full px-3 py-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
+                      onChange={handleChange}
+                    />
+                    <br/><br/>
+                    <input
+                      id="attachment"
+                      type="file"
+                      className="w-full px-3 py-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
+                      onChange={handleChange}
+                    />
+                  <br/><br/>
+
+                  <input
+                    id="link"
+                    type="url"
+                    className="w-full px-3 py-2 border border-black rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                    placeholder="Enter a link"
+                    value={formData.link || ''}
+                    onChange={handleChange}
+                  />
+                  </div>
 
               <button
                 type="submit"
