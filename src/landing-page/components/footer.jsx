@@ -15,7 +15,7 @@ export default function Footer() {
   return (
     <footer className="bg-black text-white py-12">
       {/* Top Section */}
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-b border-gray-600 pb-8">
+      <div className="max-w-7xl mx-auto container px-4 md:px-6 grid grid-cols-1 md:grid-cols-3 gap-8 items-center border-b border-gray-600 pb-8">
         {/* Phone */}
         <div className="flex items-center space-x-4">
           <div className="w-12 h-12 rounded-full bg-[#9E6AED] flex items-center justify-center">
@@ -37,23 +37,19 @@ export default function Footer() {
           <div className="w-12 h-12 rounded-full bg-[#9E6AED] flex items-center justify-center">
             <img src={Location} alt="Location" className="h-6 w-6 text-white" />
           </div>
-
-          <span className="text-lg">Office no. A-15, Sr. no. 90, <br /> Majestique Memories, NIBM <br /> Annex,Mohammadwadi,<br/> Pune - 411060 (MH)</span>
+          <span className="text-lg">Office no. A-15, Sr. no. 90, <br /> Majestique Memories, NIBM <br /> Annex, Mohammadwadi,<br /> Pune - 411060 (MH)</span>
         </div>
       </div>
 
       {/* Bottom Section */}
-      <div className="max-w-auto mx-auto mt-10 grid grid-cols-1 md:grid-cols-5">
+      <div className="max-w-7xl container mx-auto mt-10 px-4 grid grid-cols-1 md:grid-cols-5 gap-10">
         {/* Logo and Subscribe */}
-        
+        <div className="col-span-1 md:col-span-1 flex justify-center md:justify-start">
           <h1 className="text-xl font-montserrat px-20 py-2 font-bold">LOGO</h1>
-
-          {/* <img src="/path/to/logo.png" alt="Logo" className="h-12 w-auto mx-auto" /> */}
-
-      
+        </div>
 
         {/* Links */}
-        <div className="col-span-1 max-w-auto mx-auto container md:col-span-4 grid grid-cols-2 md:grid-cols-5 gap-12">
+        <div className="col-span-1 md:col-span-4 grid grid-cols-2 md:grid-cols-5 gap-8">
           <div>
             <h2 className="font-bold mb-4 underline text-white">Pages</h2>
             <ul className="space-y-2">
@@ -61,8 +57,8 @@ export default function Footer() {
               <li><a href="/" onClick={handleServicesClick} className="text-white">Services</a></li>
               {showServicesDropdown && (
                 <ul className="space-y-2 pl-4">
-                  <li><a href="/service1" className="text-white">Service 1</a></li>
-                  <li><a href="/service2" className="text-white">Service 2</a></li>
+                  <li><a href="/service1" className="text-white">Analytics</a></li>
+                  <li><a href="/service2" className="text-white">Risk Management</a></li>
                 </ul>
               )}
               <li><a href="/qamps" className="text-white">QAPMS</a></li>
@@ -89,7 +85,6 @@ export default function Footer() {
               <li className="text-white"><a href="/" className="text-white">Policy Review</a></li>
               <li className="text-white"><a href="/" className="text-white">Enterprise Risk Framework</a></li>
               <li className="text-white"><a href="/" className="text-white">Risk Review</a></li>
-
             </ul>
           </div>
 
@@ -99,7 +94,6 @@ export default function Footer() {
               <li><a className="text-white" href="/">Terms & Condition</a></li>
               <li> <a className="text-white" href="/">Privacy Policy</a></li>
               <li> <a className="text-white" href="/">Legal Disclaimer</a></li>
-
             </ul>
           </div>
 
@@ -108,14 +102,13 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><a className="text-white" href="/">Instagram</a></li>
               <li><a className="text-white" href="/">Facebook</a></li>
-              <li><a className="text-white " href="/">LinkedIn</a></li>
-
+              <li><a className="text-white" href="/">LinkedIn</a></li>
             </ul>
           </div>
         </div>
-        <div className="text-center mt-4 text-gray-400">
-          © {currentYear} All Rights Reserved
-        </div>
+      </div>
+      <div className="text-center mt-8 text-gray-400">
+        © {currentYear} All Rights Reserved
       </div>
     </footer>
   );
