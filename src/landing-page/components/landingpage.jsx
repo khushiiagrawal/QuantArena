@@ -8,14 +8,14 @@ import Footer from "./footer";
 
 export default function LandingPage() {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen w-screen bg-white">
       {/* Header Section */}
-      <header className="sticky top-0 z-50">
+      <header className=" sticky top-0 z-50">
         <Header />
       </header>
 
       {/* Main Content */}
-      <main className="flex-grow h-full">
+      <main className="flex-grow h-screen">
         <MainPage />
         <AboutSection />
         <About/>
