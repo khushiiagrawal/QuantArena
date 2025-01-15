@@ -16,6 +16,8 @@ import a5 from './imgs/impactful.png'
 import a6 from './imgs/balance.png'
 import Footer from '../../landing-page/components/footer'
 import herobg from '../../landing-page/images/Group2.png';
+import { FaBriefcase } from 'react-icons/fa';
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 
 
@@ -31,14 +33,14 @@ export default function CareerPageHero() {
           <p className="text-lg md:text-2xl font-montserrat text-gray-300 mb-24 leading-relaxed">
             Shaping Your Career, Enriching Your Future <br /> Where Ambition Meets a Satisfied Pocket!
           </p>
-          <a href='/contact-us' className="bg-[#5BD8A3] hover:bg-green-300 font-montserrat mt-6 text-black gap-2 font-medium py-3 px-5 rounded-md flex items-center">
-            Get In Touch
+          <span className="bg-[#5BD8A3]  font-montserrat mt-6 text-black gap-2 font-medium py-3 px-5 rounded-md flex items-center">
+            Scroll Down
             <img
               src="https://cdn.builder.io/api/v1/image/assets/49da03168f27461ca59f3dd580a07fb1/192f3b2d699a273c665bf60310f3cb2cf3b3992509fd278e60369b421f9ef038?apiKey=49da03168f27461ca59f3dd580a07fb1&"
               alt="Arrow icon"
-              className="w-5 h-5 ml-2"
+              className="w-5 h-5 ml-2 transform rotate-90"
             />
-          </a>
+          </span>
         </div>
       </div>
       <ImageLayout />
@@ -46,7 +48,6 @@ export default function CareerPageHero() {
       <ImageLayout2 />
       <JobApplicationPage />
       <Footer />
-
     </div>
   );
 }
@@ -309,7 +310,7 @@ export const JobApplicationPage = () => {
           >
             WANT TO JOIN US?
           </h1>
-          <h2 className="relative text-xl md:text-3xl font-semibold uppercase text-white" style={{ zIndex: 1 }}>
+          <h2 className="absolute top-0 font-montserrat left-4 m-10 text-xl md:text-3xl font-semibold uppercase text-white" style={{ zIndex: 1 }}>
             Want to join us?
           </h2>
         </div>
@@ -518,7 +519,7 @@ export const JobApplicationPage = () => {
 
       {selectedJob && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex p-6 items-center w-screen h-screen justify-center z-50">
-          <div className="bg-white container text-black font-montserrat p-6 rounded-lg shadow-lg max-w-3xl w-screen relative">
+          <div className="bg-white container text-black font-montserrat p-6 shadow-lg max-w-3xl w-screen relative">
             <span
               onClick={handleCloseModal}
               className="absolute top-0 w-6 h-6 right-3 cursor-pointer text-gray-500 hover:text-gray-700 text-4xl"
@@ -526,8 +527,16 @@ export const JobApplicationPage = () => {
               &times;
             </span>
             <h2 className="text-2xl text-gray-900 font-montserrat font-bold mb-1 text-left">{selectedJob.title}</h2>
-            <div className="text-sm mb-6 text-gray-500 font-montserrat text-left">QuantArena</div>
-            <div className="w-full h-0.5 bg-gray-300 my-6"></div>
+            
+            <div className="text-sm mb-1 text-gray-600 gap-4 font-montserrat text-left">QuantArena</div>
+                <div className="text-sm mb-4 text-gray-800 gap-4 font-montserrat font-semibold text-left">Job ID:</div>
+                
+                <div className="flex items-center gap-2">
+                  <FaBriefcase className=" text-sm mb-1 gap-4 font-montserrat text-left text-gray-500" />
+                  <span className=" text-sm mb-1 gap-4 font-montserrat text-left text-gray-600">2-4 years | {selectedJob.location}</span>
+                  <FaMapMarkerAlt className="text-sm mb-1 gap-4 font-montserrat text-left text-gray-500" />
+                </div>
+            <div className="w-full h-0.5 bg-gray-300 my-4"></div>
 
 
             <div className='font-montserrat font-semibold text-lg text-gray-900 mb-4 text-left'>
@@ -563,26 +572,34 @@ export const JobApplicationPage = () => {
                   handleCloseModal();
                 }}
                 className="bg-[#5BD8A3] text-white px-8 py-2 border hover:border-green-200 hover:bg-green-100 cursor-pointer"
-              >
+                >
                 Apply
-              </p>
-            </div>
-          </div>
-        </div>
-      )}
-      {selectedDes && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex p-6 items-center justify-center z-50">
-          <div className="bg-white text-black font-montserrat p-6 rounded shadow-lg max-w-xl w-screen relative overflow-y-auto" style={{ maxHeight: '90vh' }}>
-            <span
-              onClick={() => setSelectedDes(null)}
-              className="absolute top-0 w-6 h-6 right-3 cursor-pointer text-gray-500 hover:text-gray-700 text-4xl"
-            >
-              &times;
-            </span>
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <div>
+                </p>
+                </div>
+                </div>
+              </div>
+              )}
+              {selectedDes && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex p-6 items-center justify-center z-50">
+                <div className="bg-white text-black font-montserrat p-6 rounded shadow-lg max-w-xl w-screen relative overflow-y-auto" style={{ maxHeight: '90vh' }}>
+                <span
+                onClick={() => setSelectedDes(null)}
+                className="absolute top-0 w-6 h-6 right-3 cursor-pointer text-gray-500 hover:text-gray-700 text-4xl"
+                >
+                &times;
+                </span>
+                <form className="space-y-4" onSubmit={handleSubmit}>
+                <div>
                 <h3 className="text-2xl font-montserrat text-gray-800 font-bold mb-1 text-left">{selectedDes.title}</h3>
-                <div className="text-sm mb-4 text-gray-500 gap-4 font-montserrat text-left">QuantArena</div>
+                <div className="text-sm mb-1 text-gray-600 gap-4 font-montserrat text-left">QuantArena</div>
+                <div className="text-sm mb-4 text-gray-800 gap-4 font-montserrat font-semibold text-left">Job ID:</div>
+                
+                <div className="flex items-center gap-2">
+                  <FaBriefcase className=" text-sm mb-1 gap-4 font-montserrat text-left text-gray-500" />
+                  <span className=" text-sm mb-1 gap-4 font-montserrat text-left text-gray-600">2-4 years | {selectedDes.location}</span>
+                  <FaMapMarkerAlt className="text-sm mb-1 gap-4 font-montserrat text-left text-gray-500" />
+                </div>
+
                 <div className="w-full h-0.5 bg-gray-300 my-3"></div>
                 <label className="block text-sm font-medium text-black mb-2" htmlFor="name">
                   Name<span className='text-red-500'>*</span>
@@ -595,9 +612,9 @@ export const JobApplicationPage = () => {
                   value={formData.name}
                   onChange={handleChange}
                 />
-              </div>
+                </div>
 
-              <div>
+                <div>
                 <label className="block text-sm font-medium text-black mb-2" htmlFor="phone">
                   Phone Number<span className='text-red-500'>*</span>
                 </label>
@@ -663,19 +680,6 @@ export const JobApplicationPage = () => {
                 ></textarea>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="importance">
-                  Why do you think what you can bring to the table is important?<span className='text-red-500'>*</span>
-                </label>
-                <textarea
-                  id="importance"
-                  className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
-                  placeholder="Explain the importance"
-                  rows="3"
-                  value={formData.importance}
-                  onChange={handleChange}
-                ></textarea>
-              </div>
 
               <div>
                 <label className="block text-sm font-medium text-black mb-2" htmlFor="message">
