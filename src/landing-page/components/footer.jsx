@@ -2,6 +2,9 @@ import { useState } from 'react';
 import Phone from '../images/phone-call.png';
 import Mail from '../images/envelope.png';
 import Location from '../images/marker.png';
+import { TermsAndConditions } from './terms&conditions';
+import { PrivacyPolicy } from './terms&conditions';
+import { LegalDisclaimer } from './terms&conditions';
 
 export default function Footer() {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
@@ -10,6 +13,11 @@ export default function Footer() {
   const handleServicesClick = (e) => {
     e.preventDefault();
     setShowServicesDropdown(!showServicesDropdown);
+  };
+
+  const handlePolicyClick = (e, Component) => {
+    e.preventDefault();
+    Component();
   };
 
   return (
@@ -91,9 +99,9 @@ export default function Footer() {
           <div>
             <h2 className="font-bold mb-4 underline text-white">Policy</h2>
             <ul className="space-y-2">
-              <li><a className="text-white" href="/">Terms & Condition</a></li>
-              <li> <a className="text-white" href="/">Privacy Policy</a></li>
-              <li> <a className="text-white" href="/">Legal Disclaimer</a></li>
+              <li><a className="text-white" href="/policy" onClick={(e) => handlePolicyClick(e, TermsAndConditions)}>Terms & Condition</a></li>
+              <li><a className="text-white" href="/policy" onClick={(e) => handlePolicyClick(e, PrivacyPolicy)}>Privacy Policy</a></li>
+              <li><a className="text-white" href="/policy" onClick={(e) => handlePolicyClick(e, LegalDisclaimer)}>Legal Disclaimer</a></li>
             </ul>
           </div>
 
