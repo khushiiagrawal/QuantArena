@@ -30,7 +30,7 @@ const Dashboard = () => {
     const currentFiles = files.slice(indexOfFirstFile, indexOfLastFile);
 
     return (
-        <div className="min-h-screen w-full bg-gray-200 flex flex-col items-start py-8 md:py-12 px-4 md:px-24">
+        <div className="min-h-screen w-screen bg-gray-200 flex flex-col items-start py-8 md:py-12 px-4 md:px-24">
             <h3 className="text-left font-montserrat text-medium text-black mt-16">Dashboard</h3>
 
             <div className="w-full max-w-7xl bg-white shadow-md mt-8 min-h-[70vh] rounded-md p-4 md:p-7">
