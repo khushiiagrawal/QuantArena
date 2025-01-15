@@ -13,7 +13,7 @@ export default function MainPage() {
           your business needs.
         </p>
         
-        <a href='/contact-us' className="flex items-center justify-center py-2 w-36 mt-6 bg-[#5BD8A3] text-black font-montserrat rounded-md shadow hover:bg-green-300 transition">
+        <a href='/contact-us' className="flex items-center gap-1 justify-center py-2 w-36 mt-6 bg-[#5BD8A3] text-black font-montserrat hover:text-gray-800 rounded-md shadow hover:bg-[#82E3BA] transition">
           <span>Get In Touch</span>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/49da03168f27461ca59f3dd580a07fb1/192f3b2d699a273c665bf60310f3cb2cf3b3992509fd278e60369b421f9ef038?apiKey=49da03168f27461ca59f3dd580a07fb1&"

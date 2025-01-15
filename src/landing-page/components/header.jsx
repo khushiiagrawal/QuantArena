@@ -5,8 +5,10 @@ export default function Header() {
   const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [headerBg, setHeaderBg] = useState("bg-white bg-opacity-80");
+  const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const location = useLocation();
   const dropdownRefs = useRef([]);
+  const profileRef = useRef(null);
 
   const navItems = [
     { label: "Home", link: "/home" },
@@ -26,6 +28,10 @@ export default function Header() {
     setOpenDropdownIndex(newIsMobileMenuOpen ? servicesIndex : null);
   };
 
+  const handleProfileDropdownToggle = () => {
+    setIsProfileDropdownOpen(!isProfileDropdownOpen);
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const heroSection = document.getElementById("Hero");
@@ -43,7 +49,6 @@ export default function Header() {
       }
     };
 
-    // Check scroll position on mount
     handleScroll();
 
     window.addEventListener("scroll", handleScroll);
@@ -79,14 +84,15 @@ export default function Header() {
     };
   }, []);
 
-  const textColorClass = headerBg.includes("bg-black") ? "text-white" : "text-black";
+  const textColorClass =  "text-black";
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRefs.current.some(ref => ref && ref.contains(event.target))) {
+      if (dropdownRefs.current.some(ref => ref && ref.contains(event.target)) || (profileRef.current && profileRef.current.contains(event.target))) {
         return;
       }
       setOpenDropdownIndex(null);
+      setIsProfileDropdownOpen(false);
     };
 
     document.addEventListener("click", handleClickOutside);
@@ -142,21 +148,18 @@ export default function Header() {
                   </svg>
                 )}
               </Link>
-              {item.hasDropdown && openDropdownIndex === index && (
+              {item.hasDropdown && (openDropdownIndex === index || isMobileMenuOpen) && (
                 <ul
                   className={`${isMobileMenuOpen
                       ? "static mt-2 w-full"
                       : "absolute top-full left-0 text-xl mt-2 w-60"
                     } bg-gray-200 text-black rounded shadow-lg z-50`}
                 >
-                  {/* Analytics Option */}
                   <Link to="/analytics" onClick={() => setOpenDropdownIndex(null)}>
                     <li className="px-3 py-5 font-semibold text-center hover:rounded hover:bg-gray-300 cursor-pointer">
                       <span className="text-[#9E6AED]">Analytics</span>
                     </li>
                   </Link>
-
-                  {/* Risk Management Option */}
                   <Link to="/risk-management" onClick={() => setOpenDropdownIndex(null)}>
                     <li className="px-3 py-5 font-semibold text-center hover:rounded hover:bg-gray-300 cursor-pointer">
                       <span className="text-[#9E6AED]">Risk Management</span>
@@ -164,25 +167,66 @@ export default function Header() {
                   </Link>
                 </ul>
               )}
-
             </div>
           ))}
           <Link
             to="/contact-us"
-            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center md:hidden`}
+            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center md:hidden ${location.pathname === "/dashboard" ? "mr-4" : ""}`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact Us
           </Link>
+          {location.pathname === "/dashboard" && (
+            <div className="relative md:hidden" ref={profileRef}>
+              <button onClick={handleProfileDropdownToggle} className=" flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 ">
+                <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 bg-white rounded-full" />
+              </button>
+              {isProfileDropdownOpen && (
+                <ul className="absolute right-0 mt-2 w-60 bg-white text-black rounded shadow-lg z-50">
+                  <li className="px-4 py-2 flex items-center">
+                    <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 rounded-full mr-2" />
+                    <div>
+                      <div className="font-semibold">John Doe</div>
+                      <div className="text-sm text-gray-600">john.doe@example.com</div>
+                    </div>
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Change Password</li>
+                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Dark/Light Mode</li>
+                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Logout</li>
+                </ul>
+              )}
+            </div>
+          )}
         </nav>
 
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center">
           <Link
             to="/contact-us"
-            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center`}
+            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center ${location.pathname === "/dashboard" ? "mr-4" : ""}`}
           >
             Contact Us
           </Link>
+          {location.pathname === "/dashboard" && (
+            <div className="relative" ref={profileRef}>
+              <button onClick={handleProfileDropdownToggle} className=" flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 ">
+                <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 bg-white rounded-full" />
+              </button>
+              {isProfileDropdownOpen && (
+                <ul className="absolute right-0 mt-2 w-60 bg-white text-black rounded shadow-lg z-50">
+                  <li className="px-4 py-2 flex items-center">
+                    <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 rounded-full mr-2" />
+                    <div>
+                      <div className="font-semibold">John Doe</div>
+                      <div className="text-sm text-gray-600">john.doe@example.com</div>
+                    </div>
+                  </li>
+                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Change Password</li>
+                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Dark/Light Mode</li>
+                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Logout</li>
+                </ul>
+              )}
+            </div>
+          )}
         </div>
         <div className="md:hidden">
           <button onClick={handleMobileMenuToggle} className="text-white">
