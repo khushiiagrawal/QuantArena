@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
             >
                 {/* Large Background Text */}
                 <h1
-                    className="absolute text-[30px] sm:text-[70px] md:text-[50px] lg:text-[110px] font-extrabold uppercase text-white opacity-10"
+                    className="absolute text-[40px] sm:text-[70px] md:text-[50px] lg:text-[100px] font-extrabold uppercase text-white opacity-10"
                     style={{ ...fontStyle, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
                 >
                     WHY CHOOSE US?

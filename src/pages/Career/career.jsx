@@ -345,7 +345,7 @@ export const JobApplicationPage = () => {
         {/* Header Section */}
         <div className="relative h-40 flex items-center justify-center" style={{ backgroundColor: '#9E6AED' }}>
           <h1
-            className="absolute text-[50px] sm:text-[70px] md:text-[90px] lg:text-[140px] font-extrabold uppercase text-white opacity-10"
+            className="absolute text-[30px] sm:text-[50px] md:text-[60px] lg:text-[110px] font-extrabold uppercase text-white opacity-10"
             style={{ ...fontStyle, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', zIndex: 0 }}
           >
             WANT TO JOIN US?

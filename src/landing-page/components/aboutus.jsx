@@ -15,7 +15,7 @@ export default function About() {
                 >
                     {/* Large Background Text */}
                     <h1
-                        className="absolute text-[50px] sm:text-[60px] md:text-[120px] lg:text-[190px] font-extrabold uppercase text-white opacity-10"
+                        className="absolute text-[50px] sm:text-[60px] md:text-[120px] lg:text-[180px] font-extrabold uppercase text-white opacity-10"
                         style={{ ...fontStyle, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
                     >
                         ABOUT US

@@ -70,7 +70,7 @@ const EnterpricePolicy = () => {
                     <h1 className="text-3xl font-montserrat text-white font-semibold mt-1 px-12 text-left">Enterprise Policy Development</h1>
                 </div>
                 <div className="flex-1 overflow-x-auto">
-                <div className="min-w-full flex md:grid md:grid-cols-3 gap-8 px-4 sm:px-8 lg:px-16 py-6">
+                <div className="min-w-full flex md:grid md:grid-cols-4 gap-8 px-4 sm:px-8 lg:px-16 py-6">
                         {/* Column Headings */}
                         <React.Fragment>
                             <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex justify-center items-center text-center">
