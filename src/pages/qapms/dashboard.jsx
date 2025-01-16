@@ -38,7 +38,7 @@ const Dashboard = () => {
 
     return (
         <div>
-        <div className="min-h-screen w-screen bg-gray-200 flex flex-col items-start py-8 md:py-12 px-4 md:px-20">
+        <div className="min-h-screen w-screen bg-gray-200 flex flex-col items-start py-8 md:py-12 px-4 md:px-12">
             <h3 className="text-left font-montserrat text-medium text-black mt-16">Dashboard</h3>
 
             <div className="w-full max-w-8xl bg-white shadow-md mt-8 min-h-[70vh] rounded-md p-4 md:p-7">
@@ -47,7 +47,7 @@ const Dashboard = () => {
                 <div className="overflow-x-auto font-sm">
                     <table className="w-full table-auto h-[50vh] font-sm border-collapse">
                         <thead>
-                            <tr className="bg-[#ECE1FB] text-gray-800 font-sm text-medium font-montserrat">
+                            <tr className="bg-[#F7F1FF] text-gray-800 font-sm text-medium font-montserrat">
                                 <th className="border px-2 md:px-4 py-2 text-left">Sr. No.</th>
                                 <th className="border px-2 md:px-4 py-2 text-left">Project ID</th>
                                 <th className="border px-2 md:px-4 py-2 text-left">Project Name</th>
