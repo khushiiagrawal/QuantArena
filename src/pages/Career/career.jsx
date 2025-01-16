@@ -224,6 +224,17 @@ export const JobApplicationPage = () => {
     message: '',
     attachment: null
   });
+  const [formData2, setFormData2] = useState({
+    name2: '',
+    phone2: '',
+    email2: '',
+    introduce2: '',
+    contribution2: '',
+    importance2: '',
+    message2: '',
+    attachment2: null,
+
+  });
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedJob, setSelectedJob] = useState(null);
   const jobsPerPage = 8;
@@ -261,6 +272,17 @@ export const JobApplicationPage = () => {
       formData.attachment
     );
   };
+  const isFormValid2 = () => {
+    return (
+      formData2.name2 &&
+      formData2.phone2 &&
+      formData2.email2 &&
+      formData2.introduce2 &&
+      formData2.contribution2 &&
+      formData2.importance2 &&
+      formData2.attachment2 
+    );
+  };
 
   const handleChange = (e) => {
     const { id, value, files } = e.target;
@@ -270,10 +292,27 @@ export const JobApplicationPage = () => {
     }));
   };
 
+  const handleChange2 = (e) => {
+    const { id, value, files } = e.target;
+    setFormData2((prevData) => ({
+      ...prevData,
+      [id]: files ? files[0] : value
+    }));
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isFormValid()) {
       console.log('Form submitted:', formData);
+    } else {
+      alert('Please fill in all required fields.');
+    }
+  };
+
+  const handleSubmit2 = (e) => {
+    e.preventDefault();
+    if (isFormValid2()) {
+      console.log('Form submitted:', formData2);
     } else {
       alert('Please fill in all required fields.');
     }
@@ -394,10 +433,7 @@ export const JobApplicationPage = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       onKeyDown={(e) => {
-                        if (!/[0-9]/.test(e.key)) {
-                          e.preventDefault();
-                        }
-                        if (!/[0-9]/.test(e.key)) {
+                        if (!/[0-9]/.test(e.key) && e.key !== 'Backspace' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Delete') {
                           e.preventDefault();
                         }
                       }}
@@ -486,7 +522,7 @@ export const JobApplicationPage = () => {
                     />
                     <br/><br/>
                     <input
-                      id="attachment"
+                      id="attachment2"
                       type="file"
                       className="w-full px-3 py-4 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
                       onChange={handleChange}
@@ -588,7 +624,7 @@ export const JobApplicationPage = () => {
                 >
                 &times;
                 </span>
-                <form className="space-y-4" onSubmit={handleSubmit}>
+                <form className="space-y-4" onSubmit={handleSubmit2}>
                 <div>
                 <h3 className="text-2xl font-montserrat text-gray-800 font-bold mb-1 text-left">{selectedDes.title}</h3>
                 <div className="text-sm mb-1 text-gray-600 gap-4 font-montserrat text-left">QuantArena</div>
@@ -601,37 +637,34 @@ export const JobApplicationPage = () => {
                 </div>
 
                 <div className="w-full h-0.5 bg-gray-300 my-3"></div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="name">
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="name2">
                   Name<span className='text-red-500'>*</span>
                 </label>
                 <input
-                  id="name"
+                  id="name2"
                   type="text"
                   className="w-full px-3 py-2 border border-black text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Enter your name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  value={formData2.name2}
+                  onChange={handleChange2}
                 />
                 </div>
 
                 <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="phone">
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="phone2">
                   Phone Number<span className='text-red-500'>*</span>
                 </label>
                 <input
-                  id="phone"
+                  id="phone2"
                   type="tel"
                   pattern="\d{10}"
                   maxLength="10"
                   className="w-full px-3 py-2 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Enter phone number"
-                  value={formData.phone}
-                  onChange={handleChange}
+                  value={formData2.phone2}
+                  onChange={handleChange2}
                   onKeyDown={(e) => {
-                    if (!/[0-9]/.test(e.key)) {
-                      e.preventDefault();
-                    }
-                    if (!/[0-9]/.test(e.key)) {
+                    if (!/[0-9]/.test(e.key) && e.key !== 'Backspace' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Delete') {
                       e.preventDefault();
                     }
                   }}
@@ -639,95 +672,95 @@ export const JobApplicationPage = () => {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="email">
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="email2">
                   Email Address<span className='text-red-500'>*</span>
                 </label>
                 <input
-                  id="email"
+                  id="email2"
                   type="email"
                   className="w-full px-3 py-2 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Enter your email address"
-                  value={formData.email}
-                  onChange={handleChange}
+                  value={formData2.email2}
+                  onChange={handleChange2}
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="introduce">
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="introduce2">
                   Introduce Yourself<span className='text-red-500'>*</span>
                 </label>
                 <textarea
-                  id="introduce"
+                  id="introduce2"
                   className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Enter your introduction"
                   rows="3"
-                  value={formData.introduce}
-                  onChange={handleChange}
+                  value={formData2.introduce2}
+                  onChange={handleChange2}
                 ></textarea>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="contribution">
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="contribution2">
                   What will you bring to the table?<span className='text-red-500'>*</span>
                 </label>
                 <textarea
-                  id="contribution"
+                  id="contribution2"
                   className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Describe your contribution"
                   rows="3"
-                  value={formData.contribution}
-                  onChange={handleChange}
+                  value={formData2.contribution2}
+                  onChange={handleChange2}
                 ></textarea>
               </div>
 
 
               <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="message">
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="message2">
                   Any other message for us?
                 </label>
                 <textarea
-                  id="message"
+                  id="message2"
                   className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Enter your message"
                   rows="3"
-                  value={formData.message}
-                  onChange={handleChange}
+                  value={formData2.message2}
+                  onChange={handleChange2}
                 ></textarea>
               </div>
 
               <div>
-                    <label className="block text-sm font-medium text-black mb-2" htmlFor="attachment">
+                    <label className="block text-sm font-medium text-black mb-2" htmlFor="attachment2">
                       Relevant Attachments<span className='text-red-500'>*</span> (One or more)
                     </label>
                     <input
-                      id="attachment"
+                      id="attachment2"
                       type="file"
                       className="w-full px-3 py-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
-                      onChange={handleChange}
+                      onChange={handleChange2}
                     />
                     <br/><br/>
                     <input
-                      id="attachment"
+                      id="attachment2"
                       type="file"
                       className="w-full px-3 py-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
-                      onChange={handleChange}
+                      onChange={handleChange2}
                     />
                   <br/><br/>
 
                   <input
-                    id="link"
+                    id="link2"
                     type="url"
                     className="w-full px-3 py-2 border border-black rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                     placeholder="Enter a link"
-                    value={formData.link || ''}
-                    onChange={handleChange}
+                    value={formData2.link2 || ''}
+                    onChange={handleChange2}
                   />
                   </div>
 
               <button
                 type="submit"
-                className={`w-full ${isFormValid() ? 'bg-[#5BD8A3] hover:bg-green-600' : 'bg-gray-400 cursor-not-allowed'} text-black font-bold py-2 px-4 rounded-lg`}
-                disabled={!isFormValid()}
+                className={`w-full ${isFormValid2() ? 'bg-[#5BD8A3] hover:bg-green-600' : 'bg-gray-400 cursor-not-allowed'} text-black font-bold py-2 px-4 rounded-lg`}
+                disabled={!isFormValid2()}
               >
                 Submit
               </button>

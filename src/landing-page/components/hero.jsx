@@ -58,11 +58,14 @@ export function AboutSection() {
             (<span className="italic">&quot;QuantArena&quot;</span>), having CIN ****, is a
             company incorporated to cater to the diverse analytics and risk
             management-related needs of individuals and/or organizations
-            belonging to any sector. Starting from any kind of analytics with or
-            without statistical modeling to financial analytics, model
-            validation, policy development and validation, enterprise risk
-            framework development and maintenance; we are the one-stop shop for
-            all your analytics and risk management needs.
+            belonging to any sector. Starting from any kind of analytics with or 
+            without statistical modeling to financial analytics, model validation, 
+            policy development and validation, enterprise risk framework development 
+            and maintenance; we are the one stop shop for all your analytics and risk 
+            management needs. Our solutions are the most practical, curated as per your 
+            specific needs and provided to you in the most simplistic manner making us the analytics 
+            and risk manager partner that you’d love to rely on. We do all these because we love doing these and our 
+            charges are very reasonably priced. Please refer to the Services section for details of our services.
           </p>
         </div>
       </div>

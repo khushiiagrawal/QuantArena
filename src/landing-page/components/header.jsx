@@ -6,7 +6,7 @@ import pswd from "../images/pswd.png";
 export default function Header() {
   const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [headerBg, setHeaderBg] = useState("bg-white bg-opacity-80");
+  const [headerBg, setHeaderBg] = useState("bg-white bg-opacity-70");
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const location = useLocation();
   const [theme, setTheme] = useState("light");
@@ -49,9 +49,9 @@ export default function Header() {
         const sectionBottom = section.offsetTop + section.offsetHeight;
 
         if (window.scrollY <= sectionBottom) {
-          setHeaderBg("bg-white bg-opacity-80");
+          setHeaderBg("bg-white bg-opacity-70");
         } else {
-          setHeaderBg("bg-black bg-opacity-60");
+          setHeaderBg("bg-black bg-opacity-70");
         }
       }
     };
@@ -71,10 +71,10 @@ export default function Header() {
         setHeaderBg("bg-white bg-opacity-90");
       }
       if (location.pathname === "/contact-us") {
-        setHeaderBg("bg-white bg-opacity-80");
+        setHeaderBg("bg-white bg-opacity-70");
       }
     } else {
-      setHeaderBg("bg-white bg-opacity-80");
+      setHeaderBg("bg-white bg-opacity-70");
     }
   }, [location.pathname]);
 
@@ -123,8 +123,7 @@ export default function Header() {
               key={index}
               className="relative"
               ref={item.hasDropdown ? (el) => (dropdownRefs.current[index] = el) : null}
-              onMouseEnter={() => item.hasDropdown && handleDropdownToggle(index)}
-              onMouseLeave={() => item.hasDropdown && handleDropdownToggle(null)}
+              onClick={() => item.hasDropdown && handleDropdownToggle(index)}
             >
               <Link
                 to={item.link}
@@ -180,12 +179,12 @@ export default function Header() {
           ))}
           <Link
             to="/contact-us"
-            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center md:hidden ${location.pathname === "/dashboard" ? "mr-4" : ""}`}
+            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center md:hidden ${location.pathname === "/dashboard" || location.pathname === "/projectid" ? "mr-4" : ""}`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact Us
           </Link>
-          {location.pathname === "/dashboard" && (
+          {(location.pathname === "/dashboard" || location.pathname === "/projectid") && (
             <div className="relative md:hidden" ref={profileRef}>
               <button onClick={handleProfileDropdownToggle} className=" flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 focus:outline-none">
                 <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 bg-white rounded-full" />
@@ -217,11 +216,11 @@ export default function Header() {
         <div className="hidden md:flex items-center">
           <Link
             to="/contact-us"
-            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center ${location.pathname === "/dashboard" ? "mr-4" : ""}`}
+            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center ${location.pathname === "/dashboard" || location.pathname === "/projectid" ? "mr-4" : ""}`}
           >
             Contact Us
           </Link>
-          {location.pathname === "/dashboard" && (
+          {(location.pathname === "/dashboard" || location.pathname === "/projectid") && (
             <div className="relative" ref={profileRef} onTouchStart={handleProfileDropdownToggle}>
               <button onClick={handleProfileDropdownToggle} className=" flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 focus:outline-none">
                 <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 bg-white rounded-full" />

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
+
 const Req = () => {
     const [isRequestAccess, setIsRequestAccess] = useState(true);
     const [isForgotPassword, setIsForgotPassword] = useState(false);
@@ -93,6 +94,7 @@ const Req = () => {
                         <h1 className="text-white text-5xl font-montserrat text-semibold text-center">
                             QuantArena Project <br />Management System
                         </h1>
+                        
                     </div>
                 </>
             ) : isForgotPassword ? (

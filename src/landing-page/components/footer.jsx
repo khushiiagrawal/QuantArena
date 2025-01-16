@@ -1,23 +1,51 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Phone from '../images/phone-call.png';
 import Mail from '../images/envelope.png';
 import Location from '../images/marker.png';
-import { TermsAndConditions } from './terms&conditions';
-import { PrivacyPolicy } from './terms&conditions';
-import { LegalDisclaimer } from './terms&conditions';
+
 
 export default function Footer() {
   const [showServicesDropdown, setShowServicesDropdown] = useState(false);
   const currentYear = new Date().getFullYear();
+  const navigate = useNavigate();
 
   const handleServicesClick = (e) => {
     e.preventDefault();
     setShowServicesDropdown(!showServicesDropdown);
   };
 
-  const handlePolicyClick = (e, Component) => {
+  const handleTermsClick = (e) => {
     e.preventDefault();
-    Component();
+    navigate('/policy');
+    setTimeout(() => {
+      const element = document.getElementById('terms-and-conditions');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 500);
+  };
+
+  const handlePrivacyClick = (e) => {
+    e.preventDefault();
+    navigate('/policy');
+    setTimeout(() => {
+      const element = document.getElementById('privacy');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 500);
+  };
+
+  const handleLegalClick = (e) => {
+    e.preventDefault();
+    navigate('/policy');
+    setTimeout(() => {
+      const element = document.getElementById('legal');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 500);
   };
 
   return (
@@ -65,8 +93,8 @@ export default function Footer() {
               <li><a href="/" onClick={handleServicesClick} className="text-white">Services</a></li>
               {showServicesDropdown && (
                 <ul className="space-y-2 pl-4">
-                  <li><a href="/service1" className="text-white">Analytics</a></li>
-                  <li><a href="/service2" className="text-white">Risk Management</a></li>
+                  <li><a href="/analytics" className="text-white">Analytics</a></li>
+                  <li><a href="/risk-management" className="text-white">Risk Management</a></li>
                 </ul>
               )}
               <li><a href="/qamps" className="text-white">QAPMS</a></li>
@@ -78,30 +106,30 @@ export default function Footer() {
           <div>
             <h2 className="font-bold mb-4 underline text-white">Analytics</h2>
             <ul className="space-y-2">
-              <li className="text-white"><a href="/" className="text-white">Data Management
+              <li className="text-white"><a href="/data-management" className="text-white">Data Management
                 <br /> & Processing</a></li>
-              <li className="text-white"><a href="/" className="text-white">Data Analysis</a></li>
-              <li className="text-white"><a href="/" className="text-white">Financial Analytics</a></li>
-              <li className="text-white"><a href="/" className="text-white">Enterprise Policy
+              <li className="text-white"><a href="/data-analytics" className="text-white">Data Analytics</a></li>
+              <li className="text-white"><a href="/financial-analytics" className="text-white">Financial Analytics</a></li>
+              <li className="text-white"><a href="/enterprise-policy" className="text-white">Enterprise Policy
                 Development</a></li>
             </ul>
           </div>
           <div>
             <h2 className="font-bold mb-4 underline text-white">Risk management</h2>
             <ul className="space-y-2">
-              <li className="text-white"><a href="/" className="text-white">Model Review</a></li>
-              <li className="text-white"><a href="/" className="text-white">Policy Review</a></li>
-              <li className="text-white"><a href="/" className="text-white">Enterprise Risk Framework</a></li>
-              <li className="text-white"><a href="/" className="text-white">Risk Review</a></li>
+              <li className="text-white"><a href="/model-review" className="text-white">Model Review</a></li>
+              <li className="text-white"><a href="/policy-review" className="text-white">Policy Review</a></li>
+              <li className="text-white"><a href="/enterprise-risk-framework" className="text-white">Enterprise Risk Framework</a></li>
+              <li className="text-white"><a href="/risk-review" className="text-white">Risk Review</a></li>
             </ul>
           </div>
 
           <div>
             <h2 className="font-bold mb-4 underline text-white">Policy</h2>
             <ul className="space-y-2">
-              <li><a className="text-white" href="/policy" onClick={(e) => handlePolicyClick(e, TermsAndConditions)}>Terms & Condition</a></li>
-              <li><a className="text-white" href="/policy" onClick={(e) => handlePolicyClick(e, PrivacyPolicy)}>Privacy Policy</a></li>
-              <li><a className="text-white" href="/policy" onClick={(e) => handlePolicyClick(e, LegalDisclaimer)}>Legal Disclaimer</a></li>
+              <li><a className="text-white" href="/policy" onClick={handleTermsClick}>Terms & Condition</a></li>
+              <li><a className="text-white" href="/policy" onClick={handlePrivacyClick}>Privacy Policy</a></li>
+              <li><a className="text-white" href="/policy" onClick={handleLegalClick}>Legal Disclaimer</a></li>
             </ul>
           </div>
 

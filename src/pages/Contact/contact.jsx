@@ -1,4 +1,7 @@
+
 import Footer from '../../landing-page/components/footer';
+
+
 import bgContact from './bg-contact.png';
 import call from './call.png';
 import email from './email.png';
@@ -6,8 +9,11 @@ import location from './pin.png';
 import whatsapp from './whatsapp.png';
 import facebook from './facebook.png';
 import linkedin from './linkedin.png';
+import mapImage from './mapImage.png';
+import pinImage from './pinImage.png';
 
 const ContactPage = () => {
+  
   return (
     <div>
       <div
@@ -131,11 +137,34 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-        <div className="mt-20"></div>
+        
+        <div className="relative w-full mt-10">
+          {/* Map Image */}
+          <img
+            src={mapImage}
+            alt="Map Location"
+            className="w-full h-100 object-cover"
+          />
+          {/* Clickable Pin */}
+          <a
+            href="https://maps.app.goo.gl/CnGt2VY13oNzQ8ti6"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+          >
+            <img
+              src={pinImage}
+              alt="Pin Icon"
+              className="w-7 h-12 cursor-pointer"
+            />
+          </a>
+        </div>
+     
       </div>
+      
       <Footer/>
     </div>
   );
 };
-
 export default ContactPage;
+
