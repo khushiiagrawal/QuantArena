@@ -49,8 +49,8 @@ export default function CareerPageHero() {
       <JobApplicationPage />
       <Footer />
     </div>
-  );
-}
+    );
+  }
 
 export const ImageLayout = () => {
   return (
@@ -210,7 +210,7 @@ export const ImageLayout2 = () => {
 
 
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export const JobApplicationPage = () => {
   const fontStyle = { fontFamily: 'Montserrat, sans-serif' };
@@ -223,6 +223,18 @@ export const JobApplicationPage = () => {
     importance: '',
     message: '',
     attachment: null
+  });
+  const [formData2, setFormData2] = useState({
+    name2: '',
+    phone2: '',
+    email2: '',
+    introduce2: '',
+    contribution2: '',
+    importance2: '',
+    message2: '',
+    attachment2: null,
+    link2: '',
+
   });
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedJob, setSelectedJob] = useState(null);
@@ -262,9 +274,30 @@ export const JobApplicationPage = () => {
     );
   };
 
+  const isFormValid2 = () => {
+    return (
+      formData2.name2 &&
+      formData2.phone2 &&
+      formData2.email2 &&
+      formData2.introduce2 &&
+      formData2.contribution2 &&
+      formData2.importance2 &&
+      formData2.attachment2 &&
+      formData2.link2
+    );
+  };
+
   const handleChange = (e) => {
     const { id, value, files } = e.target;
     setFormData((prevData) => ({
+      ...prevData,
+      [id]: files ? files[0] : value
+    }));
+  };
+
+  const handleChange2 = (e) => {
+    const { id, value, files } = e.target;
+    setFormData2((prevData) => ({
       ...prevData,
       [id]: files ? files[0] : value
     }));
@@ -276,6 +309,13 @@ export const JobApplicationPage = () => {
       console.log('Form submitted:', formData);
     } else {
       alert('Please fill in all required fields.');
+    }
+  };
+
+  const handleSubmit2 = (e) => {
+    e.preventDefault();
+    if (isFormValid2()) {
+      console.log('Form submitted:', formData2);
     }
   };
 
@@ -394,128 +434,127 @@ export const JobApplicationPage = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       onKeyDown={(e) => {
-                        if (!/[0-9]/.test(e.key)) {
+                        if (!/[0-9]/.test(e.key) && e.key !== 'Backspace' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Delete') {
                           e.preventDefault();
                         }
-                        if (!/[0-9]/.test(e.key)) {
-                          e.preventDefault();
-                        }
-                      }}
-                    />
-                  </div>
+                        }}
+                      />
+                      </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-white mb-2" htmlFor="email">
-                      Email Address<span className='text-red-500'>*</span>
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
+                      <div>
+                      <label className="block text-sm font-medium text-white mb-2" htmlFor="email">
+                        Email Address
+                      </label>
+                      <input
+                        id="email"
+                        type="email"
+                        className="w-full px-3 py-2 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                        placeholder="Enter your email address"
+                        value={formData.email}
+                        onChange={handleChange}
+                      />
+                      </div>
+
+                      <div>
+                      <label className="block text-sm font-medium text-white mb-2" htmlFor="introduce">
+                        Introduce Yourself
+                      </label>
+                      <textarea
+                        id="introduce"
+                        className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                        placeholder="Enter your introduction"
+                        rows="3"
+                        value={formData.introduce}
+                        onChange={handleChange}
+                      ></textarea>
+                      </div>
+
+                      <div>
+                      <label className="block text-sm font-medium text-white mb-2" htmlFor="contribution">
+                        What will you bring to the table?
+                      </label>
+                      <textarea
+                        id="contribution"
+                        className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                        placeholder="Describe your contribution"
+                        rows="3"
+                        value={formData.contribution}
+                        onChange={handleChange}
+                      ></textarea>
+                      </div>
+
+                      <div>
+                      <label className="block text-sm font-medium text-white mb-2" htmlFor="importance">
+                        Why do you think what you can bring to the table is important?
+                      </label>
+                      <textarea
+                        id="importance"
+                        className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                        placeholder="Explain the importance"
+                        rows="3"
+                        value={formData.importance}
+                        onChange={handleChange}
+                      ></textarea>
+                      </div>
+
+                      <div>
+                      <label className="block text-sm font-medium text-white mb-2" htmlFor="message">
+                        Any other message for us?
+                      </label>
+                      <textarea
+                        id="message"
+                        className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
+                        placeholder="Enter your message"
+                        rows="3"
+                        value={formData.message}
+                        onChange={handleChange}
+                      ></textarea>
+                      </div>
+
+                      <div>
+                      <label className="block text-sm font-medium text-white mb-2" htmlFor="attachment">
+                        Relevant Attachments (One or more)
+                      </label>
+                      <input
+                        id="attachment"
+                        type="file"
+                        className="w-full px-3 py-4 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
+                        onChange={handleChange}
+                      />
+                      <br/><br/>
+                      <input
+                        id="attachment2"
+                        type="file"
+                        className="w-full px-3 py-4 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
+                        onChange={handleChange}
+                      />
+                      <br/><br/>
+                
+                      <input
+                      id="link"
+                      type="url"
                       className="w-full px-3 py-2 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
-                      placeholder="Enter your email address"
-                      value={formData.email}
+                      placeholder="Enter a link"
+                      value={formData.link || ''}
                       onChange={handleChange}
-                    />
-                  </div>
+                      />
+                      </div>
 
-                  <div>
-                    <label className="block text-sm font-medium text-white mb-2" htmlFor="introduce">
-                      Introduce Yourself<span className='text-red-500'>*</span>
-                    </label>
-                    <textarea
-                      id="introduce"
-                      className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
-                      placeholder="Enter your introduction"
-                      rows="3"
-                      value={formData.introduce}
-                      onChange={handleChange}
-                    ></textarea>
+                      <button
+                      type="submit"
+                      className="w-full bg-[#5BD8A3] hover:bg-green-600 text-black font-bold py-2 px-4 rounded-lg"
+                      >
+                      Submit
+                      </button>
+                    </form>
+                    </div>
                   </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-white mb-2" htmlFor="contribution">
-                      What will you bring to the table?<span className='text-red-500'>*</span>
-                    </label>
-                    <textarea
-                      id="contribution"
-                      className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
-                      placeholder="Describe your contribution"
-                      rows="3"
-                      value={formData.contribution}
-                      onChange={handleChange}
-                    ></textarea>
                   </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-white mb-2" htmlFor="importance">
-                      Why do you think what you can bring to the table is important?<span className='text-red-500'>*</span>
-                    </label>
-                    <textarea
-                      id="importance"
-                      className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
-                      placeholder="Explain the importance"
-                      rows="3"
-                      value={formData.importance}
-                      onChange={handleChange}
-                    ></textarea>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-white mb-2" htmlFor="message">
-                      Any other message for us?
-                    </label>
-                    <textarea
-                      id="message"
-                      className="w-full px-3 py-3 h-32 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
-                      placeholder="Enter your message"
-                      rows="3"
-                      value={formData.message}
-                      onChange={handleChange}
-                    ></textarea>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-white mb-2" htmlFor="attachment">
-                      Relevant Attachments<span className='text-red-500'>*</span> (One or more)
-                    </label>
-                    <input
-                      id="attachment"
-                      type="file"
-                      className="w-full px-3 py-4 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
-                      onChange={handleChange}
-                    />
-                    <br/><br/>
-                    <input
-                      id="attachment"
-                      type="file"
-                      className="w-full px-3 py-4 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
-                      onChange={handleChange}
-                    />
-                  <br/><br/>
-      
-                  <input
-                    id="link"
-                    type="url"
-                    className="w-full px-3 py-2 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
-                    placeholder="Enter a link"
-                    value={formData.link || ''}
-                    onChange={handleChange}
-                  />
-                  </div>
-
-                  <button
-                    type="submit"
-                    className={`w-full ${isFormValid() ? 'bg-[#5BD8A3] hover:bg-green-600' : 'bg-gray-400 cursor-not-allowed'} text-white font-bold py-2 px-4 rounded-lg`}
-                    disabled={!isFormValid()}
-                  >
-                    Submit
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+                </div>
+                </div>
+                {useEffect(() => {
+        console.log('Form Data:', formData);
+      }, [formData])}
 
       {selectedJob && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex p-6 items-center w-screen h-screen justify-center z-50">
@@ -575,20 +614,20 @@ export const JobApplicationPage = () => {
                 >
                 Apply
                 </p>
-                </div>
-                </div>
               </div>
-              )}
-              {selectedDes && (
-              <div className="fixed inset-0 bg-black bg-opacity-50 flex p-6 items-center justify-center z-50">
-                <div className="bg-white text-black font-montserrat p-6 rounded shadow-lg max-w-xl w-screen relative overflow-y-auto" style={{ maxHeight: '90vh' }}>
-                <span
+              </div>
+            </div>
+            )}
+            {selectedDes && (
+            <div className="fixed inset-0 bg-black bg-opacity-50 flex p-6 items-center justify-center z-50">
+              <div className="bg-white text-black font-montserrat p-6 rounded shadow-lg max-w-xl w-screen relative overflow-y-auto" style={{ maxHeight: '90vh' }}>
+              <span
                 onClick={() => setSelectedDes(null)}
                 className="absolute top-0 w-6 h-6 right-3 cursor-pointer text-gray-500 hover:text-gray-700 text-4xl"
-                >
+              >
                 &times;
-                </span>
-                <form className="space-y-4" onSubmit={handleSubmit}>
+              </span>
+              <form className="space-y-4" onSubmit={handleSubmit2}>
                 <div>
                 <h3 className="text-2xl font-montserrat text-gray-800 font-bold mb-1 text-left">{selectedDes.title}</h3>
                 <div className="text-sm mb-1 text-gray-600 gap-4 font-montserrat text-left">QuantArena</div>
@@ -601,144 +640,138 @@ export const JobApplicationPage = () => {
                 </div>
 
                 <div className="w-full h-0.5 bg-gray-300 my-3"></div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="name">
-                  Name<span className='text-red-500'>*</span>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="name2">
+                  Name
                 </label>
                 <input
-                  id="name"
+                  id="name2"
                   type="text"
                   className="w-full px-3 py-2 border border-black text-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Enter your name"
-                  value={formData.name}
-                  onChange={handleChange}
+                  value={formData2.name2}
+                  onChange={handleChange2}
                 />
                 </div>
 
                 <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="phone">
-                  Phone Number<span className='text-red-500'>*</span>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="phone2">
+                  Phone Number
                 </label>
                 <input
-                  id="phone"
+                  id="phone2"
                   type="tel"
                   pattern="\d{10}"
                   maxLength="10"
                   className="w-full px-3 py-2 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Enter phone number"
-                  value={formData.phone}
-                  onChange={handleChange}
+                  value={formData2.phone2}
+                  onChange={handleChange2}
                   onKeyDown={(e) => {
-                    if (!/[0-9]/.test(e.key)) {
-                      e.preventDefault();
-                    }
-                    if (!/[0-9]/.test(e.key)) {
-                      e.preventDefault();
-                    }
+                  if (!/[0-9]/.test(e.key) && e.key !== 'Backspace' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Delete') {
+                    e.preventDefault();
+                  }
                   }}
                 />
-              </div>
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="email">
-                  Email Address<span className='text-red-500'>*</span>
+                <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="email2">
+                  Email Address
                 </label>
                 <input
-                  id="email"
+                  id="email2"
                   type="email"
                   className="w-full px-3 py-2 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Enter your email address"
-                  value={formData.email}
-                  onChange={handleChange}
+                  value={formData2.email2}
+                  onChange={handleChange2}
                 />
-              </div>
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="introduce">
-                  Introduce Yourself<span className='text-red-500'>*</span>
+                <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="introduce2">
+                  Introduce Yourself
                 </label>
                 <textarea
-                  id="introduce"
+                  id="introduce2"
                   className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Enter your introduction"
                   rows="3"
-                  value={formData.introduce}
-                  onChange={handleChange}
+                  value={formData2.introduce2}
+                  onChange={handleChange2}
                 ></textarea>
-              </div>
+                </div>
 
-              <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="contribution">
-                  What will you bring to the table?<span className='text-red-500'>*</span>
+                <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="contribution2">
+                  What will you bring to the table?
                 </label>
                 <textarea
-                  id="contribution"
+                  id="contribution2"
                   className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Describe your contribution"
                   rows="3"
-                  value={formData.contribution}
-                  onChange={handleChange}
+                  value={formData2.contribution2}
+                  onChange={handleChange2}
                 ></textarea>
-              </div>
+                </div>
 
-
-              <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="message">
+                <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="message2">
                   Any other message for us?
                 </label>
                 <textarea
-                  id="message"
+                  id="message2"
                   className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
                   placeholder="Enter your message"
                   rows="3"
-                  value={formData.message}
-                  onChange={handleChange}
+                  value={formData2.message2}
+                  onChange={handleChange2}
                 ></textarea>
-              </div>
+                </div>
 
-              <div>
-                    <label className="block text-sm font-medium text-black mb-2" htmlFor="attachment">
-                      Relevant Attachments<span className='text-red-500'>*</span> (One or more)
-                    </label>
-                    <input
-                      id="attachment"
-                      type="file"
-                      className="w-full px-3 py-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
-                      onChange={handleChange}
-                    />
-                    <br/><br/>
-                    <input
-                      id="attachment"
-                      type="file"
-                      className="w-full px-3 py-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
-                      onChange={handleChange}
-                    />
-                  <br/><br/>
+                <div>
+                <label className="block text-sm font-medium text-black mb-2" htmlFor="attachment2">
+                  Relevant Attachments (One or more)
+                </label>
+                <input
+                  id="attachment2"
+                  type="file"
+                  className="w-full px-3 py-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
+                  onChange={handleChange2}
+                />
+                <br/><br/>
+                <input
+                  id="attachment2"
+                  type="file"
+                  className="w-full px-3 py-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
+                  onChange={handleChange2}
+                />
+                <br/><br/>
 
-                  <input
-                    id="link"
-                    type="url"
-                    className="w-full px-3 py-2 border border-black rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
-                    placeholder="Enter a link"
-                    value={formData.link || ''}
-                    onChange={handleChange}
-                  />
-                  </div>
+                <input
+                  id="link2"
+                  type="url"
+                  className="w-full px-3 py-2 border border-black rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                  placeholder="Enter a link"
+                  value={formData2.link2 || ''}
+                  onChange={handleChange2}
+                />
+                </div>
 
-              <button
+                <button
                 type="submit"
-                className={`w-full ${isFormValid() ? 'bg-[#5BD8A3] hover:bg-green-600' : 'bg-gray-400 cursor-not-allowed'} text-black font-bold py-2 px-4 rounded-lg`}
-                disabled={!isFormValid()}
-              >
+                className="w-full bg-[#5BD8A3] hover:bg-green-600 text-black font-bold py-2 px-4 rounded-lg"
+                >
                 Submit
-              </button>
-            </form>
-
+                </button>
+              </form>
+              </div>
+            </div>
+            )}
+            {useEffect(() => {
+            console.log('Form Data 2:', formData2);
+            }, [formData2])}
           </div>
-        </div>
-      )}
-
-
-    </div>
-  );
-
-}
+          );
+        }

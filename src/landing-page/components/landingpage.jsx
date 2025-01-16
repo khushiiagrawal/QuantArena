@@ -23,6 +23,7 @@ export default function LandingPage() {
         <PartnerSection/>
         <TeamSection/>
         <Footer/>
+
       </main>
       
 

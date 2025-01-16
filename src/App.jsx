@@ -15,6 +15,11 @@ import PolicyReview from "./pages/Services/Risk-Management/PolicyReview";
 import EnterpriseRiskFramework from "./pages/Services/Risk-Management/EnterpriseRiskFramework";
 import RiskReview from "./pages/Services/Risk-Management/RiskReview";
 import Dashboard from "./pages/QAPMS/dashboard";
+import PolicyPage from "./landing-page/components/terms&conditions";
+import { TermsAndConditions } from "./landing-page/components/terms&conditions";
+import { PrivacyPolicy } from "./landing-page/components/terms&conditions";
+import { LegalDisclaimer } from "./landing-page/components/terms&conditions";
+import ProjectId from "./pages/QAPMS/projectid";
 
 
 
@@ -44,6 +49,11 @@ export default function App() {
         <Route path="enterprise-risk-framework" element={<EnterpriseRiskFramework />} />
         <Route path="risk-review" element={<RiskReview />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="policy" element={<PolicyPage />} />
+        <Route path="terms" element={<TermsAndConditions />} />
+        <Route path="privacy" element={<PrivacyPolicy />} />
+        <Route path="legal" element={<LegalDisclaimer />} />
+        <Route path="projectid" element={<ProjectId />} />
       </Route>
     </Routes>
   );

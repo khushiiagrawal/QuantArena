@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
             >
                 {/* Large Background Text */}
                 <h1
-                    className="absolute text-[50px] sm:text-[70px] md:text-[90px] lg:text-[142px] font-extrabold uppercase text-white opacity-10"
+                    className="absolute text-[30px] sm:text-[70px] md:text-[50px] lg:text-[110px] font-extrabold uppercase text-white opacity-10"
                     style={{ ...fontStyle, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}
                 >
                     WHY CHOOSE US?
@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
                     <div className="flex justify-center mt-2">
                         <div className="w-16 h-16 rounded-full bg-[#E9DFF8] flex items-center justify-center">
                             <img
-                                src={expertiseIcon}
+                                src={advancedAnalyticsIcon}
                                 alt="Expertise Icon"
                                 className="w-10 h-12"
                             />
@@ -43,10 +43,12 @@ export default function WhyChooseUs() {
                         Inquisitiveness And Expertise
                     </h3>
                     <p className="text-gray-700 mt-8 text-sm font-montserrat leading-relaxed">
-                        Our team consists of individuals who are inquisitive by nature and have
-                        expertise in the field of analytics and risk management, ready to
-                        transform your raw data into actionable insights through comprehensive
-                        analysis, predictive analytics, and automated solutions (wherever needed).
+                        
+                        Empower your organization with our advanced analytics services. By
+                        employing cutting-edge statistical methods and real-time data analysis,
+                        we deliver actionable insights that drive business success. Our advanced
+                        analytics solutions help you identify hidden patterns, forecast trends,
+                        and optimize your strategies.
                     </p>
                 </div>
 
@@ -77,7 +79,7 @@ export default function WhyChooseUs() {
                     <div className="flex justify-center mt-2">
                         <div className="w-16 h-16 rounded-full bg-[#E9DFF8] flex items-center justify-center">
                             <img
-                                src={advancedAnalyticsIcon}
+                                src={expertiseIcon}
                                 alt="Advanced Analytics Icon"
                                 className="w-10 h-12"
                             />
@@ -87,11 +89,11 @@ export default function WhyChooseUs() {
                         Advanced Analytics
                     </h3>
                     <p className="text-gray-700 font-montserrat text-sm mt-8 leading-relaxed">
-                        Empower your organization with our advanced analytics services. By
-                        employing cutting-edge statistical methods and real-time data analysis,
-                        we deliver actionable insights that drive business success. Our advanced
-                        analytics solutions help you identify hidden patterns, forecast trends,
-                        and optimize your strategies.
+                    Our team consists of individuals who are inquisitive by nature and have
+                        expertise in the field of analytics and risk management, ready to
+                        transform your raw data into actionable insights through comprehensive
+                        analysis, predictive analytics, and automated solutions (wherever needed).
+                        
                     </p>
                 </div>
                 <div className='mt-6'></div>

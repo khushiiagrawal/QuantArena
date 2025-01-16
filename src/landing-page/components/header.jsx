@@ -1,12 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logout from "../images/logout.png";
+import pswd from "../images/pswd.png";
 
 export default function Header() {
   const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [headerBg, setHeaderBg] = useState("bg-white bg-opacity-80");
+  const [headerBg, setHeaderBg] = useState("bg-white bg-opacity-70");
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const location = useLocation();
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
   const dropdownRefs = useRef([]);
   const profileRef = useRef(null);
 
@@ -42,9 +49,9 @@ export default function Header() {
         const sectionBottom = section.offsetTop + section.offsetHeight;
 
         if (window.scrollY <= sectionBottom) {
-          setHeaderBg("bg-white bg-opacity-80");
+          setHeaderBg("bg-white bg-opacity-70");
         } else {
-          setHeaderBg("bg-black bg-opacity-60");
+          setHeaderBg("bg-black bg-opacity-70");
         }
       }
     };
@@ -64,10 +71,10 @@ export default function Header() {
         setHeaderBg("bg-white bg-opacity-90");
       }
       if (location.pathname === "/contact-us") {
-        setHeaderBg("bg-white bg-opacity-80");
+        setHeaderBg("bg-white bg-opacity-70");
       }
     } else {
-      setHeaderBg("bg-white bg-opacity-80");
+      setHeaderBg("bg-white bg-opacity-70");
     }
   }, [location.pathname]);
 
@@ -84,7 +91,7 @@ export default function Header() {
     };
   }, []);
 
-  const textColorClass =  "text-black";
+  const textColorClass = headerBg.includes("bg-black") ? "text-white" : "text-black";
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -116,6 +123,7 @@ export default function Header() {
               key={index}
               className="relative"
               ref={item.hasDropdown ? (el) => (dropdownRefs.current[index] = el) : null}
+              onClick={() => item.hasDropdown && handleDropdownToggle(index)}
             >
               <Link
                 to={item.link}
@@ -171,28 +179,34 @@ export default function Header() {
           ))}
           <Link
             to="/contact-us"
-            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center md:hidden ${location.pathname === "/dashboard" ? "mr-4" : ""}`}
+            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center md:hidden ${location.pathname === "/dashboard" || location.pathname === "/projectid" ? "mr-4" : ""}`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact Us
           </Link>
-          {location.pathname === "/dashboard" && (
+          {(location.pathname === "/dashboard" || location.pathname === "/projectid") && (
             <div className="relative md:hidden" ref={profileRef}>
-              <button onClick={handleProfileDropdownToggle} className=" flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 ">
+              <button onClick={handleProfileDropdownToggle} className=" flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 focus:outline-none">
                 <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 bg-white rounded-full" />
               </button>
-              {isProfileDropdownOpen && (
-                <ul className="absolute right-0 mt-2 w-60 bg-white text-black rounded shadow-lg z-50">
+              {(isProfileDropdownOpen || isMobileMenuOpen) && (
+                <ul className="absolute left-1/2 transform -translate-x-1/2 mt-2 w-80 bg-white text-black rounded shadow-lg z-50">
                   <li className="px-4 py-2 flex items-center">
                     <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 rounded-full mr-2" />
                     <div>
-                      <div className="font-semibold">John Doe</div>
-                      <div className="text-sm text-gray-600">john.doe@example.com</div>
+                      <div className="font-semibold truncate max-w-full">John Doe</div>
+                      <div className="text-sm text-start text-gray-600 truncate max-w-full">john.doe@example.com</div>
                     </div>
                   </li>
-                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Change Password</li>
-                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Dark/Light Mode</li>
-                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Logout</li>
+                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer">Dark/Light Mode</li>
+                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center">
+                    <img src={pswd} alt="Change Password" className="w-5 h-5 mr-2" />
+                    Change Password
+                  </li>
+                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center">
+                    <img src={logout} alt="Logout" className="w-5 h-5 mr-2" />
+                    Logout
+                  </li>
                 </ul>
               )}
             </div>
@@ -202,13 +216,13 @@ export default function Header() {
         <div className="hidden md:flex items-center">
           <Link
             to="/contact-us"
-            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center ${location.pathname === "/dashboard" ? "mr-4" : ""}`}
+            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center ${location.pathname === "/dashboard" || location.pathname === "/projectid" ? "mr-4" : ""}`}
           >
             Contact Us
           </Link>
-          {location.pathname === "/dashboard" && (
-            <div className="relative" ref={profileRef}>
-              <button onClick={handleProfileDropdownToggle} className=" flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 ">
+          {(location.pathname === "/dashboard" || location.pathname === "/projectid") && (
+            <div className="relative" ref={profileRef} onTouchStart={handleProfileDropdownToggle}>
+              <button onClick={handleProfileDropdownToggle} className=" flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 focus:outline-none">
                 <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 bg-white rounded-full" />
               </button>
               {isProfileDropdownOpen && (
@@ -217,19 +231,42 @@ export default function Header() {
                     <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 rounded-full mr-2" />
                     <div>
                       <div className="font-semibold">John Doe</div>
-                      <div className="text-sm text-gray-600">john.doe@example.com</div>
+                      <div className="text-sm text-gray-600 truncate">john.doe@example.com</div>
                     </div>
                   </li>
-                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Change Password</li>
-                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Dark/Light Mode</li>
-                  <li className="px-4 py-2 hover:bg-gray-200 cursor-pointer">Logout</li>
+                 
+                    <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center" onClick={toggleTheme}>
+                    {theme === "light" ? (
+                      <>
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12h-1m15.36 4.95l-.7-.7M6.34 6.34l-.7-.7m12.02 12.02l-.7-.7M6.34 17.66l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z"></path>
+                      </svg>
+                      Light Mode
+                      </>
+                    ) : (
+                      <>
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12h-1m15.36 4.95l-.7-.7M6.34 6.34l-.7-.7m12.02 12.02l-.7-.7M6.34 17.66l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z"></path>
+                      </svg>
+                      Dark Mode
+                      </>
+                    )}
+                    </li>
+                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center">
+                    <img src={pswd} alt="Change Password" className="w-5 h-5 mr-2" />
+                    Change Password
+                  </li>
+                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center">
+                    <img src={logout} alt="Logout" className="w-5 h-5 mr-2" />
+                    Logout
+                  </li>
                 </ul>
               )}
             </div>
           )}
         </div>
         <div className="md:hidden">
-          <button onClick={handleMobileMenuToggle} className="text-white">
+          <button onClick={handleMobileMenuToggle} className="text-white focus:outline-none">
             <svg
               className="w-5 h-5"
               fill="none"

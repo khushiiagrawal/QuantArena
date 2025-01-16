@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import pdf from "./pics/pdf.png";
+import Footer from '../../landing-page/components/footer';
 
 const Dashboard = () => {
     const [files, setFiles] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const filesPerPage = 5;
+    const navigate = useNavigate();
 
     const handleFileUpload = (e) => {
         const file = e.target.files[0];
@@ -25,15 +28,20 @@ const Dashboard = () => {
         }
     };
 
+    const handleProjectIdClick = () => {
+        navigate(`/projectid`);
+    };
+
     const indexOfLastFile = currentPage * filesPerPage;
     const indexOfFirstFile = indexOfLastFile - filesPerPage;
     const currentFiles = files.slice(indexOfFirstFile, indexOfLastFile);
 
     return (
-        <div className="min-h-screen w-screen bg-gray-200 flex flex-col items-start py-8 md:py-12 px-4 md:px-24">
+        <div>
+        <div className="min-h-screen w-screen bg-gray-200 flex flex-col items-start py-8 md:py-12 px-4 md:px-20">
             <h3 className="text-left font-montserrat text-medium text-black mt-16">Dashboard</h3>
 
-            <div className="w-full max-w-7xl bg-white shadow-md mt-8 min-h-[70vh] rounded-md p-4 md:p-7">
+            <div className="w-full max-w-8xl bg-white shadow-md mt-8 min-h-[70vh] rounded-md p-4 md:p-7">
                 <h1 className="text-xl text-black font-sm font-montserrat mb-4">Projects</h1>
 
                 <div className="overflow-x-auto font-sm">
@@ -51,7 +59,7 @@ const Dashboard = () => {
                             {currentFiles.map((file, index) => (
                                 <tr key={index}>
                                     <td className="border text-black px-2 md:px-4 py-2">{indexOfFirstFile + index + 1}</td>
-                                    <td className="border text-black px-2 md:px-4 py-2">{file.name}</td>
+                                    <td className="border text-black px-2 md:px-4 py-2 cursor-pointer text-blue-500" onClick={() => handleProjectIdClick(file.name)}>{file.name}</td>
                                     <td className="border text-black px-2 md:px-4 py-2">Project Name</td>
                                     <td className="border text-black px-2 md:px-4 py-2">Organisation Name</td>
                                     <td className="border text-black px-2 md:px-4 py-2">Project Type</td>
@@ -65,7 +73,7 @@ const Dashboard = () => {
                                                 <img src={pdf} alt="PDF Icon" className="h-10 w-10" />
                                             </div>
                                             <input type="file" id="fileInput" className="hidden" onChange={handleFileUpload} />
-                                            <p className="mt-4 text-gray-500">Add more files</p>
+                                            <p className="mt-4 text-gray-500">Add files</p>
                                         </div>
                                     </td>
                                 </tr>
@@ -84,6 +92,8 @@ const Dashboard = () => {
                 </div>
 
             </div>
+        </div>
+        <Footer />
         </div>
     );
 };
