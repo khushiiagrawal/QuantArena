@@ -16,44 +16,57 @@ const EnterpriseRiskFramework = () => {
   ];
 
   return (
-    <div>
-      <div className="bg-[#D2D2D2] min-h-screen flex flex-col w-auto font-montserrat">
-        <div className="bg-[#9E6AED] px-4 py-4">
-        <div className="text-medium font-montserrat text-white font-normal mt-20 px-12 text-left">Services {">"} Risk Management {">"} Enterprise Risk Framework</div>
-          <h1 className="text-3xl font-montserrat text-white font-semibold mt-1 px-12 text-left">Enterprise Risk Framework</h1>
+    <div className="bg-[#D2D2D2] min-h-screen flex flex-col font-montserrat overflow-x-hidden">
+      <div className="bg-[#9E6AED] px-4 py-4">
+        <div className="text-medium font-montserrat text-white font-normal mt-20 px-12 text-left">
+          Services {">"} Risk Management {">"} Enterprise Risk Framework
         </div>
-        <div className="flex-1 overflow-x-auto">
-        <div className="min-w-full flex md:grid md:grid-cols-3 gap-8 px-4 sm:px-8 lg:px-16 py-6">
-            {/* Column Headings */}
-            <React.Fragment>
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex justify-center items-center text-center">
-                <h3 className="text-xl text-black font-semibold">Service Particulars</h3>
+        <h1 className="text-3xl font-montserrat text-white font-semibold mt-1 px-12 text-left">
+          Enterprise Risk Framework
+        </h1>
+      </div>
+      <div className="flex-1">
+        <div className="grid grid-cols-3 gap-4 px-2 md:px-6 lg:px-16 py-6">
+          {/* Column Headings */}
+          <React.Fragment>
+            <div className="bg-white p-4 md:p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-base md:text-xl text-black font-semibold break-words">
+                Service Particulars
+              </h3>
+            </div>
+            <div className="bg-white p-4 md:p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-base md:text-xl text-black font-bold break-words">
+                What is it?
+              </h3>
+            </div>
+            <div className="bg-white p-4 md:p-6 rounded-lg shadow-md text-center">
+              <h3 className="text-base md:text-xl text-black font-bold break-words">
+                Why is it important?
+              </h3>
+            </div>
+          </React.Fragment>
+          {/* Card Content */}
+          {cards.map((card, index) => (
+            <React.Fragment key={index}>
+              <div className="bg-[#EFEFEF] p-4 md:p-6 rounded-lg shadow-md break-words">
+                <h2 className="text-base md:text-xl text-black font-semibold mb-4 text-center break-words">
+                  {card.title}
+                </h2>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex justify-center items-center text-center">
-                <h3 className="text-xl text-black font-bold">What is it?</h3>
+              <div className="bg-[#EFEFEF] p-4 md:p-6 rounded-lg shadow-md break-words">
+                <p className="text-sm md:text-md text-gray-700 text-justify break-words" style={{ whiteSpace: "pre-line" }}>
+                  {card.what}
+                </p>
               </div>
-              <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow flex justify-center items-center text-center">
-                <h3 className="text-xl text-black font-bold">Why is it important?</h3>
+              <div className="bg-[#EFEFEF] p-4 md:p-6 rounded-lg shadow-md break-words">
+                <p className="text-sm md:text-md text-gray-700 text-justify break-words" style={{ whiteSpace: "pre-line" }}>
+                  {card.why}
+                </p>
               </div>
             </React.Fragment>
-            {/* Card Content */}
-            {cards.map((card, index) => (
-              <React.Fragment key={index}>
-                <div className="bg-[#EFEFEF] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <h2 className="text-xl text-black font-semibold mb-4 text-center">{card.title}</h2>
-                </div>
-                <div className="bg-[#EFEFEF] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <p className="text-gray-700 text-md p-2 text-justify text-center" style={{ whiteSpace: 'pre-line' }}>{card.what}</p>
-                </div>
-                <div className="bg-[#EFEFEF] p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                  <p className="text-gray-700 text-md p-2 text-justify text-center" style={{ whiteSpace: 'pre-line' }}>{card.why}</p>
-                </div>
-              </React.Fragment>
-            ))}
-          </div>
+          ))}
         </div>
       </div>
- 
     </div>
   );
 };
