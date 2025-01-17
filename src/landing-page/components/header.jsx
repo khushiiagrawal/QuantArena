@@ -2,11 +2,11 @@ import { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logout from "../images/logout.png";
 import pswd from "../images/pswd.png";
+import Logo from "../images/Logo.png";
 
 export default function Header() {
   const [openDropdownIndex, setOpenDropdownIndex] = useState(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [headerBg, setHeaderBg] = useState("bg-white bg-opacity-70");
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
   const location = useLocation();
   const [theme, setTheme] = useState("light");
@@ -40,45 +40,6 @@ export default function Header() {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const heroSection = document.getElementById("Hero");
-      const caSection = document.getElementById("ca");
-
-      if (heroSection || caSection) {
-        const section = heroSection || caSection;
-        const sectionBottom = section.offsetTop + section.offsetHeight;
-
-        if (window.scrollY <= sectionBottom) {
-          setHeaderBg("bg-white bg-opacity-70");
-        } else {
-          setHeaderBg("bg-black bg-opacity-70");
-        }
-      }
-    };
-
-    handleScroll();
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (location.pathname === "/home" || location.pathname === "/career") {
-      const caSection = document.getElementById("ca");
-      if (caSection && window.scrollY <= caSection.offsetTop + caSection.offsetHeight) {
-        setHeaderBg("bg-white bg-opacity-90");
-      }
-      if (location.pathname === "/contact-us") {
-        setHeaderBg("bg-white bg-opacity-70");
-      }
-    } else {
-      setHeaderBg("bg-white bg-opacity-70");
-    }
-  }, [location.pathname]);
-
-  useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768) {
         setIsMobileMenuOpen(false);
@@ -91,7 +52,8 @@ export default function Header() {
     };
   }, []);
 
-  const textColorClass = headerBg.includes("bg-black") ? "text-white" : "text-black";
+  const textColorClass = "text-black";
+  const hoverTextColorClass = "hover:text-gray-700";
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -110,8 +72,12 @@ export default function Header() {
 
   return (
     <div id="Header">
-      <header className={`fixed w-screen flex items-center justify-between px-8 md:px-16 py-3 md:py-5 ${headerBg} font-montserrat shadow-md transition-colors duration-300 z-10`}>
-        <div className={`text-2xl md:text-2xl ${textColorClass}`}>Logo</div>
+      <header className="fixed w-screen flex items-center justify-between px-8 md:px-12 py-3 md:py-5 bg-white bg-opacity-90 font-montserrat shadow-md transition-colors duration-300 z-10">
+        <div>
+          <Link to="/">
+            <img src={Logo} alt="Logo" className="w-48 h-auto" />
+          </Link>
+        </div>
         <nav
           className={`${isMobileMenuOpen
             ? "absolute top-full left-0 w-full bg-white z-50 flex flex-col"
@@ -127,7 +93,7 @@ export default function Header() {
             >
               <Link
                 to={item.link}
-                className={`${textColorClass} text-xl  hover:text-gray-600 hover:underline transition-colors flex items-center`}
+                className={`${textColorClass} text-xl ${hoverTextColorClass} text-black hover:underline transition-colors flex items-center`}
                 onClick={() => {
                   if (item.hasDropdown) {
                     handleDropdownToggle(index);
@@ -186,7 +152,7 @@ export default function Header() {
           </Link>
           {(location.pathname === "/dashboard" || location.pathname === "/projectid") && (
             <div className="relative md:hidden" ref={profileRef}>
-              <button onClick={handleProfileDropdownToggle} className=" flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 focus:outline-none">
+              <button onClick={handleProfileDropdownToggle} className="flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 focus:outline-none">
                 <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 bg-white rounded-full" />
               </button>
               {(isProfileDropdownOpen || isMobileMenuOpen) && (
@@ -222,7 +188,7 @@ export default function Header() {
           </Link>
           {(location.pathname === "/dashboard" || location.pathname === "/projectid") && (
             <div className="relative" ref={profileRef} onTouchStart={handleProfileDropdownToggle}>
-              <button onClick={handleProfileDropdownToggle} className=" flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 focus:outline-none">
+              <button onClick={handleProfileDropdownToggle} className="flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 focus:outline-none">
                 <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 bg-white rounded-full" />
               </button>
               {isProfileDropdownOpen && (
@@ -234,24 +200,23 @@ export default function Header() {
                       <div className="text-sm text-gray-600 truncate">john.doe@example.com</div>
                     </div>
                   </li>
-                 
-                    <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center" onClick={toggleTheme}>
+                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center" onClick={toggleTheme}>
                     {theme === "light" ? (
                       <>
-                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12h-1m15.36 4.95l-.7-.7M6.34 6.34l-.7-.7m12.02 12.02l-.7-.7M6.34 17.66l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z"></path>
-                      </svg>
-                      Light Mode
+                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12h-1m15.36 4.95l-.7-.7M6.34 6.34l-.7-.7m12.02 12.02l-.7-.7M6.34 17.66l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z"></path>
+                        </svg>
+                        Light Mode
                       </>
                     ) : (
                       <>
-                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12h-1m15.36 4.95l-.7-.7M6.34 6.34l-.7-.7m12.02 12.02l-.7-.7M6.34 17.66l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z"></path>
-                      </svg>
-                      Dark Mode
+                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3v1m0 16v1m8.66-8.66h-1M4.34 12h-1m15.36 4.95l-.7-.7M6.34 6.34l-.7-.7m12.02 12.02l-.7-.7M6.34 17.66l-.7-.7M12 5a7 7 0 100 14 7 7 0 000-14z"></path>
+                        </svg>
+                        Dark Mode
                       </>
                     )}
-                    </li>
+                  </li>
                   <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center">
                     <img src={pswd} alt="Change Password" className="w-5 h-5 mr-2" />
                     Change Password

@@ -1,4 +1,4 @@
-import Footer from "../../landing-page/components/footer";
+
 const fontStyle = {
     fontFamily: 'Montserrat, sans-serif',
     fontWeight: 'bold',
@@ -123,7 +123,7 @@ export function LegalDisclaimer() {
                     <br/><br/>Lorem ipsum dolor sit amet consectetur. Ut nec in elit condimentum neque turpis aliquam. Volutpat accumsan adipiscing elementum elementum quis ultrices scelerisque metus elementum. Et tortor in non volutpat. Ornare luctus id adipiscing amet turpis leo senectus morbi tincidunt. In et mauris in tristique. Pellentesque morbi id ut semper malesuada a platea sed. Aliquet amet morbi varius quisque imperdiet malesuada pretium ut arcu. Egestas ultricies habitasse id purus. Sed ut scelerisque volutpat scelerisque dolor vestibulum scelerisque arcu lobortis. Blandit facilisis mattis pellentesque phasellus. Sit elit amet eu turpis mauris a mattis. Mi est amet felis eget mauris nisl ac. Adipiscing libero vitae massa tellus ac viverra volutpat tempor felis. Id volutpat arcu id adipiscing at ut sodales mollis diam.
                 </p>
                 <h2 className="text-gray-900 mt-6 font-montserrat text-2xl font-bold px-14">Lorem ipsum dolor sit</h2>
-                <p className="text-gray-700 mt-2 font-montserrat text-lg text-justify mb-4 px-14">
+                <p className="text-gray-700 mt-2 font-montserrat text-lg text-justify px-14">
                     Lorem ipsum dolor sit amet consectetur. Gravida ornare mattis sociis sagittis tempor. Aliquam nisl a at eu viverra justo mi. Enim massa velit leo cras est. Feugiat neque lacus quam aliquam urna velit venenatis feugiat dignissim.
                     <br/><br/>Lorem ipsum dolor sit amet consectetur. Gravida ornare mattis sociis sagittis tempor. Aliquam nisl a at eu viverra justo mi. Enim massa velit leo cras est. Feugiat neque lacus quam aliquam urna velit venenatis feugiat dignissim.
                     Lorem ipsum dolor sit amet consectetur. Ut nec in elit condimentum neque turpis aliquam. Volutpat accumsan adipiscing elementum elementum quis ultrices scelerisque metus elementum. Et tortor in non volutpat. Ornare luctus id adipiscing amet turpis leo senectus morbi tincidunt. In et mauris in tristique. Pellentesque morbi id ut semper malesuada a platea sed. Aliquet amet morbi varius quisque imperdiet malesuada pretium ut arcu. Egestas ultricies habitasse id purus. Sed ut scelerisque volutpat scelerisque dolor vestibulum scelerisque arcu lobortis. Blandit facilisis mattis pellentesque phasellus. Sit elit amet eu turpis mauris a mattis. Mi est amet felis eget mauris nisl ac. Adipiscing libero vitae massa tellus ac viverra volutpat tempor felis. Id volutpat arcu id adipiscing at ut sodales mollis diam.
@@ -145,7 +145,7 @@ const PolicyPage = () => {
                 <TermsAndConditions />
                 <PrivacyPolicy />
                 <LegalDisclaimer />
-                <Footer />
+             
             </main>
         </div>
     );

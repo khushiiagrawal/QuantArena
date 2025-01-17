@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Phone from '../images/phone-call.png';
 import Mail from '../images/envelope.png';
 import Location from '../images/marker.png';
+import Logo from '../images/logo.png';
 
 
 export default function Footer() {
@@ -81,7 +82,9 @@ export default function Footer() {
       <div className="max-w-7xl container mx-auto mt-10 px-4 grid grid-cols-1 md:grid-cols-5 gap-10">
         {/* Logo and Subscribe */}
         <div className="col-span-1 md:col-span-1 flex justify-center md:justify-start">
-          <h1 className="text-xl font-montserrat px-20 py-2 font-bold">LOGO</h1>
+          <div className="w-48 h-auto">
+            <img src={Logo} alt="QuantArena" />
+          </div>
         </div>
 
         {/* Links */}

@@ -3,8 +3,8 @@ import herobg from '../images/Group2.png';
 export default function MainPage() {
   return (
     <div id="Hero" >
-      <div className="flex items-center justify-between px-6 py-8 min-h-screen min-w-screen  bg-black text-white md:px-20 md:py-12 relative" style={{ backgroundImage: `url(${herobg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-      <div className="w-screen md:max-w-lg mt-12 md:mt-18 md:ml-6 text-center md:text-left">
+      <div className="flex items-center justify-between px-6 py-8 min-h-screen w-auto  bg-black text-white md:px-20 md:py-12 relative" style={{ backgroundImage: `url(${herobg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="w-auto md:max-w-lg mt-12 md:mt-18 md:ml-6 text-center md:text-left">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold uppercase leading-tight font-kufam text-white">
           Advanced Analytics & Risk Management Solutions
         </h1>

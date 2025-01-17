@@ -1,4 +1,4 @@
-import Header from "./header";
+
 import MainPage, { AboutSection } from "./hero";
 import About from "./aboutus";
 import WhyChooseUs from "./whychooseus";
@@ -10,9 +10,7 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col min-h-screen w-screen bg-white">
       {/* Header Section */}
-      <header className=" sticky top-0 z-50">
-        <Header />
-      </header>
+    
 
       {/* Main Content */}
       <main className="flex-grow h-screen">
