@@ -462,16 +462,14 @@ const UploadDocuments = () => {
                                     <td className="border text-black border-gray-300 p-2">{document.name}</td>
                                     <td className="border text-black border-gray-300 p-2">{document.description}</td>
                                     <td className="border text-black border-gray-300 p-2">
-                                        {defaultValue !== "show" && (
-                                        defaultValue === "Master Table" ? (
-                                            <img src={docImage} alt="doc" className="h-12 w-12 items-center" />
-                                        ) : (
+                                        {document.attachmentURL && (
                                             <a href={document.attachmentURL} download={document.attachmentName} className="text-[#9E6AED] hover:text-[#9E6AED] hover:underline">
                                                 <img src={docImage} alt="doc" className="h-12 w-12 m-2 inline-block" />
                                                 Download
                                             </a>
                                         )
-                                        )
+                                        
+                                        
                                     }
                                     </td>
                                     <td className="border text-black border-gray-300 p-2">{document.remarks}</td>

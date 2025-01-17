@@ -72,7 +72,7 @@ export default function Header() {
 
   return (
     <div id="Header">
-      <header className="fixed w-screen flex items-center justify-between px-8 md:px-12 py-3 md:py-5 bg-white bg-opacity-90 font-montserrat shadow-md transition-colors duration-300 z-10">
+      <header className="fixed w-screen flex items-center justify-between px-8 md:px-12 py-3 md:py-5 bg-white bg-opacity-90 font-montserrat shadow-md transition-colors duration-300 z-50">
         <div>
           <Link to="/">
             <img src={Logo} alt="Logo" className="w-48 h-auto" />
