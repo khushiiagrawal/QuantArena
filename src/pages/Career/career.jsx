@@ -443,7 +443,7 @@ export const JobApplicationPage = () => {
 
                       <div>
                       <label className="block text-sm font-medium text-white mb-2" htmlFor="email">
-                        Email Address
+                        Email Address<span className='text-red-500'>*</span>
                       </label>
                       <input
                         id="email"
@@ -457,7 +457,7 @@ export const JobApplicationPage = () => {
 
                       <div>
                       <label className="block text-sm font-medium text-white mb-2" htmlFor="introduce">
-                        Introduce Yourself
+                        Introduce Yourself<span className='text-red-500'>*</span>
                       </label>
                       <textarea
                         id="introduce"
@@ -471,7 +471,7 @@ export const JobApplicationPage = () => {
 
                       <div>
                       <label className="block text-sm font-medium text-white mb-2" htmlFor="contribution">
-                        What will you bring to the table?
+                        What will you bring to the table?<span className='text-red-500'>*</span>
                       </label>
                       <textarea
                         id="contribution"
@@ -485,7 +485,7 @@ export const JobApplicationPage = () => {
 
                       <div>
                       <label className="block text-sm font-medium text-white mb-2" htmlFor="importance">
-                        Why do you think what you can bring to the table is important?
+                        Why do you think what you can bring to the table is important?<span className='text-red-500'>*</span>
                       </label>
                       <textarea
                         id="importance"
@@ -513,7 +513,7 @@ export const JobApplicationPage = () => {
 
                       <div>
                       <label className="block text-sm font-medium text-white mb-2" htmlFor="attachment">
-                        Relevant Attachments (One or more)
+                        Relevant Attachments (One or more)<span className='text-red-500'>*</span>
                       </label>
                       <input
                         id="attachment"
@@ -641,7 +641,7 @@ export const JobApplicationPage = () => {
 
                 <div className="w-full h-0.5 bg-gray-300 my-3"></div>
                 <label className="block text-sm font-medium text-black mb-2" htmlFor="name2">
-                  Name
+                  Name<span className='text-red-500'>*</span>
                 </label>
                 <input
                   id="name2"
@@ -655,7 +655,7 @@ export const JobApplicationPage = () => {
 
                 <div>
                 <label className="block text-sm font-medium text-black mb-2" htmlFor="phone2">
-                  Phone Number
+                  Phone Number<span className='text-red-500'>*</span>
                 </label>
                 <input
                   id="phone2"
@@ -676,7 +676,7 @@ export const JobApplicationPage = () => {
 
                 <div>
                 <label className="block text-sm font-medium text-black mb-2" htmlFor="email2">
-                  Email Address
+                  Email Address<span className='text-red-500'>*</span>
                 </label>
                 <input
                   id="email2"
@@ -690,7 +690,7 @@ export const JobApplicationPage = () => {
 
                 <div>
                 <label className="block text-sm font-medium text-black mb-2" htmlFor="introduce2">
-                  Introduce Yourself
+                  Introduce Yourself<span className='text-red-500'>*</span>
                 </label>
                 <textarea
                   id="introduce2"
@@ -704,7 +704,7 @@ export const JobApplicationPage = () => {
 
                 <div>
                 <label className="block text-sm font-medium text-black mb-2" htmlFor="contribution2">
-                  What will you bring to the table?
+                  What will you bring to the table?<span className='text-red-500'>*</span>
                 </label>
                 <textarea
                   id="contribution2"
@@ -732,7 +732,7 @@ export const JobApplicationPage = () => {
 
                 <div>
                 <label className="block text-sm font-medium text-black mb-2" htmlFor="attachment2">
-                  Relevant Attachments (One or more)
+                  Relevant Attachments (One or more)<span className='text-red-500'>*</span>
                 </label>
                 <input
                   id="attachment2"
