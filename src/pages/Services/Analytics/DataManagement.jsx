@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../../../landing-page/components/footer";
+
 
 const DataManagement = () => {
     const cards = [
@@ -30,7 +30,7 @@ const DataManagement = () => {
 
     return (
         <div>
-            <div className="bg-[#D2D2D2] min-h-screen flex flex-col w-screen font-montserrat">
+            <div className="bg-[#D2D2D2] min-h-screen flex flex-col w-auto font-montserrat">
                 <div className="bg-[#9E6AED] px-4 py-4">
                     <div className="text-medium font-montserrat text-white font-normal mt-20 px-12 text-left">Services {">"} Analytics {">"} Data Management</div>
                     <h1 className="text-3xl font-montserrat text-white font-semibold mt-1 px-12 text-left">Data Management and Processing</h1>
@@ -66,7 +66,7 @@ const DataManagement = () => {
                     </div>
                 </div>
             </div>
-            <Footer />
+           
         </div>
     );
 };

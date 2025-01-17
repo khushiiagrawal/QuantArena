@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import pdf from "./pics/pdf.png";
-import Footer from '../../landing-page/components/footer';
+
 
 const Dashboard = () => {
     const [files, setFiles] = useState([]);
@@ -93,7 +93,7 @@ const Dashboard = () => {
 
             </div>
         </div>
-        <Footer />
+       
         </div>
     );
 };

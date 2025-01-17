@@ -14,7 +14,7 @@ import a3 from './imgs/take.png'
 import a4 from './imgs/growth.png'
 import a5 from './imgs/impactful.png'
 import a6 from './imgs/balance.png'
-import Footer from '../../landing-page/components/footer'
+
 import herobg from '../../landing-page/images/Group2.png';
 import { FaBriefcase } from 'react-icons/fa';
 import { FaMapMarkerAlt } from 'react-icons/fa';
@@ -26,7 +26,7 @@ export default function CareerPageHero() {
   return (
     <div>
       <div id='ca'>
-        <div className="w-screen flex-wrap flex-col bg-black text-white flex h-screen items-center justify-center text-center p-4" style={{ backgroundImage: `url(${herobg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+        <div className="w-auto flex-wrap flex-col bg-black text-white flex h-screen items-center justify-center text-center p-4" style={{ backgroundImage: `url(${herobg})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
           <h1 className="text-3xl md:text-6xl font-bold font-kufam mt-6 mb-10 leading-relaxed">
             YOUR CAREER THROUGH <br /> OUR VISION
           </h1>
@@ -47,7 +47,7 @@ export default function CareerPageHero() {
       <WhyJoinUs />
       <ImageLayout2 />
       <JobApplicationPage />
-      <Footer />
+     
     </div>
     );
   }

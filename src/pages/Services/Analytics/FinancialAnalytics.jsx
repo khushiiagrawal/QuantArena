@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from "../../../landing-page/components/footer";
+
 
 const FinancialAnalytics = () => {
     const cards = [
@@ -36,7 +36,7 @@ const FinancialAnalytics = () => {
 
     return (
         <div>
-            <div className="bg-[#D2D2D2] min-h-screen flex flex-col w-screen font-montserrat">
+            <div className="bg-[#D2D2D2] min-h-screen flex flex-col w-auto font-montserrat">
                 <div className="bg-[#9E6AED] px-4 py-4">
                     <div className="text-medium font-montserrat text-white font-normal mt-20 px-12 text-left">Services {">"} Analytics {">"} Financial Analytics</div>
                     <h1 className="text-3xl font-montserrat text-white font-semibold mt-1 px-12 text-left">Financial Analytics</h1>
@@ -72,7 +72,7 @@ const FinancialAnalytics = () => {
                     </div>
                 </div>
             </div>
-        <Footer />
+      
     </div>
     );
 };

@@ -31,13 +31,13 @@ const Req = () => {
                 <>
                     <div className="w-full md:w-1/2 bg-white flex items-center justify-center">
                         <div className="w-full md:w-3/4 p-4 md:p-8">
-                            <h2 className="text-2xl text-black font-semibold mb-8 md:mb-16">Logo</h2>
-                            <div className='mb-8 md:mb-16'>
+                            
+                            <div>
                                 <h3 className="text-3xl text-black font-montserrat font-semibold mb-2">
                                     Reset Password
                                 </h3>
                                 <p className="text-gray-500 text-sm mb-6">
-                                    Enter your new password.
+                                Use this space to set you QAPMS password
                                 </p>
                                 <form>
                                     <div className="mb-4 relative">
@@ -51,7 +51,7 @@ const Req = () => {
                                             required
                                         />
                                         <span
-                                            className="absolute right-2 top-3 cursor-pointer"
+                                            className="absolute right-4 top-11 text-black cursor-pointer"
                                             onClick={togglePasswordVisibility}
                                         >
                                             {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -68,7 +68,7 @@ const Req = () => {
                                             required
                                         />
                                         <span
-                                            className="absolute right-2 top-3 cursor-pointer"
+                                            className="absolute right-4 top-11 text-black cursor-pointer"
                                             onClick={toggleConfirmPasswordVisibility}
                                         >
                                             {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
@@ -76,7 +76,7 @@ const Req = () => {
                                     </div>
                                     <button
                                         type="submit"
-                                        className="w-full bg-[#5BD8A3] text-white font-medium py-3 mb-2 hover:bg-green-200"
+                                        className="w-full bg-[#5BD8A3] text-white font-medium py-3 mb-2 border hover:border-white hover:focus:outline-none focus:outline-none hover:bg-green-200"
                                     >
                                         Reset Password
                                     </button>
@@ -101,13 +101,13 @@ const Req = () => {
                 <>
                     <div className="w-full md:w-1/2 bg-white flex items-center justify-center">
                         <div className="w-full md:w-3/4 p-4 md:p-8">
-                            <h2 className="text-2xl text-black font-semibold mb-8 md:mb-16">Logo</h2>
+                            
                             <div className='mb-8 md:mb-16'>
                                 <h3 className="text-3xl text-black font-montserrat font-semibold mb-2">
                                     Forgot Password
                                 </h3>
                                 <p className="text-gray-500 text-sm mb-6">
-                                    Enter your email address to reset your password.
+                                Hit send and you’ll receive an email containing the link for setting your password
                                 </p>
                                 <form onSubmit={(e) => { e.preventDefault(); setIsResetPassword(true); }}>
                                     <div className="mb-4">
@@ -123,7 +123,7 @@ const Req = () => {
                                     </div>
                                     <button
                                         type="submit"
-                                        className="w-full bg-[#5BD8A3] text-white font-medium py-3 mb-2 hover:bg-green-200"
+                                        className="w-full bg-[#5BD8A3] text-white border hover:border-white hover:focus:outline-none focus:outline-none font-medium py-3 mb-2 hover:bg-green-200"
                                     >
                                         Reset Password
                                     </button>
@@ -145,19 +145,19 @@ const Req = () => {
                 </>
             ) : isRequestAccess ? (
                 <>
-                    <div className="w-full md:w-1/2 bg-[#9E6AED] flex items-center justify-center py-8 md:py-4">
-                        <h1 className="text-white text-5xl font-montserrat mt-9 text-semibold text-center">
+                    <div className="w-full md:w-1/2 bg-[#9E6AED] flex items-center justify-center py-4 md:py-4">
+                        <h1 className="text-white md:text-5xl text-5xl font-montserrat text-semibold text-center">
                             QuantArena Project <br />Management System
                         </h1>
                     </div>
                     <div className="w-full md:w-1/2 bg-white flex items-center justify-center">
-                        <div className="w-full md:w-3/4 p-4 md:p-8">
-                            <h2 className="text-2xl text-black font-semibold mb-8 md:mb-16">Logo</h2>
-                            <h3 className="text-3xl text-black font-montserrat font-semibold mb-2">
+                        <div className="w-full h-full md:w-3/4 p-4 md:p-4 md:mt-8">
+                           
+                            <h3 className="text-3xl text-black font-montserrat md:mt-20 lg:mt-32 font-semibold mb-2">
                                 Request Access
                             </h3>
-                            <p className="text-gray-500 text-sm mb-6">
-                                Lorem ipsum dolor sit amet consectetur. Imperdiet duis risus.
+                            <p className="text-gray-500 text-sm md:mb-6">
+                            Use this space to raise access for the QAPMS portal
                             </p>
                             <div className="flex border w-full border-gray-300 bg-white overflow-hidden mb-6">
                                 <button
@@ -213,7 +213,7 @@ const Req = () => {
                                 </div>
                                 <button
                                     type="submit"
-                                    className="w-full bg-[#5BD8A3] text-white font-medium py-3 hover:bg-green-200"
+                                    className="w-full bg-[#5BD8A3] text-white border hover:border-white hover:focus:outline-none focus:outline-none font-medium py-3 hover:bg-green-200"
                                 >
                                     Request Access
                                 </button>
@@ -225,13 +225,13 @@ const Req = () => {
                 <>
                     <div className="w-full md:w-1/2 bg-white flex items-center justify-center">
                         <div className="w-full md:w-3/4 p-4 md:p-8">
-                            <h2 className="text-2xl text-black font-semibold mb-8 md:mb-16">Logo</h2>
-                            <div className='mt-8 md:mt-24'>
+                            
+                            <div className='mt-12 sm:mt-20 md:mt-24'>
                                 <h3 className="text-3xl text-black font-montserrat font-semibold mb-2">
                                     Sign In to QAPMS
                                 </h3>
                                 <p className="text-gray-500 text-sm mb-6">
-                                    Lorem ipsum dolor sit amet consectetur. Imperdiet duis risus.
+                                Use this space to sign in to the QAPMS portal
                                 </p>
                                 <div className="flex border w-full border-gray-300 bg-white overflow-hidden mb-4">
                                     <button
@@ -274,7 +274,7 @@ const Req = () => {
                                             required
                                         />
                                         <span
-                                            className="absolute right-2 top-3 cursor-pointer"
+                                            className="absolute right-4 top-11 text-black cursor-pointer"
                                             onClick={togglePasswordVisibility}
                                         >
                                             {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -288,7 +288,7 @@ const Req = () => {
                                     </div>
                                     <button
                                         type="submit"
-                                        className="w-full bg-[#5BD8A3] text-white font-medium py-3 hover:bg-green-200"
+                                        className="w-full bg-[#5BD8A3] text-white border hover:border-white hover:focus:outline-none focus:outline-none font-medium py-3 hover:bg-green-200"
                                     >
                                         Login
                                     </button>

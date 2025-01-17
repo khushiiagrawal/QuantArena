@@ -1,5 +1,5 @@
 
-import Footer from '../../landing-page/components/footer';
+
 
 
 import bgContact from './bg-contact.png';
@@ -13,6 +13,12 @@ import mapImage from './mapImage.png';
 import pinImage from './pinImage.png';
 
 const ContactPage = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
+    console.log(data);
+  };
   
   return (
     <div>
@@ -38,10 +44,7 @@ const ContactPage = () => {
             <div className="p-4 md:p-6 lg:flex gap-6">
               {/* Contact Form */}
             <div className="flex-1">
-              <form className="space-y-4" onSubmit={(e) => {
-                e.preventDefault();
-                // Add form submission logic here
-              }}>
+              <form className="space-y-4" onSubmit={handleSubmit}>
                 <div className="flex flex-col md:flex-row gap-4">
                   <div className="w-full md:w-1/2">
                     <label className="block font-montserrat text-black mb-2" htmlFor="firstName">First Name<span className='text-red-500'>*</span></label>
@@ -51,6 +54,7 @@ const ContactPage = () => {
                       placeholder="First Name"
                       className="w-full p-3 border text-black bg-white border-gray-300 rounded-md"
                       required
+                      name="firstName"
                     />
                   </div>
                   <div className="w-full md:w-1/2">
@@ -58,6 +62,7 @@ const ContactPage = () => {
                     <input
                       type="text"
                       id="lastName"
+                      name="lastName"
                       placeholder="Last Name"
                       className="w-full p-3 border text-black bg-white border-gray-300 rounded-md"
                       required
@@ -69,6 +74,7 @@ const ContactPage = () => {
                   <input
                     type="email"
                     id="email"
+                    name="email"
                     placeholder="Email Address"
                     className="w-full p-3 border text-black bg-white border-gray-300 rounded-md"
                     required
@@ -79,6 +85,7 @@ const ContactPage = () => {
                   <input
                     type="tel"
                     id="phone"
+                    name="phone"
                     placeholder="Phone Number"
                     className="w-full p-3 border text-black bg-white border-gray-300 rounded-md"
                     required
@@ -88,6 +95,7 @@ const ContactPage = () => {
                   <label className="block font-montserrat text-black mb-2" htmlFor="message">Message<span className='text-red-500'>*</span></label>
                   <textarea
                     id="message"
+                    name="message"
                     placeholder="Message"
                     className="w-full p-3 border text-black bg-white border-gray-300 rounded-md h-28"
                     required
@@ -162,9 +170,11 @@ const ContactPage = () => {
      
       </div>
       
-      <Footer/>
+   
     </div>
   );
 };
 export default ContactPage;
+
+
 

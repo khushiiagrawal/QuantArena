@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import Footer from "../../../landing-page/components/footer";
+
 import { FaChartLine, FaDatabase, FaMoneyBillWave, FaBuilding } from "react-icons/fa";
 
 const Analytics = () => {
@@ -45,7 +45,7 @@ const Analytics = () => {
         </Link>
       </div>
     </div>
-    <Footer/>
+  
     </div>
   );
 };
