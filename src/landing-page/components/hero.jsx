@@ -52,20 +52,14 @@ export function AboutSection() {
         <div className="w-20 md:w-60 h-0.5 bg-[#9E6AED] mx-auto my-4"></div>
 
         {/* Paragraph Section */}
-        <div className="mt-10 px-4 md:px-8">
+        <div className="mt-10 px-2 md:px-8">
           <p className="text-base md:text-lg text-gray-900 font-montserrat leading-8 mb-10">
-            QuantArena Analytics and Risk Management Private Limited
-            (<span className="italic">&quot;QuantArena&quot;</span>), having CIN ****, is a
-            company incorporated to cater to the diverse analytics and risk
-            management-related needs of individuals and/or organizations
-            belonging to any sector. Starting from any kind of analytics with or 
-            without statistical modeling to financial analytics, model validation, 
-            policy development and validation, enterprise risk framework development 
-            and maintenance; we are the one stop shop for all your analytics and risk 
-            management needs. Our solutions are the most practical, curated as per your 
-            specific needs and provided to you in the most simplistic manner making us the analytics 
-            and risk manager partner that you’d love to rely on. We do all these because we love doing these and our 
-            charges are very reasonably priced. Please refer to the Services section for details of our services.
+            
+            QuantArena Analytics and Risk Management Private Limited (‘QuantArena’), having CIN ****, is a company incorporated to cater the diverse analytics and risk management 
+            related needs of individuals and/or organizations belonging to any sector. Starting from any kind of analytics with or without statistical modeling to financial analytics, 
+            model validation, policy development and validation, enterprise risk framework development and maintenance; we are the one stop shop for all your analytics and risk management needs. 
+            Our solutions are the most practical, curated as per your specific needs and provided to you in the most simplistic manner making us the analytics and risk manager partner that you’d love to rely on. 
+            We do all these because we love doing these and our charges are very reasonably priced. Please refer to the Services section for details of our services.
           </p>
         </div>
       </div>

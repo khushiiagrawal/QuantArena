@@ -72,7 +72,7 @@ export default function Header() {
 
   return (
     <div id="Header">
-      <header className="fixed w-screen flex items-center justify-between px-8 md:px-12 py-3 md:py-5 bg-white bg-opacity-90 font-montserrat shadow-md transition-colors duration-300 z-50">
+      <header className="fixed w-full flex items-center justify-between px-8 md:px-12 py-3 md:py-5 bg-white bg-opacity-90 font-montserrat shadow-md transition-colors duration-300 z-50">
         <div>
           <Link to="/">
             <img src={Logo} alt="Logo" className="w-48 h-auto" />
@@ -145,7 +145,7 @@ export default function Header() {
           ))}
           <Link
             to="/contact-us"
-            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center md:hidden ${location.pathname === "/dashboard" || location.pathname === "/projectid" ? "mr-4" : ""}`}
+            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center md:hidden ${location.pathname === "/dashboard" || location.pathname === "/projectid" || location.pathname === "/changepswd" ? "mr-4" : ""}`}
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Contact Us
@@ -164,7 +164,9 @@ export default function Header() {
                       <div className="text-sm text-start text-gray-600 truncate max-w-full">john.doe@example.com</div>
                     </div>
                   </li>
-                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer">Dark/Light Mode</li>
+                  {(location.pathname === "/qapms") && (
+                    <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer" onClick={toggleTheme}>Dark/Light Mode</li>
+                  )}
                   <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center">
                     <img src={pswd} alt="Change Password" className="w-5 h-5 mr-2" />
                     Change Password
@@ -182,11 +184,11 @@ export default function Header() {
         <div className="hidden md:flex items-center">
           <Link
             to="/contact-us"
-            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center ${location.pathname === "/dashboard" || location.pathname === "/projectid" ? "mr-4" : ""}`}
+            className={`bg-[#9E6AED] text-white px-4 py-2 rounded hover:bg-purple-200 transition-colors flex items-center ${location.pathname === "/dashboard" || location.pathname === "/projectid" || location.pathname === "/changepswd" ? "mr-4" : ""}`}
           >
             Contact Us
           </Link>
-          {(location.pathname === "/dashboard" || location.pathname === "/projectid") && (
+          {(location.pathname === "/dashboard" || location.pathname === "/projectid" || location.pathname === "/changepswd") && (
             <div className="relative" ref={profileRef} onTouchStart={handleProfileDropdownToggle}>
               <button onClick={handleProfileDropdownToggle} className="flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 focus:outline-none">
                 <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 bg-white rounded-full" />
@@ -200,6 +202,11 @@ export default function Header() {
                       <div className="text-sm text-gray-600 truncate">john.doe@example.com</div>
                     </div>
                   </li>
+                  {(location.pathname === "/projectid") && (
+                    <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer" onClick={toggleTheme}>
+                      Dark/Light Mode
+                    </li>
+                  )}
                   <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center" onClick={toggleTheme}>
                     {theme === "light" ? (
                       <>
@@ -217,9 +224,12 @@ export default function Header() {
                       </>
                     )}
                   </li>
-                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center">
-                    <img src={pswd} alt="Change Password" className="w-5 h-5 mr-2" />
-                    Change Password
+                  
+                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white text-black bg-gray-100 cursor-pointer flex items-center">
+                    <Link to="/changepswd" className="flex items-center text-black hover:text-white">
+                      <img src={pswd} alt="Change Password" className="w-5 h-5 mr-2 text-black hover:text-white" />
+                      Change Password
+                    </Link>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center">
                     <img src={logout} alt="Logout" className="w-5 h-5 mr-2" />
