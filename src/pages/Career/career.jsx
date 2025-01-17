@@ -113,32 +113,32 @@ const WhyJoinUs = () => {
     {
       title: "Fast Growing Company",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Porttitor turpis eget diam magna donec rhoncus sagittis lorem id.",
+        "We are a new company but the domain at hand is ever-growing having its footprint in all sectors and processes. This comes with endless possibilities of research and innovation.",
     },
     {
       title: "Great Colleagues",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Porttitor turpis eget diam magna donec rhoncus sagittis lorem id.",
+        "People at QuantArena stand out because of their unique outlook towards the world and it’s ever-changing landscape. Working with us not just enables you to work with some best minds, we all walk along with you on our common path called ‘growth’.",
     },
     {
       title: "Take Charge",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Porttitor turpis eget diam magna donec rhoncus sagittis lorem id.",
+        "We are advocates of independence and we love people who take charge in a work and leads the same.",
     },
     {
       title: "Growth Opportunities",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Porttitor turpis eget diam magna donec rhoncus sagittis lorem id.",
+        "QuantArena is not bound by any specific sectors or processes for their analytics and risk management solutions. Therefore the growth opportunities of the company, in turn the people at QuantArena, are also endless.",
     },
     {
       title: "Impactful And Challenging Work",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Porttitor turpis eget diam magna donec rhoncus sagittis lorem id.",
+        "As part of QuantArena, you will be providing different kinds of analytics and risk management solutions to clients belonging from several different sectors. This will not just be challenging but depending on the nature of assignment, you will have the chance of leaving not one but many impacts.",
     },
     {
       title: "Work-Life Balance",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Porttitor turpis eget diam magna donec rhoncus sagittis lorem id.",
+        "We are a huge promoter of work life balance as an imbalanced work life culture results in unproductivity and inefficiency ultimately translating to inferior quality work.",
     },
   ];
 
