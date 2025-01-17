@@ -131,7 +131,7 @@ const WhyJoinUs = () => {
         "QuantArena is not bound by any specific sectors or processes for their analytics and risk management solutions. Therefore the growth opportunities of the company, in turn the people at QuantArena, are also endless.",
     },
     {
-      title: "Impactful And Challenging Work",
+      title: "Impactful & Challenging Work",
       description:
         "As part of QuantArena, you will be providing different kinds of analytics and risk management solutions to clients belonging from several different sectors. This will not just be challenging but depending on the nature of assignment, you will have the chance of leaving not one but many impacts.",
     },
@@ -144,7 +144,7 @@ const WhyJoinUs = () => {
 
   return (
     <section className="bg-[#D7CDE6] w-full py-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-4 lg:px-2">
         <h2 className="text-3xl font-montserrat font-semibold text-black text-center mb-16 underline decoration-2" style={{ textUnderlineOffset: '16px', textDecorationColor: '#9C69EB' }}>
           Why Join Us?
         </h2>
@@ -152,13 +152,13 @@ const WhyJoinUs = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-white shadow-md border-gray-400 border rounded-lg p-6 hover:shadow-lg transition"
+              className="bg-white shadow-md border-gray-400 border rounded-lg py-6 px-6 hover:shadow-lg transition"
             >
               <div className="w-12 h-12 bg-[#D7CDE6] rounded-full mb-4 flex items-center justify-center">
                 <img src={index === 0 ? a1 : index === 1 ? a2 : index === 2 ? a3 : index === 3 ? a4 : index === 4 ? a5 : a6} alt="Icon" className="w-7 h-7" />
               </div>
               <h3 className="text-xl text-gray-800 font-montserrat font-semibold mb-1">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <p className="text-gray-600 font-montserrat text-justify mt-2">{feature.description}</p>
             </div>
           ))}
         </div>
