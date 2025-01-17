@@ -26,7 +26,7 @@ const Req = () => {
     };
 
     return (
-        <div className="flex flex-col md:flex-row h-screen font-montserrat w-screen">
+        <div className="flex flex-col md:flex-row h-auto font-montserrat w-screen">
             {isResetPassword ? (
                 <>
                     <div className="w-full md:w-1/2 bg-white flex items-center justify-center">
@@ -90,7 +90,7 @@ const Req = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full md:w-1/2 bg-[#9E6AED] flex items-center justify-center py-0 md:py-4">
+                    <div className="w-full min-h-screen md:w-1/2 bg-[#9E6AED] flex items-center justify-center py-0 md:py-4">
                         <h1 className="text-white text-5xl font-montserrat text-semibold text-center">
                             QuantArena Project <br />Management System
                         </h1>
@@ -137,7 +137,7 @@ const Req = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full md:w-1/2 bg-[#9E6AED] flex items-center justify-center py-0 md:py-4">
+                    <div className="w-full min-h-screen md:w-1/2 bg-[#9E6AED] flex items-center justify-center py-0 md:py-4">
                         <h1 className="text-white text-5xl font-montserrat text-semibold text-center">
                             QuantArena Project <br />Management System
                         </h1>
@@ -145,15 +145,15 @@ const Req = () => {
                 </>
             ) : isRequestAccess ? (
                 <>
-                    <div className="w-full md:w-1/2 bg-[#9E6AED] flex items-center justify-center py-4 md:py-4">
+                    <div className="w-full min-h-screen md:w-1/2 bg-[#9E6AED] flex items-center justify-center py-4 md:py-4">
                         <h1 className="text-white md:text-5xl text-5xl font-montserrat text-semibold text-center">
                             QuantArena Project <br />Management System
                         </h1>
                     </div>
-                    <div className="w-full md:w-1/2 bg-white flex items-center justify-center">
-                        <div className="w-full h-full md:w-3/4 p-4 md:p-4 md:mt-8">
+                    <div className="w-full min-h-screen md:w-1/2 bg-white flex items-center justify-center">
+                        <div className="w-full h-screen md:w-3/4 p-4 md:p-4 md:mt-8">
                            
-                            <h3 className="text-3xl text-black font-montserrat md:mt-20 lg:mt-32 font-semibold mb-2">
+                            <h3 className="text-3xl text-black font-montserrat mt-24 md:mt-20 lg:mt-32 font-semibold mb-2">
                                 Request Access
                             </h3>
                             <p className="text-gray-500 text-sm md:mb-6">
@@ -226,7 +226,7 @@ const Req = () => {
                     <div className="w-full md:w-1/2 bg-white flex items-center justify-center">
                         <div className="w-full md:w-3/4 p-4 md:p-8">
                             
-                            <div className='mt-12 sm:mt-20 md:mt-24'>
+                            <div className='mt-16 sm:mt-20 md:mt-24'>
                                 <h3 className="text-3xl text-black font-montserrat font-semibold mb-2">
                                     Sign In to QAPMS
                                 </h3>
@@ -296,7 +296,7 @@ const Req = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-full md:w-1/2 bg-[#9E6AED] flex items-center justify-center py-8 md:py-4">
+                    <div className="w-full min-h-screen md:w-1/2 bg-[#9E6AED] flex items-center justify-center py-8 md:py-4">
                         <h1 className="text-white text-5xl font-montserrat text-semibold text-center">
                             QuantArena Project <br />Management System
                         </h1>

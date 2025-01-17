@@ -20,6 +20,7 @@ import { TermsAndConditions } from "./landing-page/components/terms&conditions";
 import { PrivacyPolicy } from "./landing-page/components/terms&conditions";
 import { LegalDisclaimer } from "./landing-page/components/terms&conditions";
 import ProjectId from "./pages/QAPMS/projectid";
+import ChangePassword from "./pages/QAPMS/changepswd";
 
 
 
@@ -54,6 +55,7 @@ export default function App() {
         <Route path="privacy" element={<PrivacyPolicy />} />
         <Route path="legal" element={<LegalDisclaimer />} />
         <Route path="projectid" element={<ProjectId />} />
+        <Route path="changepswd" element={<ChangePassword />} />
       </Route>
     </Routes>
   );
