@@ -40,7 +40,8 @@ export default function WhyChooseUs() {
                         </div>
                     </div>
                     <h3 className="text-xl font-semibold font-montserrat text-gray-900 mt-10">
-                        Inquisitiveness And Expertise
+                    Advanced Analytics
+                        
                     </h3>
                     <p className="text-gray-700 mt-8 text-sm font-montserrat leading-relaxed">
                         
@@ -86,7 +87,8 @@ export default function WhyChooseUs() {
                         </div>
                     </div>
                     <h3 className="text-xl font-semibold font-montserrat mt-10 text-gray-900 mb-4">
-                        Advanced Analytics
+                        
+                        Inquisitiveness And Expertise
                     </h3>
                     <p className="text-gray-700 font-montserrat text-sm mt-8 leading-relaxed">
                     Our team consists of individuals who are inquisitive by nature and have
@@ -122,15 +124,14 @@ export function PartnerSection() {
           {/* Paragraph Section */}
           <div className="mt-10 px-4 md:px-8">
             <p className="text-base md:text-lg text-gray-900 font-montserrat leading-8 mb-10">
-              We bring unparalleled expertise and a commitment to excellence. Our
-              team of dedicated professionals leverages assiduous research and
-              cutting-edge technologies to deliver tailored solutions that meet
-              your unique needs. We prioritize accuracy, integrity, and client
-              satisfaction, ensuring that every decision is backed by robust data
-              and statistical insights. By choosing us as your analytics and risk
-              management partner, you gain the most reliable ally focused on
-              driving your business forward and helping you navigate challenges
-              with confidence and innovation.
+            We bring unparalleled expertise and a commitment to excellence. 
+            Our team of dedicated professionals leverage assiduous research and 
+            cutting-edge technologies to deliver tailored solutions that meet your 
+            unique needs. We prioritize accuracy, integrity and client satisfaction, 
+            ensuring that every decision is backed by robust data and statistical insights. 
+            By choosing us as your analytics and risk management partner, you gain the most 
+            reliable ally focused on driving your business forward and helping you 
+            navigate challenges with confidence and innovation.
             </p>
           </div>
         </div>

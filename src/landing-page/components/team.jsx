@@ -142,7 +142,7 @@ export function TeamSection() {
 
                                 <span>
                                 <a
-                                    href={selectedMember.name === 'Niloy Ray' ? 'https://linkedin.com/in/niloyray' : selectedMember.name === 'Dona Saha Ray' ? 'https://linkedin.com/in/donasaharay' : 'https://linkedin.com/in/debrajdey'}
+                                    href={selectedMember.name === 'Niloy Ray' ? 'https://www.linkedin.com/in/niloy-ray-07bbba176/' : selectedMember.name === 'Dona Saha Ray' ? 'https://www.linkedin.com/in/dona-saha-ray-a736aa134/' : 'https://www.linkedin.com/in/debraj-dey-0602a4167/'}
                                     className="text-[#824AD8] font-montserrat hover:underline text-lg"
                                     target="_blank" rel="noopener noreferrer"
                                 >
@@ -151,7 +151,7 @@ export function TeamSection() {
                                 </span>
                                 <span>
                                 <a
-                                    href={selectedMember.name === 'Niloy Ray' ? 'https://facebook.com/niloyray' : selectedMember.name === 'Dona Saha Ray' ? 'https://facebook.com/donasaharay' : 'https://facebook.com/debrajdey'}
+                                    href={selectedMember.name === 'Niloy Ray' ? 'https://www.facebook.com/niloy.ray.5/' : selectedMember.name === 'Dona Saha Ray' ? 'https://www.facebook.com/dona.saha.ray001' : 'https://www.facebook.com/debraj.dey.773/'}
                                     className="text-[#824AD8] font-montserrat hover:underline text-lg"
                                     target="_blank" rel="noopener noreferrer"
                                 >
