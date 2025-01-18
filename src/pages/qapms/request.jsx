@@ -156,7 +156,7 @@ const Req = () => {
                             <h3 className="text-3xl text-black font-montserrat mt-24 md:mt-20 lg:mt-32 font-semibold mb-2">
                                 Request Access
                             </h3>
-                            <p className="text-gray-500 text-sm md:mb-6">
+                            <p className="text-gray-500 text-sm mb-6 md:mb-6">
                             Use this space to raise access for the QAPMS portal
                             </p>
                             <div className="flex border w-full border-gray-300 bg-white overflow-hidden mb-6">

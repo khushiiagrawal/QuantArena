@@ -139,9 +139,9 @@ export default function Footer() {
           <div>
             <h2 className="font-bold mb-4 underline text-white">Links</h2>
             <ul className="space-y-2">
-              <li><a className="text-white" href="/">Instagram</a></li>
-              <li><a className="text-white" href="/">Facebook</a></li>
               <li><a className="text-white" href="/">LinkedIn</a></li>
+              <li><a className="text-white" href="/">Facebook</a></li>
+              <li><a className="text-white" href="/">Instagram</a></li>
             </ul>
           </div>
         </div>

@@ -167,9 +167,14 @@ export default function Header() {
                   {(location.pathname === "/qapms") && (
                     <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer" onClick={toggleTheme}>Dark/Light Mode</li>
                   )}
-                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center">
-                    <img src={pswd} alt="Change Password" className="w-5 h-5 mr-2" />
-                    Change Password
+                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer" onClick={toggleTheme}>
+                    {theme === "light" ? "Dark Mode" : "Light Mode"}
+                    </li>
+                  <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white text-black bg-gray-100 cursor-pointer flex items-center">
+                    <Link to="/changepswd" className="flex items-center text-black hover:text-white">
+                      <img src={pswd} alt="Change Password" className="w-5 h-5 mr-2 text-black hover:text-white" />
+                      Change Password
+                    </Link>
                   </li>
                   <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center">
                     <img src={logout} alt="Logout" className="w-5 h-5 mr-2" />
