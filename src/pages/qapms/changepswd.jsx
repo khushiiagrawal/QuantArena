@@ -27,7 +27,7 @@ const ChangePassword = () => {
 
     return (
         
-            <div className="w-full  min-h-screen bg-white flex flex-col md:flex-row items-center justify-center">
+            <div className="w-auto min-h-screen bg-white flex flex-col md:flex-row items-center justify-center">
                 <div className="w-full min-h-screen md:w-1/2 bg-[#9E6AED] flex items-center justify-center py-0 md:py-4">
                     <h1 className="text-white text-5xl font-montserrat text-semibold text-center">
                         QuantArena Project <br />Management System

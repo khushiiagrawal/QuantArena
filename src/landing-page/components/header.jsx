@@ -150,7 +150,7 @@ export default function Header() {
           >
             Contact Us
           </Link>
-          {(location.pathname === "/dashboard" || location.pathname === "/projectid") && (
+          {(location.pathname === "/dashboard" || location.pathname === "/projectid" || location.pathname === "/changepswd" ) && (
             <div className="relative md:hidden" ref={profileRef}>
               <button onClick={handleProfileDropdownToggle} className="flex bg-white rounded-full w-12 h-12 border border-gray-100 hover:bg-gray-300 hover:border-gray-200 focus:outline-none">
                 <img src="/path/to/profile-image.jpg" alt="Profile" className="w-8 h-8 bg-white rounded-full" />

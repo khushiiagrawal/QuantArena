@@ -223,7 +223,7 @@ const Req = () => {
                 </>
             ) : (
                 <>
-                    <div className="w-full md:w-1/2 bg-white flex items-center justify-center">
+                    <div className="w-full min-h-screen md:w-1/2 bg-white flex items-center justify-center">
                         <div className="w-full md:w-3/4 p-4 md:p-8">
                             
                             <div className='mt-16 sm:mt-20 md:mt-24'>
