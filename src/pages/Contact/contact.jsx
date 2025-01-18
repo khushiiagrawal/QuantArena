@@ -146,12 +146,12 @@ const ContactPage = () => {
           </div>
         </div>
         
-        <div className="relative w-full mt-10">
+        <div className="relative w-full mt-4">
           {/* Map Image */}
           <img
             src={mapImage}
             alt="Map Location"
-            className="w-full h-100 object-cover"
+            className="w-full margin py-4 px-8 md:px-16 md:py-8 h-90 object-cover"
           />
           {/* Clickable Pin */}
           <a
