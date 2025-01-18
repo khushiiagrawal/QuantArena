@@ -12,8 +12,17 @@ export default function Header() {
   const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
   };
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme") || "light";
+    setTheme(savedTheme);
+    document.documentElement.setAttribute("data-theme", savedTheme);
+  }, []);
   const dropdownRefs = useRef([]);
   const profileRef = useRef(null);
 
@@ -164,12 +173,11 @@ export default function Header() {
                       <div className="text-sm text-start text-gray-600 truncate max-w-full">john.doe@example.com</div>
                     </div>
                   </li>
-                  {(location.pathname === "/qapms") && (
-                    <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer" onClick={toggleTheme}>Dark/Light Mode</li>
-                  )}
+                  {(location.pathname === "/projectid") && (
                   <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer" onClick={toggleTheme}>
                     {theme === "light" ? "Dark Mode" : "Light Mode"}
                     </li>
+                  )}
                   <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white text-black bg-gray-100 cursor-pointer flex items-center">
                     <Link to="/changepswd" className="flex items-center text-black hover:text-white">
                       <img src={pswd} alt="Change Password" className="w-5 h-5 mr-2 text-black hover:text-white" />
@@ -208,11 +216,8 @@ export default function Header() {
                     </div>
                   </li>
                   {(location.pathname === "/projectid") && (
-                    <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer" onClick={toggleTheme}>
-                      Dark/Light Mode
-                    </li>
-                  )}
                   <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white bg-gray-100 cursor-pointer flex items-center" onClick={toggleTheme}>
+
                     {theme === "light" ? (
                       <>
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -220,6 +225,7 @@ export default function Header() {
                         </svg>
                         Light Mode
                       </>
+                      
                     ) : (
                       <>
                         <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -229,6 +235,7 @@ export default function Header() {
                       </>
                     )}
                   </li>
+                  )}
                   
                   <li className="px-4 py-2 hover:bg-[#9E6AED] hover:text-white text-black bg-gray-100 cursor-pointer flex items-center">
                     <Link to="/changepswd" className="flex items-center text-black hover:text-white">

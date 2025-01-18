@@ -62,7 +62,7 @@ export default function About() {
                                      we are your preferred partner in navigating complexity and uncertainty, 
                                      empowering businesses to make informed decisions, optimize performance and
                                       safeguard against emerging risks through innovative analytics and 
-                                      comprehensive risk management solutions.
+                                      comprehensive risk management solutions.
                             </p>
                         </div>
                     </div>

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import docImage from "./pics/doc.png";
 
+
+
 const UploadDocuments = () => {
     const [defaultValue, setDefaultValue] = useState("");
     const [documentName, setDocumentName] = useState("");
@@ -238,11 +240,11 @@ const UploadDocuments = () => {
                                         {index + 1}
                                     </td>
                                     <td className="border-b p-6 text-center text-black border-gray-300">-</td>
-                                    <td className="border-b  p-6 text-center text-black border-gray-300">-</td>
-                                    <td className="border-b  p-6 text-center text-black border-gray-300">-</td>
-                                    <td className="border-b  p-6 text-center text-black border-gray-300">-</td>
-                                    <td className="border-b  p-6 text-center text-black border-gray-300">-</td>
-                                    <td className="border-b  p-6 border-r text-center text-black border-gray-300">-</td>
+                                    <td className="border-b p-6 text-center text-black border-gray-300">-</td>
+                                    <td className="border-b p-6 text-center text-black border-gray-300">-</td>
+                                    <td className="border-b p-6 text-center text-black border-gray-300">-</td>
+                                    <td className="border-b p-6 text-center text-black border-gray-300">-</td>
+                                    <td className="border-b p-6 border-r text-center text-black border-gray-300">-</td>
                                 </tr>
                             ))
                         ) : (
@@ -250,12 +252,12 @@ const UploadDocuments = () => {
                             .slice((currentPage - 1) * filesPerPage, currentPage * filesPerPage)
                             .map((document, index) => (
                                 <tr key={index}>
-                                    <td className="border text-center text-black border-gray-300">
+                                    <td className="border-b border-l text-center text-black border-gray-300">
                                         {document.srNo}
                                     </td>
-                                    <td className="border text-center text-black border-gray-300">{document.name}</td>
-                                    <td className="border text-center text-black border-gray-300">{document.description}</td>
-                                    <td className="border text-center text-black border-gray-300">
+                                    <td className="border-b text-center text-black border-gray-300">{document.name}</td>
+                                    <td className="border-b text-center text-black border-gray-300">{document.description}</td>
+                                    <td className="border-b text-center text-black border-gray-300">
                                         {document.attachmentURL && (
                                             <a href={document.attachmentURL} download={document.attachmentName} className="hover:underline text-[#9E6AED] hover:text-[#9E6AED]">
                                                 <img src={docImage} alt="doc" className="h-12 w-12 m-2 inline-block" />
@@ -263,9 +265,9 @@ const UploadDocuments = () => {
                                             </a>
                                         )}
                                     </td>
-                                    <td className="border text-center text-black border-gray-300">{document.remarks}</td>
-                                    <td className="border text-center text-black border-gray-300">{document.uploadTime}</td>
-                                    <td className="border text-center text-black border-gray-300">User</td>
+                                    <td className="border-b text-center text-black border-gray-300">{document.remarks}</td>
+                                    <td className="border-b text-center text-black border-gray-300">{document.uploadTime}</td>
+                                    <td className="border-b border-r text-center text-black border-gray-300">User</td>
                                 </tr>
                             ))
                         )}
@@ -293,6 +295,7 @@ const UploadDocuments = () => {
                     <option value={20}>20</option>
                 </select>
             </div>
+          
         </div>
     );
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const FormComponent = () => {
@@ -7,20 +7,13 @@ const FormComponent = () => {
     const [severity, setSeverity] = useState('');
     const [openDropdown, setOpenDropdown] = useState(null);
     const [referenceSection, setReferenceSection] = useState('');
+    const [description, setDescription] = useState('');
+    const [severityRationale, setSeverityRationale] = useState('');
+    const [mitigationSuggestions, setMitigationSuggestions] = useState('');
 
-    const [formData, setFormData] = useState({
-        outcomeType: '',
-        title: '',
-        description: '',
-        referenceSection: '',
-        severity: '',
-        severityRationale: '',
-        mitigationSuggestions: '',
-    });
-
+    const [formData, setFormData] = useState([]);
     const [filesPerPage, setFilesPerPage] = useState(5);
     const [currentPage, setCurrentPage] = useState(1);
-    const uploadedDocuments = []; // Define uploadedDocuments as an empty array or with your data
 
     const handleSelect = (setter) => (value) => {
         setter(value);
@@ -28,14 +21,17 @@ const FormComponent = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setFormData({
+        const newEntry = {
+            srNo: formData.length + 1,
             outcomeType,
             title,
-            description: e.target.description.value,
+            description,
             referenceSection,
-            severityRationale: e.target.severityRationale.value,
-            mitigationSuggestions: e.target.mitigationSuggestions.value,
-        });
+            severity,
+            severityRationale,
+            mitigationSuggestions,
+        };
+        setFormData([...formData, newEntry]);
     };
 
     const handlePrevClick = () => {
@@ -45,7 +41,7 @@ const FormComponent = () => {
     };
 
     const handleNextClick = () => {
-        if (currentPage < Math.ceil(uploadedDocuments.length / filesPerPage)) {
+        if (currentPage < Math.ceil(formData.length / filesPerPage)) {
             setCurrentPage(currentPage + 1);
         }
     };
@@ -158,6 +154,8 @@ const FormComponent = () => {
                         <textarea
                             id="description"
                             className="mt-2 focus:outline-none border rounded px-4 py-3 h-14 text-left w-full bg-gray-200 text-black hover:border-white"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
                             rows="3"
                             placeholder="Enter description"
                         ></textarea>
@@ -179,7 +177,7 @@ const FormComponent = () => {
                     </div>
 
                     {['Required Action Item', 'Limitation'].includes(outcomeType) && (
-                        <>
+                        <React.Fragment>
                             {/* Severity */}
                             <div>
                                 <label htmlFor="severity" className="block text-lg font-medium font-montserrat text-gray-800">
@@ -196,7 +194,7 @@ const FormComponent = () => {
                                     onSelect={handleSelect(setSeverity)}
                                 />
                             </div>
-
+                    
                             {/* Severity Rationale */}
                             <div>
                                 <label htmlFor="severityRationale" className="block text-lg font-medium font-montserrat text-gray-800">
@@ -207,9 +205,11 @@ const FormComponent = () => {
                                     className="mt-2 focus:outline-none border rounded px-4 py-3 h-14 text-left w-full bg-gray-200 text-black hover:border-white"
                                     rows="3"
                                     placeholder="Enter rationale"
+                                    value={severityRationale}
+                                    onChange={(e) => setSeverityRationale(e.target.value)}
                                 ></textarea>
                             </div>
-
+                    
                             {/* Mitigation Suggestions */}
                             <div className="md:col-span-2">
                                 <label htmlFor="mitigationSuggestions" className="block text-lg font-medium font-montserrat text-gray-800">
@@ -220,9 +220,11 @@ const FormComponent = () => {
                                     className="mt-2 focus:outline-none border rounded px-4 py-3 h-14 text-left w-1/2 bg-gray-200 text-black hover:border-white"
                                     rows="3"
                                     placeholder="Enter suggestions"
+                                    value={mitigationSuggestions}
+                                    onChange={(e) => setMitigationSuggestions(e.target.value)}
                                 ></textarea>
                             </div>
-                        </>
+                        </React.Fragment>
                     )}
 
                     <div className="flex justify-left space-x-4 mt-6">
@@ -239,6 +241,7 @@ const FormComponent = () => {
                             Submit
                         </button>
                     </div>
+                
                 </div>
             </form>
             <RiskFindingsTable
@@ -253,38 +256,73 @@ const FormComponent = () => {
     );
 };
 
-const RiskFindingsTable = ({ formData, currentPage, handlePrevClick, handleNextClick, filesPerPage, setFilesPerPage }) => {
+export const RiskFindingsTable = ({ formData, currentPage, handlePrevClick, handleNextClick, filesPerPage, setFilesPerPage }) => {
     return (
         <>
             <div className="text-left text-lg font-montserrat font-semibold w-full mt-12 text-gray-900">
                 Risk Findings
             </div>
-            <table className="w-full mt-6">
-                <thead>
-                    <tr className="border font-montserrat text-black font-normal border-[#AFAFAF] bg-[#F7F1FF]">
-                        <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Sr. No.</th>
-                        <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Outcome Type</th>
-                        <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Title</th>
-                        <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Description</th>
-                        <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Reference Section</th>
-                        <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Severity</th>
-                        <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Severity Rationale</th>
-                        <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Mitigation Suggestions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td className="border-b border-l p-6 text-center text-black border-gray-300">1</td>
-                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.outcomeType || '-'}</td>
-                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.title || '-'}</td>
-                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.description || '-'}</td>
-                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.referenceSection || '-'}</td>
-                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.severity || '-'}</td>
-                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.severityRationale || '-'}</td>
-                        <td className="border-b border-r text-center p-6 text-black border-gray-300">{formData.mitigationSuggestions || '-'}</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div className="overflow-x-auto">
+                <table className="w-full mt-6 min-w-[1000px]">
+                    <thead>
+                        <tr className=" border font-montserrat text-black font-normal border-[#AFAFAF] bg-[#F7F1FF]">
+                            <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Sr. No.</th>
+                            <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Outcome Type</th>
+                            <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Title</th>
+                            <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Description</th>
+                            <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Reference Section</th>
+                            <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Severity</th>
+                            <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Severity Rationale</th>
+                            <th className="font-montserrat font-normal p-2 border-b border-r border-[#AFAFAF]">Mitigation Suggestions</th>
+                        </tr>
+                    </thead>
+                    <tbody className="w-full">
+                        {formData.length === 0
+                            ? Array.from({ length: filesPerPage }).map((_, index) => (
+                                <tr key={index}>
+                                    <td className="border-b border-l text-center p-6 text-black border-gray-300">-</td>
+                                    <td className="border-b text-center p-6 text-black border-gray-300">-</td>
+                                    <td className="border-b text-center p-6 text-black border-gray-300">-</td>
+                                    <td className="border-b text-center p-6 text-black border-gray-300">-</td>
+                                    <td className="border-b text-center p-6 text-black border-gray-300">-</td>
+                                    <td className="border-b text-center p-6 text-black border-gray-300">-</td>
+                                    <td className="border-b text-center p-6 text-black border-gray-300">-</td>
+                                    <td className="border-b border-r text-center p-6 text-black border-gray-300">-</td>
+                                </tr>
+                            ))
+                            : formData
+                                .slice((currentPage - 1) * filesPerPage, currentPage * filesPerPage)
+                                .map((document, index) => (
+                                    <tr key={index}>
+                                        <td className="border-b border-l p-6 text-center text-black border-gray-300">
+                                            {document.srNo}
+                                        </td>
+                                        <td className="border-b text-center p-6 text-black border-gray-300">
+                                            {document.outcomeType}
+                                        </td>
+                                        <td className="border-b text-center p-6 text-black border-gray-300">
+                                            {document.title}
+                                        </td>
+                                        <td className="border-b text-center p-6 text-black border-gray-300">
+                                            {document.description}
+                                        </td>
+                                        <td className="border-b text-center p-6 text-black border-gray-300">
+                                            {document.referenceSection}
+                                        </td>
+                                        <td className="border-b text-center p-6 text-black border-gray-300">
+                                            {document.severity}
+                                        </td>
+                                        <td className="border-b text-center p-6 text-black border-gray-300">
+                                            {document.severityRationale}
+                                        </td>
+                                        <td className="border-b border-r p-6 text-center text-black border-gray-300">
+                                            {document.mitigationSuggestions}
+                                        </td>
+                                    </tr>
+                                ))}
+                    </tbody>
+                </table>
+            </div>
             <div className="flex justify-between font-montserrat items-center mt-4">
                 <span className="cursor-pointer text-purple-600 hover:text-purple-800" onClick={handlePrevClick}>&laquo; Prev</span>
                 <div className="flex space-x-2">
@@ -311,15 +349,18 @@ const RiskFindingsTable = ({ formData, currentPage, handlePrevClick, handleNextC
 };
 
 RiskFindingsTable.propTypes = {
-    formData: PropTypes.shape({
-        outcomeType: PropTypes.string,
-        title: PropTypes.string,
-        description: PropTypes.string,
-        referenceSection: PropTypes.string,
-        severity: PropTypes.string,
-        severityRationale: PropTypes.string,
-        mitigationSuggestions: PropTypes.string,
-    }).isRequired,
+    formData: PropTypes.arrayOf(
+        PropTypes.shape({
+            srNo: PropTypes.number.isRequired,
+            outcomeType: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            description: PropTypes.string.isRequired,
+            referenceSection: PropTypes.string.isRequired,
+            severity: PropTypes.string,
+            severityRationale: PropTypes.string,
+            mitigationSuggestions: PropTypes.string,
+        })
+    ).isRequired,
     currentPage: PropTypes.number.isRequired,
     handlePrevClick: PropTypes.func.isRequired,
     handleNextClick: PropTypes.func.isRequired,
