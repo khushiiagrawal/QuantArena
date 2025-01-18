@@ -217,7 +217,7 @@ const FormComponent = () => {
                                 </label>
                                 <textarea
                                     id="mitigationSuggestions"
-                                    className="mt-2 focus:outline-none border rounded px-4 py-3 h-14 text-left w-1/2 bg-gray-200 text-black hover:border-white"
+                                    className="mt-2 focus:outline-none border rounded px-4 py-3 h-14 text-left w-full bg-gray-200 text-black hover:border-white"
                                     rows="3"
                                     placeholder="Enter suggestions"
                                     value={mitigationSuggestions}
