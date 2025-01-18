@@ -28,7 +28,7 @@ export default function About() {
                 </div>
 
                 {/* Content Section */}
-                                <div className="relative z-10 mt-8 container max-w-7xl mx-auto px-2 md:px-2">
+                                <div className="relative z-10 mt-8 max-w-8xl mx-auto px-2 md:px-3">
                                     {/* Vision Section */}
                                     <div className="flex flex-col items-center md:flex-row md:items-center gap-8 mb-8">
                                         <div className="relative w-full mt-10 md:w-1/2 px-4 md:px-6">
