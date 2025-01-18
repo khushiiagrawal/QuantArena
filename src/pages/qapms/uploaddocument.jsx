@@ -220,7 +220,7 @@ const UploadDocuments = () => {
                 </div>
                 <table className="w-full mt-4">
                     <thead>
-                        <tr className="border font-montserrat font-normal border-[#AFAFAF] bg-[#F7F1FF]">
+                        <tr className="border text-black font-montserrat font-normal border-[#AFAFAF] bg-[#F7F1FF]">
                             <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Sr. No.</th>
                             <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Document Name</th>
                             <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Description</th>
@@ -234,15 +234,15 @@ const UploadDocuments = () => {
                         {uploadedDocuments.length === 0 ? (
                             Array.from({ length: filesPerPage }).map((_, index) => (
                                 <tr key={index}>
-                                    <td className="border-b border-l text-center text-black border-gray-300">
+                                    <td className="border-b border-l  p-6 text-center text-black border-gray-300">
                                         {index + 1}
                                     </td>
-                                    <td className="border-b text-center text-black border-gray-300">-</td>
-                                    <td className="border-b text-center text-black border-gray-300">-</td>
-                                    <td className="border-b text-center text-black border-gray-300">-</td>
-                                    <td className="border-b text-center text-black border-gray-300">-</td>
-                                    <td className="border-b text-center text-black border-gray-300">-</td>
-                                    <td className="border-b border-r text-center text-black border-gray-300">-</td>
+                                    <td className="border-b p-6 text-center text-black border-gray-300">-</td>
+                                    <td className="border-b  p-6 text-center text-black border-gray-300">-</td>
+                                    <td className="border-b  p-6 text-center text-black border-gray-300">-</td>
+                                    <td className="border-b  p-6 text-center text-black border-gray-300">-</td>
+                                    <td className="border-b  p-6 text-center text-black border-gray-300">-</td>
+                                    <td className="border-b  p-6 border-r text-center text-black border-gray-300">-</td>
                                 </tr>
                             ))
                         ) : (

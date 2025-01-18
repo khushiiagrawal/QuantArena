@@ -261,7 +261,7 @@ const RiskFindingsTable = ({ formData, currentPage, handlePrevClick, handleNextC
             </div>
             <table className="w-full mt-6">
                 <thead>
-                    <tr className="border font-montserrat font-normal border-[#AFAFAF] bg-[#F7F1FF]">
+                    <tr className="border font-montserrat text-black font-normal border-[#AFAFAF] bg-[#F7F1FF]">
                         <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Sr. No.</th>
                         <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Outcome Type</th>
                         <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Title</th>
@@ -275,13 +275,13 @@ const RiskFindingsTable = ({ formData, currentPage, handlePrevClick, handleNextC
                 <tbody>
                     <tr>
                         <td className="border-b border-l p-6 text-center text-black border-gray-300">1</td>
-                        <td className="border-b text-center p-2 text-black border-gray-300">{formData.outcomeType || '-'}</td>
-                        <td className="border-b text-center p-2 text-black border-gray-300">{formData.title || '-'}</td>
-                        <td className="border-b text-center p-2 text-black border-gray-300">{formData.description || '-'}</td>
-                        <td className="border-b text-center p-2 text-black border-gray-300">{formData.referenceSection || '-'}</td>
-                        <td className="border-b text-center p-2 text-black border-gray-300">{formData.severity || '-'}</td>
-                        <td className="border-b text-center p-2 text-black border-gray-300">{formData.severityRationale || '-'}</td>
-                        <td className="border-b border-r text-center p-2 text-black border-gray-300">{formData.mitigationSuggestions || '-'}</td>
+                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.outcomeType || '-'}</td>
+                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.title || '-'}</td>
+                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.description || '-'}</td>
+                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.referenceSection || '-'}</td>
+                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.severity || '-'}</td>
+                        <td className="border-b text-center p-6 text-black border-gray-300">{formData.severityRationale || '-'}</td>
+                        <td className="border-b border-r text-center p-6 text-black border-gray-300">{formData.mitigationSuggestions || '-'}</td>
                     </tr>
                 </tbody>
             </table>
