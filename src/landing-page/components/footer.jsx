@@ -66,7 +66,7 @@ export default function Footer() {
           <div className="w-12 h-12 rounded-full bg-[#FCBE60] flex items-center justify-center">
             <img src={Mail} alt="Mail" className="h-6 w-6 text-white" />
           </div>
-          <span className="text-lg">connect.quantarena.co.in</span>
+          <span className="text-lg">connect@quantarena.co.in</span>
         </div>
 
         {/* Address */}
@@ -74,7 +74,7 @@ export default function Footer() {
           <div className="w-12 h-12 rounded-full bg-[#9E6AED] flex items-center justify-center">
             <img src={Location} alt="Location" className="h-6 w-6 text-white" />
           </div>
-          <span className="text-lg">Office no. A-15, Sr. no. 90, <br /> Majestique Memories, NIBM <br /> Annex, Mohammadwadi,<br /> Pune - 411060 (MH)</span>
+          <span className="text-lg">Office no. A-15, Majestique Memories,<br/> Sr. no. 90/1/1, NIBM Annex,<br/> Mohammadwadi, Pune- 411028 (MH)</span>
         </div>
       </div>
 
@@ -141,7 +141,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li><a className="text-white" href="/">LinkedIn</a></li>
               <li><a className="text-white" href="/">Facebook</a></li>
-              <li><a className="text-white" href="/">Instagram</a></li>
+              
             </ul>
           </div>
         </div>

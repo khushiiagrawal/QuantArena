@@ -31,7 +31,7 @@ export default function About() {
                 <div className="relative z-10 mt-8 max-w-8xl mx-auto px-2 md:px-8">
                     {/* Vision Section */}
                     <div className="flex flex-col items-center md:flex-row md:items-center gap-8 mb-8">
-                        <div className="relative w-full mt-10 md:w-1/2 px-4 md:px-6">
+                        <div className="relative w-full mt-6 md:w-1/2 px-4 md:px-6">
                             <div className="relative">
                                 <img
                                     src={visionImage}
@@ -47,8 +47,8 @@ export default function About() {
                                 ></div>
                             </div>
                         </div>
-                        <div className="flex-1 text-center md:text-left mt-8 max-w-prose px-4 md:px-6">
-                            <h3 className="text-2xl md:text-3xl mb-4 text-black" style={fontStyle}>
+                        <div className="flex-1 text-center md:text-left mt-12 max-w-prose px-4 md:px-6">
+                            <h3 className="text-2xl md:text-3xl mb-1 text-black" style={fontStyle}>
                                 Our Vision
                             </h3>
                             <p className="text-base md:text-lg leading-relaxed text-gray-800" style={fontStyle}>
@@ -102,7 +102,7 @@ export default function About() {
 
                     {/* Expertise Section */}
                     <div className="flex flex-col items-center md:flex-row md:items-center gap-8">
-                        <div className="relative w-full md:w-1/2 px-4 md:px-6 mt-16">
+                        <div className="relative w-full md:w-1/2 px-4 md:px-6 mt-14">
                             <div className="relative">
                                 <img
                                     src={expertiseImage}
@@ -119,8 +119,8 @@ export default function About() {
                                 ></div>
                             </div>
                         </div>
-                        <div className="flex-1 text-center md:text-left mt-8 max-w-prose px-4 md:px-6">
-                            <h3 className="text-2xl md:text-3xl mb-4 text-black" style={fontStyle}>
+                        <div className="flex-1 text-center md:text-left mt-16 max-w-prose px-4 md:px-6">
+                            <h3 className="text-2xl md:text-3xl mb-6 text-black" style={fontStyle}>
                                 Our Expertise
                             </h3>
                             <p className="text-base md:text-lg leading-relaxed text-gray-800" style={fontStyle}>
