@@ -31,7 +31,7 @@ export default function CareerPageHero() {
             YOUR CAREER THROUGH <br /> OUR VISION
           </h1>
           <p className="text-lg md:text-2xl font-montserrat text-gray-300 mb-24 leading-relaxed">
-            Shaping Your Career, Enriching Your Future <br /> Where Ambition Meets a Satisfied Pocket!
+            Shaping Your Career, Enriching Your Future - <br /> Where Ambition Meets a Satisfied Pocket!
           </p>
           <span className="bg-[#5BD8A3]  font-montserrat mt-6 text-black gap-2 font-medium py-3 px-5 rounded-md flex items-center">
             Scroll Down
@@ -291,7 +291,7 @@ export const JobApplicationPage = () => {
     const { id, value, files } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [id]: files ? files[0] : value
+      [id]: files ? (prevData[id] ? [...prevData[id], ...Array.from(files)] : Array.from(files)) : value
     }));
   };
 
@@ -299,7 +299,7 @@ export const JobApplicationPage = () => {
     const { id, value, files } = e.target;
     setFormData2((prevData) => ({
       ...prevData,
-      [id]: files ? files[0] : value
+      [id]: files ? (prevData[id] ? [...prevData[id], ...Array.from(files)] : Array.from(files)) : value
     }));
   };
 
@@ -520,24 +520,11 @@ export const JobApplicationPage = () => {
                         type="file"
                         className="w-full px-3 py-4 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
                         onChange={handleChange}
+                        multiple
                       />
-                      <br/><br/>
-                      <input
-                        id="attachment2"
-                        type="file"
-                        className="w-full px-3 py-4 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
-                        onChange={handleChange}
-                      />
-                      <br/><br/>
-                
-                      <input
-                      id="link"
-                      type="url"
-                      className="w-full px-3 py-2 border border-white rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-[#9E6AED]"
-                      placeholder="Enter a link"
-                      value={formData.link || ''}
-                      onChange={handleChange}
-                      />
+                      
+                     
+                      
                       </div>
 
                       <button
@@ -670,106 +657,91 @@ export const JobApplicationPage = () => {
                   if (!/[0-9]/.test(e.key) && e.key !== 'Backspace' && e.key !== 'ArrowLeft' && e.key !== 'ArrowRight' && e.key !== 'Delete') {
                     e.preventDefault();
                   }
-                  }}
-                />
+                    }}
+                  />
+                  </div>
+
+                  <div>
+                  <label className="block text-sm font-medium text-black mb-2" htmlFor="email2">
+                    Email Address<span className='text-red-500'>*</span>
+                  </label>
+                  <input
+                    id="email2"
+                    type="email"
+                    className="w-full px-3 py-2 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                    placeholder="Enter your email address"
+                    value={formData2.email2}
+                    onChange={handleChange2}
+                  />
+                  </div>
+
+                  <div>
+                  <label className="block text-sm font-medium text-black mb-2" htmlFor="introduce2">
+                    Introduce Yourself<span className='text-red-500'>*</span>
+                  </label>
+                  <textarea
+                    id="introduce2"
+                    className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                    placeholder="Enter your introduction"
+                    rows="3"
+                    value={formData2.introduce2}
+                    onChange={handleChange2}
+                  ></textarea>
+                  </div>
+
+                  <div>
+                  <label className="block text-sm font-medium text-black mb-2" htmlFor="contribution2">
+                    What will you bring to the table?<span className='text-red-500'>*</span>
+                  </label>
+                  <textarea
+                    id="contribution2"
+                    className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                    placeholder="Describe your contribution"
+                    rows="3"
+                    value={formData2.contribution2}
+                    onChange={handleChange2}
+                  ></textarea>
+                  </div>
+
+                  <div>
+                  <label className="block text-sm font-medium text-black mb-2" htmlFor="message2">
+                    Any other message for us?
+                  </label>
+                  <textarea
+                    id="message2"
+                    className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
+                    placeholder="Enter your message"
+                    rows="3"
+                    value={formData2.message2}
+                    onChange={handleChange2}
+                  ></textarea>
+                  </div>
+
+                  <div>
+                  <label className="block text-sm font-medium text-black mb-2" htmlFor="attachment2">
+                    Relevant Attachments (One or more)<span className='text-red-500'>*</span>
+                  </label>
+                  <input
+                    id="attachment2"
+                    type="file"
+                    className="w-full px-3 py-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
+                    onChange={handleChange2}
+                  />
+                  
+                  </div>
+
+                  <button
+                  type="submit"
+                  className="w-full bg-[#5BD8A3] hover:bg-green-600 text-black font-bold py-2 px-4 rounded-lg"
+                  onClick={() => setSelectedDes(null)}
+                  >
+                  Submit
+                  </button>
+                  </form>
+                  </div>
                 </div>
-
-                <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="email2">
-                  Email Address<span className='text-red-500'>*</span>
-                </label>
-                <input
-                  id="email2"
-                  type="email"
-                  className="w-full px-3 py-2 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
-                  placeholder="Enter your email address"
-                  value={formData2.email2}
-                  onChange={handleChange2}
-                />
-                </div>
-
-                <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="introduce2">
-                  Introduce Yourself<span className='text-red-500'>*</span>
-                </label>
-                <textarea
-                  id="introduce2"
-                  className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
-                  placeholder="Enter your introduction"
-                  rows="3"
-                  value={formData2.introduce2}
-                  onChange={handleChange2}
-                ></textarea>
-                </div>
-
-                <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="contribution2">
-                  What will you bring to the table?<span className='text-red-500'>*</span>
-                </label>
-                <textarea
-                  id="contribution2"
-                  className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
-                  placeholder="Describe your contribution"
-                  rows="3"
-                  value={formData2.contribution2}
-                  onChange={handleChange2}
-                ></textarea>
-                </div>
-
-                <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="message2">
-                  Any other message for us?
-                </label>
-                <textarea
-                  id="message2"
-                  className="w-full px-3 py-3 h-32 border border-black shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
-                  placeholder="Enter your message"
-                  rows="3"
-                  value={formData2.message2}
-                  onChange={handleChange2}
-                ></textarea>
-                </div>
-
-                <div>
-                <label className="block text-sm font-medium text-black mb-2" htmlFor="attachment2">
-                  Relevant Attachments (One or more)<span className='text-red-500'>*</span>
-                </label>
-                <input
-                  id="attachment2"
-                  type="file"
-                  className="w-full px-3 py-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
-                  onChange={handleChange2}
-                />
-                <br/><br/>
-                <input
-                  id="attachment2"
-                  type="file"
-                  className="w-full px-3 py-4 border border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-blue"
-                  onChange={handleChange2}
-                />
-                <br/><br/>
-
-                <input
-                  id="link2"
-                  type="url"
-                  className="w-full px-3 py-2 border border-black rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue bg-white"
-                  placeholder="Enter a link"
-                  value={formData2.link2 || ''}
-                  onChange={handleChange2}
-                />
-                </div>
-
-                <button
-                type="submit"
-                className="w-full bg-[#5BD8A3] hover:bg-green-600 text-black font-bold py-2 px-4 rounded-lg"
-                >
-                Submit
-                </button>
-              </form>
-              </div>
-            </div>
-            )}
-            {useEffect(() => {
+                )}
+                {useEffect(() => {
             console.log('Form Data 2:', formData2);
             }, [formData2])}
           </div>
