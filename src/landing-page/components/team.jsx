@@ -45,9 +45,9 @@ const teamMembers = [
             <div>
                 Debraj is a passionate statistician and data analyst with a strong academic foundation and professional expertise. He completed his B.Sc. in Statistics from Maulana Azad College, Calcutta university and M.Sc. in Statistics from Ballygunge Science College, Calcutta University.
                 <br /> <br />
-                His professional journey began as a Subject Matter Expert in statistics on leading online platforms such as Chegg, CourseHero, and TutorBin. Over the years, he has solved more than 25,000 problems, earning accolades like the prestigious "Expert of Experts Award" from Chegg for delivering the highest number of high-quality solutions. Additionally, he has served as a Quality Content Reviewer at Chegg, ensuring the accuracy and excellence of solutions provided to students worldwide.
+                His professional journey began as a Subject Matter Expert in statistics on leading online platforms such as Chegg, CourseHero and TutorBin. Over the years, he has solved more than 25,000 problems, earning accolades like the prestigious "Expert of Experts Award" from Chegg for delivering the highest number of high-quality solutions. Additionally, he has served as a Quality Content Reviewer at Chegg, ensuring the accuracy and excellence of solutions provided to students worldwide.
                 <br /> <br />
-                His statistical expertise spans probability, regression models, time series analysis, hypothesis testing, confidence intervals, quality control, and more. Additionally, he specializes in data analysis, data visualization, and representation using tools and technologies like C, R, Advanced Excel, Python, Power BI, and Minitab.
+                His statistical expertise spans probability, regression models, time series analysis, hypothesis testing, confidence intervals, quality control and more. Additionally, he specializes in data analysis, data visualization and representation using tools and technologies like C, R, Advanced Excel, Python, Power BI and Minitab.
                 <br /> <br />
                 With a blend of academic excellence and hands-on experience, Debraj is dedicated to leveraging data-driven insights to solve complex challenges and create value in the field of data analytics.
             </div>
@@ -103,7 +103,7 @@ export function TeamSection() {
             {/* Modal Popup */}
             {selectedMember && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                    <div className="bg-white w-[70%] sm:w-[80%] lg:w-[90%] max-w-5xl p-8 shadow relative text-left overflow-y-auto max-h-[90vh]">
+                    <div className="bg-white w-[90%] sm:w-[90%] lg:w-[90%] max-w-5xl p-8 shadow relative text-left overflow-y-auto max-h-[90vh]">
                         <span
                             className="absolute top-3 right-6 cursor-pointer text-gray-600 hover:text-gray-800 text-2xl"
                             onClick={handleClose}

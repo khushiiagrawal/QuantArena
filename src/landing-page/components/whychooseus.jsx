@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
                     </h3>
                     <p className="text-gray-700 mt-8 text-sm font-montserrat leading-relaxed">
                         
-                    Empower your organization with our advanced analytics services. By employing cutting-edge statistical methods and real-time data analysis, we deliver actionable insights that drive business success. Our advanced analytics solutions help you identify hidden patterns, forecast trends, and optimize your strategies. Transform your data into valuable knowledge and make confident, data-driven decisions to stay ahead in a competitive market.
+                    Empower your organization with our advanced analytics services. By employing cutting-edge statistical methods and real-time data analysis, we deliver actionable insights that drive business success. Our advanced analytics solutions help you identify hidden patterns, forecast trends and optimize your strategies. Transform your data into valuable knowledge and make confident, data-driven decisions to stay ahead in a competitive market.
                     </p>
                 </div>
 
@@ -64,7 +64,7 @@ export default function WhyChooseUs() {
                         Tailored Solutions
                     </h3>
                     <p className="text-gray-700 font-montserrat text-sm mt-8 leading-relaxed">
-                    Delivering results that fit your business like a glove, our tailored solutions ensure your unique needs are met with precision. We specialize in custom analytics and risk management strategies designed to address your specific objectives and challenges. By understanding your distinct requirements, we develop targeted approaches that maximize impact, optimize processes, and enhance decision-making. Partner with us for bespoke solutions that drive efficiency, innovation and growth in your business.
+                    Delivering results that fit your business like a glove, our tailored solutions ensure your unique needs are met with precision. We specialize in custom analytics and risk management strategies designed to address your specific objectives and challenges. By understanding your distinct requirements, we develop targeted approaches that maximize impact, optimize processes and enhance decision-making. Partner with us for bespoke solutions that drive efficiency, innovation and growth in your business.
                     </p>
                 </div>
 
@@ -84,7 +84,7 @@ export default function WhyChooseUs() {
                         Inquisitiveness And Expertise
                     </h3>
                     <p className="text-gray-700 font-montserrat text-sm mt-8 leading-relaxed">
-                    Our team consists of individuals who are inquisitive by nature and has expertise in the field of analytics and risk management ready to transform your raw data into actionable insights through comprehensive analysis, predictive analytics and automated solutions (wherever needed). Our risk management capabilities help identify vulnerabilities and craft tailored mitigation strategies. We ensure data accuracy and regulatory compliance, providing custom solutions that align with your unique business needs. Partner with us and let’s together master the knowledge and resilience needed to grow your business.
+                    Our team consists of individuals who are inquisitive by nature and has expertise in the field of analytics and risk management ready to transform your raw data into actionable insights through comprehensive analysis, predictive analytics and automated solutions (wherever needed). Our risk management capabilities help identify vulnerabilities and craft tailored mitigation strategies. We ensure data accuracy and regulatory compliance, providing custom solutions that align with your unique business needs. Partner with us to master the knowledge and resilience needed to grow your business.
                         
                     </p>
                 </div>
