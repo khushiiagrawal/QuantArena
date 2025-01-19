@@ -1,8 +1,6 @@
 import { useState } from "react";
 import docImage from "./pics/doc.png";
 
-
-
 const UploadDocuments = () => {
     const [defaultValue, setDefaultValue] = useState("");
     const [documentName, setDocumentName] = useState("");
@@ -60,15 +58,15 @@ const UploadDocuments = () => {
     };
 
     return (
-        <div className="w-full font-montserrat min-h-[50vh] bg-white">
-            <div className="mt-10 text-left text-xl font-montserrat font-semibold w-full text-gray-900">
+        <div className="w-full font-montserrat min-h-[50vh] bg-white dark:bg-gray-900">
+            <div className="mt-10 text-left text-xl font-montserrat font-semibold w-full text-gray-900 dark:text-gray-100">
                 Upload Documents
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
                 {/* Document Name */}
                 <div>
-                    <label className="block text-lg font-medium font-montserrat text-gray-800">
+                    <label className="block text-lg font-medium font-montserrat text-gray-800 dark:text-gray-200">
                         Document Name <span className="text-red-500">*</span>
                     </label>
                     <input
@@ -76,17 +74,17 @@ const UploadDocuments = () => {
                         value={documentName}
                         onChange={(e) => setDocumentName(e.target.value)}
                         placeholder="Enter document name"
-                        className="mt-2 h-14 block w-full p-2 border hover:border-gray-400 text-lg bg-gray-100 text-black border rounded shadow-sm focus:outline-none"
+                        className="mt-2 h-14 block w-full p-2 border hover:border-gray-400 text-lg bg-gray-100 dark:bg-gray-700 text-black dark:text-gray-200 border rounded shadow-sm focus:outline-none"
                         required
                     />
                 </div>
 
                 {/* Document Attachment */}
                 <div>
-                    <label className="block text-lg font-medium font-montserrat text-gray-800">
+                    <label className="block text-lg font-medium font-montserrat text-gray-800 dark:text-gray-200">
                         Document Attachment <span className="text-red-500">*</span>
                     </label>
-                    <div className="mt-2 flex justify-center h-14 border-2 border-dashed border-[#9E6AED] rounded-md cursor-pointer hover:bg-purple-50">
+                    <div className="mt-2 flex justify-center h-14 border-2 border-dashed border-[#9E6AED] rounded-md cursor-pointer hover:bg-purple-50 dark:hover:bg-purple-900">
                         <input
                             type="file"
                             className="hidden"
@@ -96,7 +94,7 @@ const UploadDocuments = () => {
                         />
                         <label
                             htmlFor="file-upload"
-                            className="flex items-center text-lg cursor-pointer text-purple-600"
+                            className="flex items-center text-lg cursor-pointer text-purple-600 dark:text-purple-400"
                         >
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -119,14 +117,14 @@ const UploadDocuments = () => {
 
                 {/* Document Description */}
                 <div>
-                    <label className="block text-lg font-medium mt-4 font-montserrat text-gray-800">
+                    <label className="block text-lg font-medium mt-4 font-montserrat text-gray-800 dark:text-gray-200">
                         Document Description <span className="text-red-500">*</span>
                     </label>
                     <textarea
                         value={documentDescription}
                         onChange={(e) => setDocumentDescription(e.target.value)}
                         placeholder="Enter description"
-                        className="mt-2 h-40 block w-full p-2 border hover:border-gray-400 text-lg text-start bg-gray-100 text-black border rounded shadow-sm focus:outline-none"
+                        className="mt-2 h-40 block w-full p-2 border hover:border-gray-400 text-lg text-start bg-gray-100 dark:bg-gray-700 text-black dark:text-gray-200 border rounded shadow-sm focus:outline-none"
                         rows="4"
                         required
                     ></textarea>
@@ -134,14 +132,14 @@ const UploadDocuments = () => {
 
                 {/* Remarks/Comments */}
                 <div>
-                    <label className="block text-lg font-medium mt-4 font-montserrat text-gray-800">
+                    <label className="block text-lg font-medium mt-4 font-montserrat text-gray-800 dark:text-gray-200">
                         Remarks/Comments
                     </label>
                     <textarea
                         value={remarks}
                         onChange={(e) => setRemarks(e.target.value)}
                         placeholder="Enter remarks/comments"
-                        className="mt-2 h-40 block w-full p-2 border hover:border-gray-400 text-lg text-start bg-gray-100 text-black border rounded shadow-sm focus:outline-none"
+                        className="mt-2 h-40 block w-full p-2 border hover:border-gray-400 text-lg text-start bg-gray-100 dark:bg-gray-700 text-black dark:text-gray-200 border rounded shadow-sm focus:outline-none"
                         rows="4"
                     ></textarea>
                 </div>
@@ -151,7 +149,7 @@ const UploadDocuments = () => {
             <div className="flex justify-left mt-6 gap-4">
                 <button
                     onClick={handleSave}
-                    className="py-2 px-10 border rounded focus:outline-none bg-white border-[#5BD8A3] text-black hover:text-gray-700 hover:border-[#8FF2C8]"
+                    className="py-2 px-10 border rounded focus:outline-none bg-white dark:bg-gray-700 border-[#5BD8A3] text-black dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 hover:border-[#8FF2C8]"
                 >
                     Save
                 </button>
@@ -160,7 +158,7 @@ const UploadDocuments = () => {
                         handleSave();
                         handleSubmit();
                     }}
-                    className="py-2 px-10 rounded border focus:outline-none bg-[#5BD8A3] text-black hover:text-gray-700 hover:border-white hover:bg-[#8FF2C8]"
+                    className="py-2 px-10 rounded border focus:outline-none bg-[#5BD8A3] text-black dark:text-gray-200 hover:text-gray-700 dark:hover:text-gray-400 hover:border-white hover:bg-[#8FF2C8]"
                 >
                     Submit
                 </button>
@@ -195,7 +193,7 @@ const UploadDocuments = () => {
                         </span>
                     </button>
                     {defaultValue === "show" && (
-                        <div className="absolute left-0 mt-2 shadow focus:outline-none border w-60 z-10 bg-white text-black shadow-gray-500">
+                        <div className="absolute left-0 mt-2 shadow focus:outline-none border w-60 z-10 bg-white dark:bg-gray-700 text-black dark:text-gray-200 shadow-gray-500">
                             <div
                                 className="px-4 py-2 cursor-pointer hover:text-white hover:bg-[#9E6AED]"
                                 onClick={() => setDefaultValue("Master Table")}
@@ -217,17 +215,17 @@ const UploadDocuments = () => {
                         </div>
                     )}
                 </div>
-                <div className="text-left text-lg font-montserrat font-semibold w-full mt-12 text-gray-900">
+                <div className="text-left text-lg font-montserrat font-semibold w-full mt-12 text-gray-900 dark:text-gray-100">
                     Document Details
                 </div>
                 <table className="w-full mt-4">
                     <thead>
-                        <tr className="border text-black font-montserrat font-normal border-[#AFAFAF] bg-[#F7F1FF]">
+                        <tr className="border text-black dark:text-gray-200 font-montserrat font-normal border-[#AFAFAF] bg-[#F7F1FF] dark:bg-gray-700">
                             <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Sr. No.</th>
                             <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Document Name</th>
                             <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Description</th>
                             <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Document</th>
-                            <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Remarks</th>
+                            <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Remarks/Comments</th>
                             <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Upload Time</th>
                             <th className="font-montserrat font-normal p-2 border-b border-[#AFAFAF]">Uploaded by</th>
                         </tr>
@@ -236,15 +234,15 @@ const UploadDocuments = () => {
                         {uploadedDocuments.length === 0 ? (
                             Array.from({ length: filesPerPage }).map((_, index) => (
                                 <tr key={index}>
-                                    <td className="border-b border-l  p-6 text-center text-black border-gray-300">
+                                    <td className="border-b border-l  p-6 text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">
                                         {index + 1}
                                     </td>
-                                    <td className="border-b p-6 text-center text-black border-gray-300">-</td>
-                                    <td className="border-b p-6 text-center text-black border-gray-300">-</td>
-                                    <td className="border-b p-6 text-center text-black border-gray-300">-</td>
-                                    <td className="border-b p-6 text-center text-black border-gray-300">-</td>
-                                    <td className="border-b p-6 text-center text-black border-gray-300">-</td>
-                                    <td className="border-b p-6 border-r text-center text-black border-gray-300">-</td>
+                                    <td className="border-b p-6 text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">-</td>
+                                    <td className="border-b p-6 text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">-</td>
+                                    <td className="border-b p-6 text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">-</td>
+                                    <td className="border-b p-6 text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">-</td>
+                                    <td className="border-b p-6 text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">-</td>
+                                    <td className="border-b p-6 border-r text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">-</td>
                                 </tr>
                             ))
                         ) : (
@@ -252,12 +250,12 @@ const UploadDocuments = () => {
                             .slice((currentPage - 1) * filesPerPage, currentPage * filesPerPage)
                             .map((document, index) => (
                                 <tr key={index}>
-                                    <td className="border-b border-l text-center text-black border-gray-300">
+                                    <td className="border-b border-l text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">
                                         {document.srNo}
                                     </td>
-                                    <td className="border-b text-center text-black border-gray-300">{document.name}</td>
-                                    <td className="border-b text-center text-black border-gray-300">{document.description}</td>
-                                    <td className="border-b text-center text-black border-gray-300">
+                                    <td className="border-b text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">{document.name}</td>
+                                    <td className="border-b text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">{document.description}</td>
+                                    <td className="border-b text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">
                                         {document.attachmentURL && (
                                             <a href={document.attachmentURL} download={document.attachmentName} className="hover:underline text-[#9E6AED] hover:text-[#9E6AED]">
                                                 <img src={docImage} alt="doc" className="h-12 w-12 m-2 inline-block" />
@@ -265,27 +263,27 @@ const UploadDocuments = () => {
                                             </a>
                                         )}
                                     </td>
-                                    <td className="border-b text-center text-black border-gray-300">{document.remarks}</td>
-                                    <td className="border-b text-center text-black border-gray-300">{document.uploadTime}</td>
-                                    <td className="border-b border-r text-center text-black border-gray-300">User</td>
+                                    <td className="border-b text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">{document.remarks}</td>
+                                    <td className="border-b text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">{document.uploadTime}</td>
+                                    <td className="border-b border-r text-center text-black dark:text-gray-200 border-gray-300 dark:border-gray-600">User</td>
                                 </tr>
                             ))
                         )}
                     </tbody>
                 </table>
                 <div className="flex justify-between font-montserrat items-center mt-4">
-                    <span className="cursor-pointer text-purple-600 hover:text-purple-800" onClick={handlePrevClick}>&laquo; Prev</span>
+                    <span className="cursor-pointer text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-600" onClick={handlePrevClick}>&laquo; Prev</span>
                     <div className="flex space-x-2">
-                        <span className="w-8 h-8 text-center p-1 rounded-full bg-[#C9AEF2] text-gray-800">{currentPage}</span>
-                        <span className="w-8 h-8 border text-center p-1 rounded-full bg-gray-100 text-gray-800 border-[#C9AEF2]">{currentPage + 1}</span>
+                        <span className="w-8 h-8 text-center p-1 rounded-full bg-[#C9AEF2] text-gray-800 dark:text-gray-200">{currentPage}</span>
+                        <span className="w-8 h-8 border text-center p-1 rounded-full bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 border-[#C9AEF2]">{currentPage + 1}</span>
                     </div>
-                    <span className="cursor-pointer text-purple-600 hover:text-purple-800" onClick={handleNextClick}>Next &raquo;</span>
+                    <span className="cursor-pointer text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-600" onClick={handleNextClick}>Next &raquo;</span>
                 </div>
             </div>
             <div className="flex justify-end mt-4">
-                <label className="mr-2 mt-1 text-gray-700">Rows per page:</label>
+                <label className="mr-2 mt-1 text-gray-700 dark:text-gray-200">Rows per page:</label>
                 <select
-                    className="border focus:outline-none rounded py-1 bg-white text-black border-gray-300 hover:border-gray-700"
+                    className="border focus:outline-none rounded py-1 bg-white dark:bg-gray-700 text-black dark:text-gray-200 border-gray-300 dark:border-gray-600 hover:border-gray-700 dark:hover:border-gray-400"
                     value={filesPerPage}
                     onChange={(e) => setFilesPerPage(Number(e.target.value))}
                 >
@@ -295,7 +293,6 @@ const UploadDocuments = () => {
                     <option value={20}>20</option>
                 </select>
             </div>
-          
         </div>
     );
 }

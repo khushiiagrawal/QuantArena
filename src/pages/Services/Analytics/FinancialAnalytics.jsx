@@ -9,20 +9,13 @@ const FinancialAnalytics = () => {
             why: `Financial forecasting empowers organizations to make data-driven decisions, navigate through uncertainty, mitigate risk and ultimately achieve sustainable growth. It is crucial for businesses which want to achieve long term success.`,
         },
         {
-            title: "ETL (Extract, Transform, Load) Services",
-            what: `ETL (Extract, Transform, Load) is the process of extracting data from multiple sources, transforming it into a consistent, usable format, and loading it into a target system (such as a data warehouse).\n
-            The Extract step involves collecting raw data from various sources (e.g., databases, or flat files). The Transform step cleans and formats the data, while the Load step stores the processed data in a centralized system.`,
-            why: `ETL enables businesses to consolidate and prepare data for analysis, ensuring it is accurate, consistent, and easily accessible. It simplifies data handling and enhances decision-making.\n
-            ETL is critical for creating a unified data repository, eliminating data silos, and ensuring data readiness for analytics. It improves workflow efficiency and supports real-time and batch processing.`,
-        },
-        {
             title: "Financial Statements Preparation",
             what: `Financial statements preparation includes the preparation of annual financial statements as well as quarterly statements, namely Balance Sheet, Statement of Profit and Loss and Cash Flow Statements, by processing data from Trial Balance or any other format and segregating them into different ledger heads ultimately present them as per relevant standards of Financial Reporting Framework.`,
             why: `The governing companies/ taxation law in any country in the world require organization/ individuals to prepare their financial statements in order to get a clear picture in a well-presented form. Moreover, credit institutions also require these statements prepared solely on projections while applying any type of credit with them. Well prepared financial statements do not just look good while presenting but also help to attract investors, institutions and/or any present/future stakeholder.`,
         },
         {
             title:`Financial Statements Analysis`,
-            what:`Financial statements analysis means the analysis of financial statements (i.e. Balance Sheet, Statement of Profit and Loss and Cash Flow Statements) with the help of various analytical tools and techniques such as ratio analysis, trend analysis, cash flow analysis, etc.`,
+            what:`Financial statements analysis means the analysis of financial statements (i.e. Balance Sheet, Statement of Profit and Loss and Cash Flow Statements) with the help of various analytical tools and techniques such as ratio analysis, trend analysis, cash flow analysis etc.`,
             why:`Financial statement analysis helps to gain a deeper understanding of a business’s financial performance. It also assists in making informed decisions, regarding its liquidity, solvency and efficiency, by both the business and the stakeholder. Businesses can asses risk and gain a comprehensive understanding where they are standing financially.`,
 
         },

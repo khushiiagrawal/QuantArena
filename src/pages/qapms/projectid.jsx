@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import UploadDocuments from "./uploaddocument";
-import FormComponent from "./riskfinding";
+import FormComponent, { RiskFindingsTable } from "./riskfinding";
 
 const ProjectId = () => {
     const [defaultValue, setDefaultValue] = useState("");
@@ -199,6 +199,10 @@ const ProjectId = () => {
                         {(defaultValue === "Model Review" || defaultValue === "Policy Review") && (
                             <FormComponent />
                         )}
+                        {(defaultValue === "Risk Review" || defaultValue === "Enterprise Risk Framework") && (
+                            <RiskFindingsTable />
+                        )}
+                    
                     </>
                 )}
             </div>
