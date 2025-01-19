@@ -73,7 +73,7 @@ const Dashboard = () => {
                                                 <img src={pdf} alt="PDF Icon" className="h-10 w-10" />
                                             </div>
                                             <input type="file" id="fileInput" className="hidden" onChange={handleFileUpload} />
-                                            <p className="mt-4 text-gray-500 dark:text-gray-300">Add files</p>
+                                            <p className="mt-4 text-gray-500 dark:text-gray-300 cursor-pointer">Add files</p>
                                         </div>
                                     </td>
                                 </tr>
