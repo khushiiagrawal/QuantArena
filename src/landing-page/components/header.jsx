@@ -88,7 +88,7 @@ export default function Header() {
           className={`${isMobileMenuOpen
             ? "absolute top-full left-0 w-full bg-white dark:bg-black z-50 flex flex-col"
             : "hidden"
-            } md:flex md:flex-row md:static flex-1 items-center justify-center md:gap-1`}
+            } md:flex md:flex-row md:static flex-1 items-center justify-center md:gap-16`}
         >
           {navItems.map((item, index) => (
             <div
