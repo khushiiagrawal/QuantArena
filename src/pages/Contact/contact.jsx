@@ -35,7 +35,7 @@ const ContactPage = () => {
             Get In Touch
           </h1>
           <p className="text-center text-gray-600 font-montserrat px-4 md:px-8">
-          We’d love to hear from you! Whether you have questions, need assistance, or want to discuss a project or potential partnerships, our team is here to help. Use the form below to get in touch, and we’ll respond to your inquiry as soon as possible. Alternatively, you may also choose to email or call using our contact details.
+          We’d love to hear from you! Whether you have questions, need assistance, or want to discuss a project or potential partnerships, our team is here to help. Use the form below to get in touch and we’ll respond to your inquiry as soon as possible. Alternatively, you may also choose to email or call using our contact details.
           </p>
         </div>
 
@@ -123,7 +123,7 @@ const ContactPage = () => {
                 <div className="flex font-montserrat items-start gap-4">
                   <img src={location} alt="Location Icon" />
                   <p className='text-left text-front'>
-                    Head Office: Office no. A-15, Sr. no. 90, Majestique Memories,NIBM Annex, Mohammadwadi, Pune- 411060 (MH) <br/> <br/> Registered Address: Office no. A-15, Sr. no. 90, Majestique Memories, NIBM Annex, Mohammadwadi, Pune- 411060 (MH)
+                  <b>Head Office:</b> Office no. A-15, Majestique Memories, Sr. no. 90/1/1, NIBM Annex, Mohammadwadi, Pune- 411028 (MH)<br/> <br/> <b>Registered Address:</b> Office no. A-15, Majestique Memories, Sr. no. 90/1/1, NIBM Annex, Mohammadwadi, Pune- 411028 (MH)
                   </p>
                 </div>
                 <div className="mt-6">
