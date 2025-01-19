@@ -9,7 +9,7 @@ export default function MainPage() {
           Advanced Analytics & Risk Management Solutions
         </h1>
         <p className="mt-4 md:mt-6 text-lg md:text-xl font-light font-montserrat leading-relaxed">
-          Identify, assess, and mitigate with data-driven insights tailored to
+          Identify, assess and mitigate with data-driven insights tailored to
           your business needs.
         </p>
         
