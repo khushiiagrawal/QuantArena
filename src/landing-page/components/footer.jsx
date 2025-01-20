@@ -139,8 +139,8 @@ export default function Footer() {
           <div>
             <h2 className="font-bold mb-4 underline text-white">Links</h2>
             <ul className="space-y-2">
-              <li><a className="text-white" href="/">LinkedIn</a></li>
-              <li><a className="text-white" href="/">Facebook</a></li>
+              <li><a className="text-white" href="https://www.linkedin.com/company/105614051" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a className="text-white" href="https://www.facebook.com/profile.php?id=61571931913800" target="_blank" rel="noopener noreferrer">Facebook</a></li>
               
             </ul>
           </div>
