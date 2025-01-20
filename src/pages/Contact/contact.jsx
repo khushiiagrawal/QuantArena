@@ -129,10 +129,10 @@ const ContactPage = () => {
                 <div className="mt-6">
                   <p className="font-semibold font-montserrat">Follow Us</p>
                   <div className="flex gap-4 mt-2">
-                    <a href="https://www.linkedin.com/in/niloy-ray-07bbba176/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/company/105614051/" target="_blank" rel="noopener noreferrer">
                       <img src={linkedin} alt="Linkedin" className='w-12 h-12 cursor-pointer'/>
                     </a>
-                    <a href="https://www.linkedin.com/in/niloy-ray-07bbba176/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.facebook.com/profile.php?id=61571931913800" target="_blank" rel="noopener noreferrer">
                       <img src={facebook} alt="Facebook" className='w-12 h-12 cursor-pointer' />
                     </a>
                   </div>
