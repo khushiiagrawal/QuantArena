@@ -30,6 +30,11 @@ export default function Header() {
     { label: "Career", link: "/career" },
   ];
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+
   const handleDropdownToggle = (index) => {
     setOpenDropdownIndex(openDropdownIndex === index ? null : index);
   };
