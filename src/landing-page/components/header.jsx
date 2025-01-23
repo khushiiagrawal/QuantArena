@@ -63,7 +63,7 @@ export default function Header() {
     };
   }, []);
 
-  const textColorClass = theme === 'dark' ? 'text-white' : 'text-black';
+  const textColorClass = (theme === 'dark' && (location.pathname === '/projectid' || location.pathname === '/dashboard')) ? 'text-white' : 'text-black';
   const hoverTextColorClass = "hover:text-gray-700";
 
   useEffect(() => {
@@ -83,7 +83,7 @@ export default function Header() {
 
   return (
     <div id="Header">
-      <header className="fixed w-full flex items-center justify-between px-6 md:px-10 py-3 md:py-5 dark:bg-black dark:bg-opacity-60 bg-white bg-opacity-90 font-montserrat shadow-md transition-colors duration-300 z-50">
+      <header className={`fixed w-full flex items-center justify-between px-6 md:px-10 py-3 md:py-5 bg-white bg-opacity-90 font-montserrat shadow-md transition-colors duration-300 z-50 ${location.pathname === "/projectid" || location.pathname === '/dashboard' ? (theme === 'dark' ? 'dark:bg-black dark:bg-opacity-60' : 'bg-white') : 'bg-white'}`}>
         <div>
           <Link to="/">
             <img src={Logo} alt="Logo" className="w-48 mr-1 h-auto" />
